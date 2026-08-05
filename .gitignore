@@ -1,0 +1,22 @@
+# 中间产物与敏感配置不入库
+__pycache__/
+*.pyc
+.reasonix/
+
+# 环境配置（含 API key）
+.env
+config.env
+
+# 提取的原始文本（体积大且可从游戏目录再生）
+data/raw/
+
+# 校对中间产物（可再生成）
+data/review/
+data/aligned/
+
+# 本地工具
+tools/.venv/
+
+# 打包产物按需发布，默认不入库（发布时走 GitHub Release）
+patch/*.zip
+patch/*.7z
