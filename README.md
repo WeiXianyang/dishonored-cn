@@ -208,9 +208,8 @@ Full 形态共 5 个 zip 分卷（因为单文件超过 100 MB，GitHub 不能�
 
 ---
 
-## 致谢
+## 说明
 
-本补丁 95%+ 译文来自**天邈汉化组**《羞辱》年度版汉化 v1.4（2015.12.30），仅订正约 4.7% 的翻译问题。向天邈汉化组的无偿贡献致敬：
-- 其乐发布帖：https://keylol.com/t101091-1-1
-- Steam 群组：https://steamcommunity.com/groups/tianmiao
-- 微博：https://weibo.com/disthaven
+本补丁基于天邈汉化组《羞辱》v1.4 汉化版本修改。
+
+作者：WeiXianyang
