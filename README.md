@@ -46,9 +46,7 @@ Phase 0 环境 → Phase 1 提取对齐 → Phase 2 术语表 → Phase 3 AI校�
 
 AI 会按 8 个阶段逐步引导你完成全部流程。
 
-> 📖 完整工作流文档：[`LOCALIZATION_PIPELINE.md`](LOCALIZATION_PIPELINE.md)  
-> 📖 工作流设计原理见 [`docs/safe-localization-workflow.md`](docs/safe-localization-workflow.md)  
-> 📖 术语安全审计见 [`docs/glossary-safety-audit-report.md`](docs/glossary-safety-audit-report.md)
+> 📖 完整工作流文档：[`LOCALIZATION_PIPELINE.md`](LOCALIZATION_PIPELINE.md)
 
 ---
 
@@ -95,13 +93,13 @@ Dishonored-CN-1.4p-Full-part4-DLC07.zip     920 MB   (28 文件)
 Phase 4.5 裁决明细：critical 1,822 → keep 1,661 / fix 161；high 2,652 → keep 2,112 / fix 540；
 medium 714 → keep 512 / fix 202；low 63 → keep 60 / fix 3。
 
-详细分阶段报告见 `docs/`（Phase 1–4.5 验收清单、术语决策、Wiki 研究、工作流规范、授权申请函等）。
+全部 6,352 条修改明细（含英文原文 / 天邈原译 / 修正译文 / 理由）见 [`changelog.json`](changelog.json)。
 
 ---
 
 ## 安装
 
-> 📖 **完整图文教程（推荐先看）：[`docs/安装教程-完整版.md`](docs/安装教程-完整版.md)** —— 覆盖每一步操作、预期画面、常见问题排查。
+> 📖 **完整图文教程（推荐先看）：[`安装教程-完整版.md`](安装教程-完整版.md)** —— 覆盖每一步操作、预期画面、常见问题排查。
 > 以下为核心步骤速览。
 
 ### 准备工作

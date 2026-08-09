@@ -25,3 +25,4 @@ patch/*.7z
 # 构建中间态与临时脚本（产物见 release/）
 build/
 tmp/
+Dishonored-CN-1.4p-Full-*.zip
