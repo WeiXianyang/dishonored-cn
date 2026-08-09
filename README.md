@@ -7,16 +7,11 @@
 
 ---
 
-## 🔧 通用汉化修补 Skill
+## 🔧 通用汉化修补工作流
 
-本项目沉淀了一整套 **AI 辅助游戏汉化最小修补工作流**，封装为 Reasonix Skill，可直接复用到其他游戏的汉化修复项目。
+本项目沉淀了一整套 **AI 辅助游戏汉化最小修补工作流**，任何 AI 工具均可使用——**不绑定特定平台**。
 
-### 适用场景
-
-- 已有汉化质量不错但存在零星错译/漏译/术语不一致，需要系统性审校
-- 源文本格式复杂（UE3 .int、UPK 字幕、含标签/变量/换行签名）
-- 需要保留原汉化组翻译底色，只做"修补"而非"重译"
-- 需要可追溯的修改清单（每条含 原文 → 原译 → 新译 → 理由）
+**使用方式**：将 [`LOCALIZATION_PIPELINE.md`](LOCALIZATION_PIPELINE.md) 全文复制粘贴给任意 AI（ChatGPT、Claude、Reasonix、Cursor 等），然后告诉 AI 你的项目信息即可开始。
 
 ### 8 阶段审校管线
 
@@ -38,21 +33,23 @@ Phase 0 环境 → Phase 1 提取对齐 → Phase 2 术语表 → Phase 3 AI校�
 
 ### 如何使用
 
-安装 Reasonix 后，将本仓库的 `.reasonix/skills/localization-pipeline/SKILL.md` 复制到你的汉化项目中：
+1. 打开 [`LOCALIZATION_PIPELINE.md`](LOCALIZATION_PIPELINE.md)
+2. 全文复制
+3. 粘贴给任意 AI 工具，并附上你的项目信息：
 
 ```
-your-translation-project/
-└── .reasonix/
-    └── skills/
-        └── localization-pipeline/
-            └── SKILL.md
+我正在修复 [游戏名] 的汉化。
+英文源目录：[路径]
+中文源目录：[路径]
+请按照本文档的工作流，从 Phase 0 开始。
 ```
 
-然后在对话中调用 `/localization-pipeline`，Agent 会按照工作流指引你完成全部阶段。
+AI 会按 8 个阶段逐步引导你完成全部流程。
 
-> 📖 完整工作流文档见 `.reasonix/skills/localization-pipeline/SKILL.md`  
-> 📖 工作流设计原理见 `docs/safe-localization-workflow.md`  
-> 📖 术语安全审计见 `docs/glossary-safety-audit-report.md`
+> 📖 完整工作流文档：[`LOCALIZATION_PIPELINE.md`](LOCALIZATION_PIPELINE.md)  
+> 📖 Reasonix 用户也可使用内置 Skill：`/localization-pipeline`  
+> 📖 工作流设计原理见 [`docs/safe-localization-workflow.md`](docs/safe-localization-workflow.md)  
+> 📖 术语安全审计见 [`docs/glossary-safety-audit-report.md`](docs/glossary-safety-audit-report.md)
 
 ---
 
