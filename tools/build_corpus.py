@@ -29,28 +29,32 @@ import parse_textsdb
 
 
 def load_int_map(directory):
-    """{file: {(section, key): (value, line)}}（同文件同 section 同 key 取最后一行）"""
+    """{file: {完整条目身份: entry}}；重复 key/结构字段不会互相覆盖。"""
     out = {}
     for e in parse_int.parse_int_dir(directory):
-        out.setdefault(e['file'], {})[(e['section'], e['key'])] = (e['value'], e['line'])
+        identity = parse_int.entry_identity(e)
+        if identity in out.setdefault(e['file'], {}):
+            raise ValueError(f"重复 INT identity: {e['file']} {identity}")
+        out[e['file']][identity] = e
     return out
 
-
 def load_dis_context(path):
-    """dis.db: 对话树路径 -> {叶子名: MD5}；展开为 {MD5: 对话树路径}"""
-    import re
+    """dis.db 展开为 ``{MD5: 主 UPK/对话树/对象路径}``。
+
+    使用真实 pickle 结构，兼容标量字幕与玩家选择列表；旧正则方案会漏掉
+    153 个选择项哈希，并可能跨顶层对象误绑定上下文。
+    """
     if not path:
         return {}
-    text = open(path, 'rb').read().decode('latin1', errors='replace')
-    ctx = {}
-    # 结构: S'<路径>' pN (dpM S'<叶名>' pX S'<MD5>' pY s ...)
-    path_re = re.compile(r"S'([^']+)'\s*p\d+\s*\(dp")
-    leaf_re = re.compile(r"S'([^']+)'\s*p\d+\s*S'([0-9A-F]{32})'\s*p\d+\s*s")
-    for m in path_re.finditer(text):
-        seg = text[m.end():m.end() + 200000]
-        for lm in leaf_re.finditer(seg):
-            ctx[lm.group(2)] = f"{m.group(1)}.{lm.group(1)}"
-    return ctx
+    from extract_upk_texts import load_dis_index
+    _expected, contexts, _stats = load_dis_index(path)
+    return {
+        digest: (
+            f"{refs[0]['upk']}:{refs[0]['dialog_path']}.{refs[0]['object']}"
+            + (f"[{refs[0]['choice_index']}]"
+               if refs[0]['choice_index'] is not None else ''))
+        for digest, refs in contexts.items()
+    }
 
 
 def extract_tags(s):
@@ -66,35 +70,57 @@ def build(en_int, cn_int, en_tdb, cn_tdb, dis_db):
     # ---- int 层 ----
     en_map = load_int_map(en_int)
     cn_map = load_int_map(cn_int)
-    for fname, keys in cn_map.items():
+    for fname, entries in cn_map.items():
         en_keys = en_map.get(fname, {})
-        for (section, key), (cn_val, line) in keys.items():
-            en_val = en_keys.get((section, key), ('', 0))[0]
+        for identity, cn_entry in entries.items():
+            en_entry = en_keys.get(identity)
+            en_val = en_entry['value'] if en_entry else ''
+            cn_val = cn_entry['value']
             if en_val:
                 status = 'aligned'
             else:
                 status = 'cn_only'
+            selector = parse_int.entry_selector(cn_entry)
             corpus.append({
-                'id': f'int:{fname}:{section}:{key}',
+                'id': f"int:{fname}:{cn_entry['section']}:{selector}",
                 'layer': 'int',
-                'context': {'file': fname, 'section': section, 'key': key, 'line': line},
+                'context': {
+                    'file': fname,
+                    'section': cn_entry['section'],
+                    'key': cn_entry['key'],
+                    'assignment_occurrence': cn_entry['assignment_occurrence'],
+                    'subkey': cn_entry['subkey'],
+                    'field_occurrence': cn_entry['field_occurrence'],
+                    'style': cn_entry['style'],
+                    'line': cn_entry['line'],
+                },
                 'en': en_val,
                 'cn': cn_val,
                 'tags': extract_tags(cn_val),
                 'status': status,
             })
     # 英文有而中文没有的键（可能漏译）
-    for fname, keys in en_map.items():
+    for fname, entries in en_map.items():
         cn_keys = cn_map.get(fname, {})
-        for (section, key), (en_val, line) in keys.items():
-            if (section, key) not in cn_keys:
+        for identity, en_entry in entries.items():
+            if identity not in cn_keys:
+                selector = parse_int.entry_selector(en_entry)
                 corpus.append({
-                    'id': f'int:{fname}:{section}:{key}',
+                    'id': f"int:{fname}:{en_entry['section']}:{selector}",
                     'layer': 'int',
-                    'context': {'file': fname, 'section': section, 'key': key, 'line': line},
-                    'en': en_val,
+                    'context': {
+                        'file': fname,
+                        'section': en_entry['section'],
+                        'key': en_entry['key'],
+                        'assignment_occurrence': en_entry['assignment_occurrence'],
+                        'subkey': en_entry['subkey'],
+                        'field_occurrence': en_entry['field_occurrence'],
+                        'style': en_entry['style'],
+                        'line': en_entry['line'],
+                    },
+                    'en': en_entry['value'],
                     'cn': '',
-                    'tags': extract_tags(en_val),
+                    'tags': extract_tags(en_entry['value']),
                     'status': 'en_only',
                 })
 

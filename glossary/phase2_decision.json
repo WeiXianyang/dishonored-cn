@@ -1,0 +1,25 @@
+{
+ "policy": "accept-resolved-terms-exclude-deferred",
+  "approval_note": "用户于 2026-08-06 确认采用 618 条术语锁，574 条排除，7 条上下文分流及 Hearty Crew 延后进入 Phase 3；Phase 3 后续以寒脊监狱同关卡证据将 Control Room Hallway 从“控制室的门厅”纠正为“控制室走廊”，术语总数不变。",
+ "previous_terms_sha256": "7d024db2feec2f0c1b615017def353829286d86d9347521a0a87e9f4e17d7cd9",
+  "new_terms_sha256": "6b407222cd691e63e77a589583b962d1b87223dc89b95dd9be2e33c7d6729252",
+  "term_count": 618,
+  "deferred_count": 8,
+  "rejected_count": 574,
+  "phase3_term_overrides": [
+    {
+      "en_term": "Control Room Hallway",
+      "previous_cn": "控制室的门厅",
+      "cn_term": "控制室走廊",
+      "research_rule": "prison_hallway_location_labels"
+    }
+  ],
+  "phase3_terms_evidence_sha256": "b279c393fe0b71a17042880011cdd2b8a86fc3f44219d1dedb0a9bdfa21f44ed",
+ "source_hashes": {
+  "resolved_terms": "04e1e955dc1a8b9ef4edf3364b21a20abd0ebd7d82e619aa86c8e76a13df5cfe",
+  "deferred_terms": "a0d8af3be4a76fc11b63055c4046a620cdfa859973903c38a00f5d6a52877300",
+  "rejected_terms": "4e67b93ec8bf985ce9b0f3d164aec12844c9ea3bc4b2ff8c1c2fd23016ff5c45",
+  "resolution_decisions": "a6eabf6cb4be30b6a692e3ca4a26a84ed152a9bcc6a7a3b319da1f8bba475e34",
+  "resolution_validation": "5b9a1fcfd82c220447cc82293a2b6248bead9fbfd0dfad34486b34354963e3f4"
+ }
+}

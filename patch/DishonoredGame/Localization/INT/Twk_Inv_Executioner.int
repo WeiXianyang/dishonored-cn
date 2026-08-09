@@ -1,0 +1,12 @@
+[Twk_Inv_TorturerHand:pPlayerSpecific DisTweaks_InventoryItem_PlayerSpecific]
+m_Name=""
+m_Description=""
+
+[Twk_Inv_TorturerSword:pPlayerSpecific DisTweaks_InventoryItem_PlayerSpecific]
+m_Name=""
+m_Description=""
+
+[Twk_Inv_TorturerSword_Player:pPlayerSpecific DisTweaks_InventoryItem_PlayerSpecific]
+m_Name=""
+m_Description=""
+

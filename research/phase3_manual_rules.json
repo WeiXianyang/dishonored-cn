@@ -1,0 +1,671 @@
+[
+  {
+    "rule_id": "gaffer_whaling_role",
+    "en_contains": "gaffer",
+    "expected_count": 7,
+    "status": "resolved",
+    "finding": "Gaffer 在本作中是捕鲸行业岗位，不是泛指老人，也不是教练。英文 Wiki 的《On Hunting Whales》写有 forward-gaffer；中文 Wiki 分别使用“顺位领班”和“叉鱼人”。天邈在罗斯维德相关两句中已把 gaffer 译为“工头”，把 gaff-hand 译为“鱼叉手”。",
+    "recommended_action": "fix_if_needed",
+    "recommended_text_guidance": "岗位语境优先用“捕鲸工头”，已有单独“工头”且指代清楚时可保留；书名统一为《捕鲸工头的故事》；forward-gaffer 译作前部/前甲板捕鲸工头，不得译成老人、老者、教练。gaff-hand 仍按鱼叉手处理。",
+    "sources": [
+      {
+        "title": "Dishonored Wiki: A Gaffer's Tale, Vol 1",
+        "url": "https://dishonored.fandom.com/wiki/A_Gaffer%27s_Tale%2C_Vol_1",
+        "evidence": "叙述者以 apprentice to the gaffer 身份参与追踪和猎杀鲸鱼。"
+      },
+      {
+        "title": "Dishonored 中文 Wiki：叉鱼人的故事，卷一",
+        "url": "https://dishonored.fandom.com/zh/wiki/%E5%8F%89%E9%B1%BC%E4%BA%BA%E7%9A%84%E6%95%85%E4%BA%8B%EF%BC%8C%E5%8D%B7%E4%B8%80%EF%BC%88%E4%B9%A6%E7%B1%8D%EF%BC%89",
+        "evidence": "标题译“叉鱼人的故事”，正文译“作为一个叉鱼人的学徒”。"
+      },
+      {
+        "title": "Dishonored 中文 Wiki：捕鲸路上",
+        "url": "https://dishonored.fandom.com/zh/wiki/%E6%8D%95%E9%B2%B8%E8%B7%AF%E4%B8%8A%EF%BC%88%E4%B9%A6%E7%B1%8D%EF%BC%89",
+        "evidence": "forward-gaffer 译为“顺位领班”，确认它是船上岗位。"
+      },
+      {
+        "title": "本地天邈对齐语料",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "upk:A96A836A1DB09C0A8050B304A8B172B3 与 upk:F0CA2E988C6EB790493B9CC0617CB0D1 均译“工头”。"
+      }
+    ],
+    "notes": "中文 Wiki 并非官方中文本地化；最终措辞同时服从 Wiki 职务证据和天邈既有译法。"
+  },
+  {
+    "rule_id": "ricker_slash_threat",
+    "en_contains": "ricker",
+    "expected_count": 5,
+    "status": "resolved",
+    "finding": "中英文 Dishonored Wiki 均无 ricker 词义解释，普通词典义项也不适用于台词；但本地英文语料的 5 个独立哈希全部固定使用 slit your ricker，且都是持刀敌人的割杀威胁，翻译所需的功能语义可确定为喉咙/颈部。",
+    "recommended_action": "fix",
+    "recommended_text_guidance": "统一自然译成“割开你的喉咙/割你的喉”，不得再弱化成打劫、撕碎或把 ricker 当作对人的辱称。",
+    "sources": [
+      {
+        "title": "Dishonored Wiki 站内核查",
+        "url": "https://dishonored.fandom.com/wiki/Special:Search?query=ricker",
+        "evidence": "英文与中文 Wiki 均无 ricker 的世界观释义。"
+      },
+      {
+        "title": "Merriam-Webster: ricker",
+        "url": "https://www.merriam-webster.com/dictionary/ricker",
+        "evidence": "标准词典只列杆/桅与堆放威士忌桶者等无关义项。"
+      },
+      {
+        "title": "本地天邈对齐语料",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "5 条不同哈希均出现 slit your ricker，交叉语境一致。"
+      }
+    ],
+    "notes": "虚构俚语的细词源仍不可考，但句内人体指代已充分消歧。"
+  },
+  {
+    "rule_id": "thick_lung_disease",
+    "en_contains": "thick lung",
+    "expected_count": 2,
+    "status": "resolved",
+    "finding": "英文 Wiki 的心脏语录确认原句为 died of thick lung；中文 Wiki 对应句译作“因肺部肿胀而夭折”。天邈两个复本分别译“肺炎”和“肺病”，既不一致，也把原文无依据地具体化为肺炎。",
+    "recommended_action": "fix",
+    "recommended_text_guidance": "两个复本统一采用“死于肺部肿胀/因肺部肿胀而夭折”，不得译成肺炎。",
+    "sources": [
+      {
+        "title": "Dishonored Wiki: The Heart/Quotes",
+        "url": "https://dishonored.fandom.com/wiki/The_Heart/Quotes",
+        "evidence": "Bottle Street Thug 语录收录完整英文原句。"
+      },
+      {
+        "title": "Dishonored 中文 Wiki：心脏/语录",
+        "url": "https://dishonored.fandom.com/zh/wiki/%E5%BF%83%E8%84%8F/%E8%AF%AD%E5%BD%95",
+        "evidence": "对应句译作“因肺部肿胀而夭折”。"
+      }
+    ],
+    "notes": "保留虚构/俗称疾病的特异性，不擅自等同现代医学诊断。"
+  },
+  {
+    "rule_id": "midrow_substation_location",
+    "en_contains": "Midrow Substation",
+    "expected_count": 7,
+    "status": "resolved",
+    "finding": "Midrow Substation 是考德温大桥上控制桥梁供电、带有三个大转轮的区域。Dishonored 中文 Wiki 的考德温大桥与顿沃街道条目均统一称“中街变电站”；天邈的“半船变电站/所”属于无依据错译。",
+    "recommended_action": "fix",
+    "recommended_text_guidance": "所有 7 个入口、选择项和地图图例统一使用“中街变电站”；To/Go to 译“前往中街变电站”，Stay at 译“留在中街变电站”。",
+    "sources": [
+      {
+        "title": "Dishonored 中文 Wiki：考德温大桥",
+        "url": "https://dishonored.fandom.com/zh/wiki/%E8%80%83%E5%BE%B7%E6%B8%A9%E5%A4%A7%E6%A1%A5",
+        "evidence": "页面设有“中街变电站”小节，并解释它控制大桥电力。"
+      },
+      {
+        "title": "Dishonored 中文 Wiki：顿沃的街道",
+        "url": "https://dishonored.fandom.com/zh/wiki/%E9%A1%BF%E6%B2%83%E7%9A%84%E8%A1%97%E9%81%93",
+        "evidence": "列出“中街变电站（Midrow Substation）”。"
+      }
+    ]
+  },
+  {
+    "rule_id": "butterfly_case_object",
+    "en_exact": "Butterfly Case",
+    "expected_count": 6,
+    "status": "resolved",
+    "finding": "同一英文物件 Butterfly Case 在基础游戏的 butterfly_case_01/02 中已译为“蝴蝶笼”，而 DLC 训练靶四个复本误成“蝴蝶箱”。对象名与可搬运交互一致，基础游戏既有译法可直接消歧。",
+    "recommended_action": "fix_if_needed",
+    "recommended_text_guidance": "六个复本统一为“蝴蝶笼”；同时去掉 butterfly_case_02 旧译末尾多出的英文双引号。",
+    "sources": [
+      {
+        "title": "本地天邈对齐语料",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "基础游戏两个 butterfly_case 复本使用“蝴蝶笼”，DLC 四个训练靶复本使用“蝴蝶箱”。"
+      }
+    ]
+  },
+  {
+    "rule_id": "chain_gauntlet_challenge",
+    "en_exact": "Chain Gauntlet",
+    "expected_count": 1,
+    "status": "resolved",
+    "finding": "该字符串位于 Dunwall City Trials 的 DLC05_ChainGauntlet 目标文件，子任务是 Kill Griff 与 Collect the Rune；它表示连续战斗/连杀试炼，不是护具。Wiki 也确认 Kill Chain 是该 DLC 的谜题挑战。天邈“锁子臂铠”是把 gauntlet 误按铠甲义翻译。",
+    "recommended_action": "fix",
+    "recommended_text_guidance": "译为“连杀试炼”；不得保留“锁子臂铠”。",
+    "sources": [
+      {
+        "title": "Dishonored Wiki: Kill Chain",
+        "url": "https://dishonored.fandom.com/wiki/Kill_Chain",
+        "evidence": "页面确认 Kill Chain 是 Dunwall City Trials 的连续击杀谜题挑战。"
+      },
+      {
+        "title": "本地目标语料",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "DLC05_ChainGauntlet.int 同目标下子任务为 Kill Griff 与 Collect the Rune。"
+      }
+    ]
+  },
+  {
+    "rule_id": "choffer_world_slang",
+    "en_contains": "choffer",
+    "expected_count": 9,
+    "status": "resolved",
+    "finding": "Dishonored Wiki 只把 choffer 作为守卫台词收录，没有给出正式词义；外部词源讨论也没有可靠定论。9 条本地语料则一致表明它是可单独呼喝、可被 dumb/stupid/daft 修饰的泛化贬称。天邈多数复本已稳定译作“杂鱼”或“蠢货”，足以保留其既有口吻。",
+    "recommended_action": "fix_if_needed",
+    "recommended_text_guidance": "作为辱称时优先保留天邈的“杂鱼”，按句法需要也可自然译“蠢货”；不得按 chauffeur 误译成司机，也不得把它当正式职业。run a saw 是“操作/开锯”，B67D... 中“管什么寓言”必须修成“他永远也开不了锯，没那个胆量/魄力”。safe hint 中 dumb choffers with a saw 可译“拿锯子的蠢货/杂鱼”，避免“白痴杂鱼”堆叠。",
+    "sources": [
+      {
+        "title": "Dishonored Wiki: Grand Guard",
+        "url": "https://dishonored.fandom.com/wiki/Grand_Guard",
+        "evidence": "守卫语音列表收录 Alright choffer，证明它可作对人的称呼，但页面未定义词源。"
+      },
+      {
+        "title": "English Language & Usage: What is the meaning of 'choffer'?",
+        "url": "https://english.stackexchange.com/questions/602799/what-is-the-meaning-of-choffer",
+        "evidence": "讨论汇总了虚构词、chuffer、鱼饵等猜测，但没有确定词源；可确认它在游戏中作贬称。"
+      },
+      {
+        "title": "本地天邈对齐语料",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "9 条语料把它置于辱骂、驱赶及操作锯子的语境，多数旧译使用“杂鱼”。"
+      }
+    ],
+    "notes": "词源本身仍不确定；本规则只裁定翻译所需的语用功能，并保留天邈既有称呼。"
+  },
+  {
+    "rule_id": "dishonored_tarot_jack_rank",
+    "en_regex": "The Jack of (Swords|Skulls)",
+    "expected_count": 2,
+    "status": "resolved",
+    "finding": "Dishonored Tarot Deck 的小阿卡纳四种花色都包含 King、Queen、Commoner、Jack；这里的 Jack 是牌阶，不是名叫杰克的角色。天邈同一随机抽牌组已把 Queen of Rats 译作“鼠女皇”、King of Pistols 译作“手枪王”，现有“利剑杰克/骷髅杰克”虽然带音译色彩，但玩家可理解且已形成组内风格。",
+    "recommended_action": "keep",
+    "recommended_text_guidance": "保留“你抽了：利剑杰克/骷髅杰克”；判断时必须把 Jack 当作牌阶，禁止因误判为人物而改写。",
+    "sources": [
+      {
+        "title": "Dishonored Wiki: Dishonored Tarot Deck",
+        "url": "https://dishonored.fandom.com/wiki/Dishonored_Tarot_Deck",
+        "evidence": "页面列出四种花色及每种花色的 King、Queen、Commoner、Jack 牌阶。"
+      },
+      {
+        "title": "本地随机抽牌语料",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "两条文本均位于 Granny_Recipe.Random_Card HUD 消息，与其他花色牌并列。"
+      }
+    ]
+  },
+  {
+    "rule_id": "hatter_singular_member",
+    "en_exact": "Hatter",
+    "expected_count": 5,
+    "status": "resolved",
+    "finding": "英文 Wiki 在同一任务中明确区分 Hatters（帮派群体）与 one Hatter（单个成员）。本地 5 个单数目标名中已有 2 个译作“帽子帮成员”，其余 3 个仅写“帽子帮”，会把单一目标误成整支帮派。",
+    "recommended_action": "fix_if_needed",
+    "recommended_text_guidance": "单独的目标名 Hatter 统一译为“帽子帮成员”；复数 Hatters 或帮派名称仍译“帽子帮”。",
+    "sources": [
+      {
+        "title": "Dishonored Wiki: The Dead Eels",
+        "url": "https://dishonored.fandom.com/wiki/The_Dead_Eels",
+        "evidence": "任务说明分别使用 Hatters 指群体、one Hatter 指单名守卫。"
+      },
+      {
+        "title": "本地天邈对齐语料",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "5 个 en_exact=Hatter 的目标名中，DLC07 已有两个复本使用“帽子帮成员”。"
+      }
+    ]
+  },
+  {
+    "rule_id": "water_of_life_fountains",
+    "en_exact": "Drinking from fountains recharges a small amount of health",
+    "expected_count": 3,
+    "status": "resolved",
+    "finding": "Water of Life 护符的 Wiki 说明是从 fountains 饮水回复 7.5% 生命；页面的游戏说明又明确指出猎犬酒馆的啤酒龙头和波伊尔庄园的饮水龙头也计入该机制。天邈把玩法提示译成“饮用水龙头里的水”虽略有具体化，但没有造成机制误导。",
+    "recommended_action": "keep",
+    "recommended_text_guidance": "三个复本保留“饮用水龙头里的水能回充一小部分生命值”；不得仅凭 fountain 的字面义把它改成喷泉而造成玩法误导。",
+    "sources": [
+      {
+        "title": "Dishonored Wiki: Bone Charms",
+        "url": "https://dishonored.fandom.com/wiki/Bone_Charms",
+        "evidence": "Water of Life 条目给出 fountains 回复生命，并注明酒馆与庄园的 taps/faucets 也计入。"
+      },
+      {
+        "title": "Dishonored 中文 Wiki：骸骨护符",
+        "url": "https://dishonored.fandom.com/zh/wiki/%E9%AA%B8%E9%AA%A8%E6%8A%A4%E7%AC%A6",
+        "evidence": "中文页面同样说明两处龙头属于生效范围。"
+      }
+    ]
+  },
+  {
+    "rule_id": "key_notes_audiograph_key",
+    "en_exact": "Key Notes",
+    "expected_count": 1,
+    "status": "resolved",
+    "finding": "The Dead Eels Wiki 说明 Key Notes 是藏在特林布尔枕下的一盘神秘空白 audiograph；把它放入播放器会打开装有抗毒剂配方的暗格。因此标题同时利用 key（钥匙/关键）和 notes（记录/音符）的双关，并不是普通纸质笔记。",
+    "recommended_action": "keep",
+    "recommended_text_guidance": "依最小修补原则保留道具名“关键笔记”，但理解为录音带标签的双关；不得把它扩写成纸质笔记。若未来人工统一录音带命名，可另行评估“钥匙音符”，本轮不冒险强改。",
+    "sources": [
+      {
+        "title": "Dishonored Wiki: The Dead Eels",
+        "url": "https://dishonored.fandom.com/wiki/The_Dead_Eels",
+        "evidence": "页面明确称其为 labeled Key Notes 的 blank audiograph mission item，并说明它会开启墙上暗格。"
+      },
+      {
+        "title": "本地道具描述与交互文本",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "同一 DLC07_Mill_AG_LabKey 描述为“一份神秘的空白录音带”，播放器要求 Audiograph Card。"
+      }
+    ],
+    "notes": "中文 Wiki 没有可核实的对应译名；为保留天邈底色，本轮只修正语境判断，不自行创造新专名。"
+  },
+  {
+    "rule_id": "general_ui_label",
+    "en_exact": "General",
+    "expected_count": 2,
+    "status": "resolved",
+    "finding": "两个 General 分别是日志分类标签和设置分类标签，天邈都使用“一般”的同一既有译法。没有证据表明它造成错误指引；改成“常规/综合”只属于风格替换。",
+    "recommended_action": "keep",
+    "recommended_text_guidance": "两个复本均保留“一般”，不得仅为近义词偏好改成“常规”或“综合”。",
+    "sources": [
+      {
+        "title": "本地日志与设置 UI 语料",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "DisGFxMoviePlayerJournal_Texts:t_General 与 m_SettingsCategory_General 两处旧译一致。"
+      }
+    ]
+  },
+  {
+    "rule_id": "pie_thief_task_exclamation",
+    "en_exact": "Pie Thief!",
+    "expected_count": 1,
+    "status": "resolved",
+    "finding": "该字符串位于 Dunwall City Trials 的 Burglar/Thief 挑战任务列表，与 A full set、各发条蛋收集项并列，是带感叹语气的任务/奖励标签。天邈“偷馅饼的！”保留了名词指斥和感叹号，没有具体语义错误。",
+    "recommended_action": "keep",
+    "recommended_text_guidance": "保留“偷馅饼的！”；无需在缺少画面依据时擅改成“馅饼小偷”或补写句子。",
+    "sources": [
+      {
+        "title": "本地 DLC05_Thief 任务组",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "同组字段均为挑战任务/收集标签，原文自身带感叹号。"
+      }
+    ]
+  },
+  {
+    "rule_id": "shot_both_guards_hit_semantics",
+    "en_exact": "Shot both guards",
+    "expected_count": 1,
+    "status": "resolved",
+    "finding": "该条位于刺客训练 Expert 任务组；同文件普通训练反复使用 Hit the 2 training targets 并译“击中两名训练目标”。Shot both guards 表达两名守卫都被射中，而天邈“射击两名守卫”只表示开火动作，遗漏了命中结果。",
+    "recommended_action": "fix",
+    "recommended_text_guidance": "最小修补为“击中两名守卫”；不必擅加武器、次数或完成状态。",
+    "sources": [
+      {
+        "title": "本地 DLC05_bootcamp 普通/Expert 任务组",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "同一文件多条 Hit the 2 training targets 已使用“击中”表达命中语义。"
+      }
+    ]
+  },
+  {
+    "rule_id": "p0_counting_on_you_strike_true",
+    "en_exact": "That's the gist of it. Remember our cause, and strike true. We're counting on you.\n",
+    "expected_count": 1,
+    "status": "resolved",
+    "finding": "这是中文社区已明确指出、并由英文 UPK 与天邈 texts.db 稳定哈希闭环的 P0 错译。strike true 是要求出手准确，不是“追求真相”；We're counting on you 是“我们指望你”，不是因果/依赖结构“我们取决于你”。cause 在刺客组织训诫中指共同事业/信念，不是普通岗位职责。",
+    "recommended_action": "fix",
+    "recommended_text_guidance": "保留四个原有 UPK 时序标签及顺序，以天邈句式为底稿修成类似“这就是要领。/牢记我们的事业，/出手要准。/我们指望你了。”；必须含“指望”或“依靠”，必须删除“追求真相”和“我们取决于你”。",
+    "sources": [
+      {
+        "title": "英文 UPK、天邈 texts.db 与对话树闭环",
+        "url": "docs/tianmiao-1.4-feedback-research.md",
+        "evidence": "稳定 ID upk:281290178F077DFEF82116B3B2F373B3 已完成三方取证并列为 P0 回归。"
+      }
+    ]
+  },
+  {
+    "rule_id": "p0_im_trapped",
+    "en_exact": "I'm trapped!",
+    "expected_count": 1,
+    "status": "resolved",
+    "finding": "这是中文社区已明确指出、并由英文 UPK 与天邈 texts.db 稳定哈希闭环的 P0 错译。I'm trapped 表示说话者被困住，天邈“我中陷阱了”是不自然且偏义的直译。",
+    "recommended_action": "fix",
+    "recommended_text_guidance": "最小修补为“我被困住了！”，不得保留“我中陷阱了”。",
+    "sources": [
+      {
+        "title": "英文 UPK、天邈 texts.db 与对话树闭环",
+        "url": "docs/tianmiao-1.4-feedback-research.md",
+        "evidence": "稳定 ID upk:9EF2CA8AAC46376916E50EE7AC2E73BB 已完成三方取证并列为 P0 回归。"
+      }
+    ]
+  },
+  {
+    "rule_id": "bend_time_agenda_bonus",
+    "en_contains": "Agenda Bonus",
+    "expected_count": 3,
+    "status": "resolved",
+    "finding": "该名称属于 Bend Time Massacre 第 2 轮奖励挑战，完整说明要求杀死三名贵族且不伤害守卫，体现一项有选择性的议程/目标安排。天邈三个复本分裂成“代理人奖励”和“日常奖励”，两者都不是 agenda 的含义。Dishonored Fandom 未提供该奖励名的中文对应页，本地完整任务说明足以裁定功能语义。",
+    "recommended_action": "fix",
+    "recommended_text_guidance": "三个复本统一使用“议程奖励”：完整说明开头为“议程奖励：”，两条轮次标题为“第2轮 - 议程奖励”；不得保留“代理人奖励”或“日常奖励”。",
+    "sources": [
+      {
+        "title": "Dishonored Wiki: Bend Time Massacre",
+        "url": "https://dishonored.fandom.com/wiki/Bend_Time_Massacre",
+        "evidence": "Fandom 用于确认挑战与轮次语境；站内检索没有给出该奖励名的中文正式译法。"
+      },
+      {
+        "title": "本地 Bend Time Massacre 第 2 轮任务组",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "完整英文说明为 Kill the 3 nobles, but leave the 3 guards unharmed；三个 Agenda Bonus 复本可精确互证。"
+      }
+    ]
+  },
+  {
+    "rule_id": "bend_time_surgical_bonus",
+    "en_contains": "Surgical Bonus",
+    "expected_count": 3,
+    "status": "resolved",
+    "finding": "该名称属于 Bend Time Massacre 第 4 轮奖励挑战，要求只杀死三名潘德顿且不让其他人发现或死亡，是以“外科手术般精准”为意象的挑战名。本地完整任务说明已译“外科手术奖励”，两个轮次标题缩成“外科奖励”造成复本不一致。",
+    "recommended_action": "fix_if_needed",
+    "recommended_text_guidance": "三个复本统一沿用天邈已有的“外科手术奖励”；轮次标题为“第4轮 - 外科手术奖励”。不另创“精准击杀”等新挑战名。",
+    "sources": [
+      {
+        "title": "Dishonored Wiki: Bend Time Massacre",
+        "url": "https://dishonored.fandom.com/wiki/Bend_Time_Massacre",
+        "evidence": "用于确认该名称属于 Bend Time Massacre 奖励轮次。"
+      },
+      {
+        "title": "Gamer Guides: Bend Time Massacre",
+        "url": "https://www.gamerguides.com/dishonored/guide/dunwall-city-trials/challenge-maps/bend-time-massacre",
+        "evidence": "Round 4 Bonus (Surgical) 的目标是秘密杀死三名潘德顿，不让他人看到或发现尸体。"
+      },
+      {
+        "title": "本地 Bend Time Massacre 第 4 轮任务组",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "完整任务说明复本已采用“外科手术奖励”，可作为同组天邈底色。"
+      }
+    ]
+  },
+  {
+    "rule_id": "piero_pylon_malformed_internal_name",
+    "en_exact": "`i",
+    "expected_count": 28,
+    "status": "resolved",
+    "finding": "语料中 28 个拾取物内部 m_Name（包括 Hub_Twk 的 BP_Piero_Pylon）在英文源和天邈目标里都完全相同，且都只有残缺片段 `i；同对象实际交互提示另有完整的 Pick up/拾取。没有英文语义可供翻译，也没有证据能恢复缺失内容。",
+    "recommended_action": "keep",
+    "recommended_text_guidance": "原样保留 `i，不补反引号、不猜测物品名；这是源数据残片而不是可可靠修补的译文。",
+    "sources": [
+      {
+        "title": "本地 Hub_Twk Piero Pylon 对象组",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "28 个 m_Name 的中英文均精确为 `i，同对象 m_InteractText 已单独提供完整拾取提示。"
+      }
+    ],
+    "notes": "未来若从游戏资产或编辑器恢复出完整源名，可另开数据修复；Phase 3 不凭空构造。"
+  },
+  {
+    "rule_id": "gentleman_caller_single_target",
+    "en_exact": "Gentleman Caller",
+    "expected_count": 9,
+    "status": "resolved",
+    "finding": "Dishonored Wiki 说明 Gentlemen Callers 是拉格斯奶奶在 High Overseer Campbell 中的支线：三名瓶街帮成员上门滋扰。九个单数 Gentleman Caller 区域复本都位于该任务的目标标记组，分别指向一名来客，而天邈“绅士的来访”把人物误成事件。",
+    "recommended_action": "fix",
+    "recommended_text_guidance": "九个单数目标标记复本统一译为“绅士访客”；复数支线标题“绅士的来访”作为天邈既有任务名可继续保留。",
+    "sources": [
+      {
+        "title": "Dishonored Wiki: Gentleman Caller",
+        "url": "https://dishonored.fandom.com/wiki/Gentleman_Caller",
+        "evidence": "页面说明成就需要完成 Gentlemen Callers 支线。"
+      },
+      {
+        "title": "TrueAchievements: Gentleman Caller",
+        "url": "https://www.trueachievements.com/a168850/gentleman-caller-achievement",
+        "evidence": "攻略明确说明该支线的 gentlemen callers 是三名瓶街帮成员。"
+      },
+      {
+        "title": "本地任务与目标标记语料",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "支线任务正文已有“解决奶奶的绅士访客”，九个单数 marker 复本可沿用该词。"
+      }
+    ]
+  },
+  {
+    "rule_id": "dead_eels_life_support_disabled",
+    "en_exact": "Disabled",
+    "expected_count": 1,
+    "status": "resolved",
+    "finding": "该 HUD 消息位于 The Dead Eels 的毒气倒计时与 Life Support Battery 目标同一脚本组。Wiki 说明移除鲸油电池会关闭倔老头的生命维持装置并释放毒气；Disabled 描述设备状态，不是某个人“丧失行动能力”。",
+    "recommended_action": "fix",
+    "recommended_text_guidance": "最小修补为“已停用”；不得保留指向人的“丧失行动能力”。",
+    "sources": [
+      {
+        "title": "Dishonored Wiki: The Dead Eels",
+        "url": "https://dishonored.fandom.com/wiki/The_Dead_Eels",
+        "evidence": "移除生命维持装置的鲸油电池会关闭装置并释放毒气。"
+      },
+      {
+        "title": "本地 Draper Mill 脚本组",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "Disabled 与 Life Support Battery、还剩 1/2/3 个和 Gas Released 倒计时处于同一脚本。"
+      }
+    ]
+  },
+  {
+    "rule_id": "prison_hallway_location_labels",
+    "en_regex": "^(Cell Hallway Key|Control Room Hallway|Exit Hallway)$",
+    "expected_count": 3,
+    "status": "resolved",
+    "finding": "三条均位于 Coldridge Prison 的门钥匙或导航目标组，Hallway 在同一关卡的 Cell Hallway Door 已被天邈正确译成“牢房走廊门”，其他对白也统一为“走廊”。旧译“门厅/离开门厅”错误地改变了空间类型或把地点名变成动作。",
+    "recommended_action": "fix",
+    "recommended_text_guidance": "Cell Hallway Key→“牢房走廊钥匙”；Control Room Hallway→“控制室走廊”；Exit Hallway→“出口走廊”。",
+    "sources": [
+      {
+        "title": "本地 Coldridge Prison 关卡语料",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "Prison_MS 的 Cell Hallway Door 已译“牢房走廊门”，本关卡其余 hallway 台词也均译“走廊”。"
+      }
+    ]
+  },
+  {
+    "rule_id": "runtime_key_needed_template",
+    "en_exact": "`k needed",
+    "expected_count": 13,
+    "status": "resolved",
+    "finding": "`k 是本地化字符串中的运行时钥匙名替换标记，不是残缺英文；同项目大量 Press `k、You need the `k 和单独 `k 复本证明解析器把它作为两字符动态占位。13 个 `k needed 复本的天邈译文存在前后空格不一致，两个复本还写成倒装“`k 需要”。",
+    "recommended_action": "fix_if_needed",
+    "recommended_text_guidance": "13 个复本统一为“需要 `k”：保留一个反引号和小写 k，中文与标记之间一个空格，标记后不追加空格；不得把 `k 当作可见字母翻译或删除。",
+    "sources": [
+      {
+        "title": "本地运行时按键/钥匙标记语料",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "Press `k、Locked. You need the `k、You used: `k 与 13 个 `k needed 复本共同确认其动态替换功能。"
+      }
+    ]
+  },
+  {
+    "rule_id": "kill_chain_possible_label",
+    "en_exact": "Possible: ",
+    "expected_count": 1,
+    "case_sensitive": true,
+    "status": "resolved",
+    "finding": "该字段是 Dunwall City Trials 的连杀挑战 HUD 标签，与 Round、Unlocked 和 Best Score 等字段并列。它只表示当前可实现的数值/连杀提示；天邈的简短标签“可能：”没有造成错误指引，脱离实际 HUD 数值擅自补成“可能击杀数/连击数”反而会引入未见文本。",
+    "recommended_action": "keep",
+    "recommended_text_guidance": "保留“可能：”，不得仅因缺少 HUD 画面而扩写或改成猜测性的指标名。",
+    "sources": [
+      {
+        "title": "本地 Dunwall City Trials HUD 字段组",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "DishonoredGame.int 的 t_PossibleKC 与 t_Phase、t_Unlocked、t_BestScore 处于同一 DisDLC05MoviePlayerHUD_Texts 分区；英文源和旧译一一对齐。"
+      }
+    ]
+  },
+  {
+    "rule_id": "morley_withdraws_painting_title",
+    "en_contains": "\"Morley Withdraws\"",
+    "expected_count": 2,
+    "case_sensitive": true,
+    "status": "resolved",
+    "finding": "用户指定的 Dishonored 中文 Wiki 在画商公寓缺失画作清单中把 \"Morley Withdraws\" 明确列为画作《漠利撤退》；英文列表也把它与其他画名并列。天邈将 Withdraws 音译为人名“维思卓斯”，属于标题结构错判。项目既有语料对国家 Morley 一贯使用“莫利”，因此只沿用天邈地名底色，把动词标题修为“莫利撤退”。",
+    "recommended_action": "fix",
+    "recommended_text_guidance": "两个复本的画名统一为“\"莫利撤退\"”；描述复本只改标题，不改画家与媒介字段。不得改用中文 Wiki 的地名异体“漠利”。",
+    "sources": [
+      {
+        "title": "Dishonored 中文 Wiki：艺术商人的公寓",
+        "url": "https://dishonored.fandom.com/zh/wiki/%E8%89%BA%E6%9C%AF%E5%95%86%E4%BA%BA%E7%9A%84%E5%85%AC%E5%AF%93",
+        "evidence": "缺失画作清单将该英文标题对应为《漠利撤退》，确认 Withdraws 是谓语而非姓名。"
+      },
+      {
+        "title": "本地 Morley 既有译名语料",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "国家 Morley 在天邈长文本中稳定译作“莫利”，本项目保留该既有专名。"
+      }
+    ]
+  },
+  {
+    "rule_id": "pandyssian_cliffs_hedgerow_credit",
+    "en_contains": "Jonathon Hedgerow",
+    "expected_count": 1,
+    "case_sensitive": true,
+    "status": "resolved",
+    "finding": "英文源把《Pandyssian Cliffs》的画家写作 Jonathon Hedgerow，而天邈误套了另一个确实存在于语料中的 Jonathon Russel（乔纳森·罗素）。用户指定的中文 Wiki 同一画作清单把 Hedgerow 对应为“乔纳森·赫吉罗”，可明确区分两人。",
+    "recommended_action": "fix",
+    "recommended_text_guidance": "只把画家署名“乔纳森·罗素”修为“乔纳森·赫吉罗”；保留标题和“帆布上的油画”等其他天邈文本。",
+    "sources": [
+      {
+        "title": "Dishonored 中文 Wiki：艺术商人的公寓",
+        "url": "https://dishonored.fandom.com/zh/wiki/%E8%89%BA%E6%9C%AF%E5%95%86%E4%BA%BA%E7%9A%84%E5%85%AC%E5%AF%93",
+        "evidence": "画作清单并列给出 Jonathon Hedgerow／乔纳森·赫吉罗。"
+      },
+      {
+        "title": "本地 Jonathon Russel 条目",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "Jonathon Russel 是另一个独立人物条目，天邈译作乔纳森·罗素，不能替代 Hedgerow。"
+      }
+    ]
+  },
+  {
+    "rule_id": "bannerman_ruined_socially",
+    "en_contains": "Bannerman was ruined",
+    "expected_count": 2,
+    "status": "resolved",
+    "finding": "Dishonored 中文 Wiki 的阿诺德·提姆什条目明确说明，他曾毁掉一名叫 Bannerman 的贵族。这里 was ruined 指贵族的名誉、地位或财产败落，不是建筑“沦为废墟”；另一天邈复本已有“身败名裂”可互证。",
+    "recommended_action": "fix_if_needed",
+    "recommended_text_guidance": "含“沦为废墟”的复本改为“班纳曼败落了”或沿用另一复本的“班纳曼已经身败名裂”；已经表达社会性毁灭的复本只修明显语病，不统一重写。",
+    "sources": [
+      {
+        "title": "Dishonored 中文 Wiki：阿诺德·提姆什",
+        "url": "https://dishonored.fandom.com/zh/wiki/%E9%98%BF%E8%AF%BA%E5%BE%B7%C2%B7%E6%8F%90%E5%A7%86%E4%BB%80",
+        "evidence": "趣闻说明提姆什曾毁掉另一名叫班纳曼的贵族，确认 Bannerman 是人且 ruined 不是物理废墟。"
+      },
+      {
+        "title": "本地双复本对话",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "同一句另一复本使用“身败名裂”，提供天邈既有正确语义。"
+      }
+    ]
+  },
+  {
+    "rule_id": "dead_counter_existing_name",
+    "en_exact": "Another corpse for the Dead Counter.",
+    "expected_count": 1,
+    "status": "resolved",
+    "finding": "Fandom 的 Dead Counters 与 Dead Counter Responsibilities 页面确认这是城市卫队在瘟疫期间统计尸体、维护死亡记录的专门岗位。本地书名 Dead Counter Responsibilities 已由天邈译作“计死员”，该短称虽生造但准确、简洁且已形成既有译名。",
+    "recommended_action": "keep",
+    "recommended_text_guidance": "保留“又一具留给计死员的尸体。”；不得仅为更字面而改成“死亡统计员”。",
+    "sources": [
+      {
+        "title": "Dishonored Wiki: Dead Counters",
+        "url": "https://dishonored.fandom.com/wiki/Dead_Counters",
+        "evidence": "页面确认 Dead Counter 是城市卫队专门岗位。"
+      },
+      {
+        "title": "本地 Dead Counter Responsibilities 书名",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "天邈把该岗位说明书稳定命名为“计死员”。"
+      }
+    ]
+  },
+  {
+    "rule_id": "city_watch_dead_counters_name",
+    "en_contains": "City Watch dead-counters really going to come through here tomorrow?",
+    "expected_count": 2,
+    "status": "resolved",
+    "finding": "Dead Counters 是城市卫队下属岗位，项目既有短称为“计死员”。两个对白复本分别出现缺少结构助词的“城市警卫计死员”和错字“记死员”；Medium 的“死亡统计员”则不必要地抛弃既有译名。",
+    "recommended_action": "fix",
+    "recommended_text_guidance": "两个复本均使用“城市警卫的计死员”，并把 come through here 译为“经过这儿/这里”；不得写成“记死员”或另造“死亡统计员”。",
+    "sources": [
+      {
+        "title": "Dishonored Wiki: Dead Counters",
+        "url": "https://dishonored.fandom.com/wiki/Dead_Counters",
+        "evidence": "页面把 Dead Counters 明确归入 City Watch。"
+      },
+      {
+        "title": "本地 Dead Counter 职位语料",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "书名与对白复本共同证明天邈既有称呼为“计死员”，其中一个复本的“记”是错字。"
+      }
+    ]
+  },
+  {
+    "rule_id": "the_eels_dead_eels_shorthand",
+    "en_exact": "The Eels are lucky Geezer knows how to make a bargain.",
+    "expected_count": 1,
+    "status": "resolved",
+    "finding": "该句位于 The Dead Eels 任务，Fandom 页面本身反复以 The Eels 简称 Dead Eels 帮派。天邈“那群鳗鱼”把派系简称误成字面动物；正式术语表已锁定 Dead Eels 为“死鳗帮”。",
+    "recommended_action": "fix",
+    "recommended_text_guidance": "最小修补为“死鳗帮很走运，倔老头懂得怎么谈条件。”或等义天邈句式；必须含“死鳗帮”，不得写成动物“鳗鱼”。",
+    "sources": [
+      {
+        "title": "Dishonored Wiki: The Dead Eels",
+        "url": "https://dishonored.fandom.com/wiki/The_Dead_Eels",
+        "evidence": "同一任务页面直接使用 The Eels 指称 Dead Eels 帮派。"
+      }
+    ]
+  },
+  {
+    "rule_id": "counting_boo_named_character",
+    "en_contains": "Counting Boo.",
+    "expected_count": 1,
+    "case_sensitive": true,
+    "status": "resolved",
+    "finding": "Dishonored 中英文 Wiki 均确认 Boo（布）是高级督军坎贝尔任务中的瓶街帮成员。Counting Boo 意为算上名叫布的人，不是辱骂对方不会数数。",
+    "recommended_action": "fix",
+    "recommended_text_guidance": "保留原有标签并把末句修为“把布也算上。”；不得保留“你这不会数数的笨蛋”。",
+    "sources": [
+      {
+        "title": "Dishonored 中文 Wiki：布",
+        "url": "https://dishonored.fandom.com/zh/wiki/%E5%B8%83",
+        "evidence": "页面确认 Boo 的既有中文名是“布”，且他是瓶街帮成员。"
+      }
+    ]
+  },
+  {
+    "rule_id": "earl_named_guard",
+    "en_exact": "When are you gonna pay me, Earl?",
+    "expected_count": 1,
+    "case_sensitive": true,
+    "status": "resolved",
+    "finding": "Dishonored 中文 Wiki 的“厄尔”条目确认 Earl 是皇家医师任务中驻守考德温大桥的低级城市警卫，并明确记载他欠同伴一场南希游戏的赌债；这里不是伯爵爵位。",
+    "recommended_action": "fix",
+    "recommended_text_guidance": "最小修补为“你什么时候付我钱，厄尔？”或等义口语；必须把称呼 Earl 译为人物名“厄尔”，不得保留“伯爵”。",
+    "sources": [
+      {
+        "title": "Dishonored 中文 Wiki：厄尔",
+        "url": "https://dishonored.fandom.com/zh/wiki/%E5%8E%84%E5%B0%94",
+        "evidence": "页面确认 Earl 是城市警卫姓名，并描述同一段南希牌局欠款对话。"
+      }
+    ]
+  },
+  {
+    "rule_id": "habber_weed_existing_translation",
+    "en_exact": "I gotta stop chewing habber weed. Nothing here.",
+    "expected_count": 1,
+    "status": "resolved",
+    "finding": "Fandom 与本地多条语料确认 habber weed 是可咀嚼、具有麻醉和成瘾作用的虚构植物/毒品。天邈多数对白已经使用“哈勃大麻”，当前句义完整；在没有官方固定译名时不为同义偏好改成“哈伯草”。",
+    "recommended_action": "keep",
+    "recommended_text_guidance": "保留“我不能再嗑哈勃大麻了。这里什么都没有。”及原有标签；不得只为统一音译或物种分类修改。",
+    "sources": [
+      {
+        "title": "Dishonored Wiki: Rumors and Sightings: Daud",
+        "url": "https://dishonored.fandom.com/wiki/Rumors_and_Sightings:_Daud",
+        "evidence": "正文记载罪犯交易 habber weed；其他游戏文本说明其被咀嚼并有麻醉、成瘾效果。"
+      },
+      {
+        "title": "本地 habber weed 对话语料",
+        "url": "data/aligned/corpus.jsonl",
+        "evidence": "多个天邈对白复本既有“哈勃大麻”，当前条是完整且自然的既有用法。"
+      }
+    ]
+  }
+]

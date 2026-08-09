@@ -1,0 +1,279 @@
+[
+ {
+  "id": "term:782f872b77125b8e",
+  "en_term": "Archer Urn",
+  "action": "lock",
+  "cn_term": "射手金瓮",
+  "category": "item",
+  "confidence": 0.98,
+  "reason": "Wiki 确认它是 Archer 家族的 Urn 传家宝；天邈同一家族保留“射手”，同类 Urn 稳定译为“金瓮”，据此修正孤立错译“水壶”。",
+  "conflict_reason": "",
+  "support_cn_terms": ["金瓮"],
+  "wiki_urls": ["https://dishonored.fandom.com/wiki/Coin"]
+ },
+ {
+  "id": "term:3e76db5ad04b41b1",
+  "en_term": "Boyle Cameo",
+  "action": "lock",
+  "cn_term": "波义耳浮雕",
+  "category": "item",
+  "confidence": 0.98,
+  "reason": "Wiki 确认所有语境指同一件阁楼奖品；天邈对白已有中性的“波义耳浮雕”，既保留底色，也避免无证据补充“贝”这一材质。",
+  "conflict_reason": "",
+  "support_cn_terms": [],
+  "wiki_urls": [
+   "https://dishonored.fandom.com/wiki/Boyle_Mansion",
+   "https://dishonored.fandom.com/wiki/Lady_Boyle%27s_Last_Party",
+   "https://dishonored.fandom.com/wiki/Coin"
+  ]
+ },
+ {
+  "id": "term:abcf6c1f9ca9db4e",
+  "en_term": "Captain's Post",
+  "action": "lock",
+  "cn_term": "队长哨所",
+  "category": "place",
+  "confidence": 0.97,
+  "reason": "Wiki 确认该地点是有房间和警卫职能的岗哨；结合天邈既有“哨所”组件，修正不通顺的“队长的站子”。",
+  "conflict_reason": "",
+  "support_cn_terms": ["哨所"],
+  "wiki_urls": [
+   "https://dishonored.fandom.com/wiki/Eminent_Domain",
+   "https://dishonored.fandom.com/wiki/Chauncy"
+  ]
+ },
+ {
+  "id": "term:07963914d92b761b",
+  "en_term": "Carmine Cameo",
+  "action": "lock",
+  "cn_term": "卡尔米浮雕",
+  "category": "item",
+  "confidence": 0.98,
+  "reason": "Wiki 确认这是 Carmine 家族的 cameo 传家宝；天邈对该家族其他物件稳定用“卡尔米”，对 cameo 系统性使用“浮雕”。",
+  "conflict_reason": "",
+  "support_cn_terms": ["卡尔米", "浮雕"],
+  "wiki_urls": ["https://dishonored.fandom.com/wiki/Coin"]
+ },
+ {
+  "id": "term:9089519988529b15",
+  "en_term": "Drawbridge Cell Door",
+  "action": "lock",
+  "cn_term": "吊桥牢房门",
+  "category": "place",
+  "confidence": 0.99,
+  "reason": "Wiki 明确吊桥北塔内有 holding cell，Drawbridge Cell Key 用于开启该牢房；因此对象是牢房门，不是操作间。",
+  "conflict_reason": "",
+  "support_cn_terms": ["牢房门"],
+  "wiki_urls": [
+   "https://dishonored.fandom.com/wiki/Kaldwin%27s_Bridge",
+   "https://dishonored.fandom.com/wiki/Keys"
+  ]
+ },
+ {
+  "id": "term:8e59da90ddacb930",
+  "en_term": "Drawbridge Control",
+  "action": "exclude",
+  "cn_term": "",
+  "category": "item",
+  "confidence": 0.99,
+  "reason": "Wiki 与本地语料共同证明该短语既可指操作杆，也可指可停留的吊桥控制站；不能建立单一平面映射。",
+  "conflict_reason": "交互物应译“吊桥控制杆”，转场地点应译“吊桥控制室”，Phase 3 必须按字段分流。",
+  "support_cn_terms": [],
+  "wiki_urls": ["https://dishonored.fandom.com/wiki/Kaldwin%27s_Bridge"]
+ },
+ {
+  "id": "term:b65eac96b50aa6a2",
+  "en_term": "Fencer",
+  "action": "exclude",
+  "cn_term": "",
+  "category": "ability",
+  "confidence": 0.98,
+  "reason": "Wiki 只确认 Fencer 是拼剑相关骸骨护符；本地另有独立的计分技巧实体，不能让护符名覆盖计分系统。",
+  "conflict_reason": "骸骨护符保留“剑术大师”，计分技巧保留“剑术家”。",
+  "support_cn_terms": [],
+  "wiki_urls": [
+   "https://dishonored.fandom.com/wiki/Bone_Charms",
+   "https://dishonored.fandom.com/wiki/Swords"
+  ]
+ },
+ {
+  "id": "term:dd63edb1fa734878",
+  "en_term": "Hatter",
+  "action": "exclude",
+  "cn_term": "",
+  "category": "title",
+  "confidence": 0.99,
+  "reason": "Wiki 明确 the Hatters 指帮派，而 a Hatter 指单个成员；本地组织标签与 NPC 名称正好对应这两种指称。",
+  "conflict_reason": "组织语境用“帽子帮”，单个 NPC 用“帽子帮成员”。",
+  "support_cn_terms": [],
+  "wiki_urls": ["https://dishonored.fandom.com/wiki/Hatters_Gang"]
+ },
+ {
+  "id": "term:a8ae42b61aa0eb60",
+  "en_term": "Hearty Crew",
+  "action": "defer",
+  "cn_term": "",
+  "category": "ability",
+  "confidence": 0.82,
+  "reason": "Wiki 确认它是提高召唤刺客伤害的骸骨护符，但仍不能证明天邈的“热情伙伴”或“亲密伙伴”哪一个更适合作为正式名称。",
+  "conflict_reason": "两个 DLC 的直接名称证据对等；Phase 3 需带护符效果定向定稿。",
+  "support_cn_terms": [],
+  "wiki_urls": ["https://dishonored.fandom.com/wiki/Bone_Charms"]
+ },
+ {
+  "id": "term:c5e169a602be0600",
+  "en_term": "Heretic's Brand",
+  "action": "exclude",
+  "cn_term": "",
+  "category": "world_term",
+  "confidence": 1.0,
+  "reason": "Wiki 明确该英文同时指惩罚/疤痕概念和施加惩罚的金属工具，证实这里存在真实双义。",
+  "conflict_reason": "概念用“异端烙印”，拾取或使用的工具用“异教徒烙铁”。",
+  "support_cn_terms": [],
+  "wiki_urls": [
+   "https://dishonored.fandom.com/wiki/Heretic%27s_Brand",
+   "https://dishonored.fandom.com/wiki/On_Branding_Heretics"
+  ]
+ },
+ {
+  "id": "term:5e886905bafa54d7",
+  "en_term": "HIGH OVERSEER JOHN CLAVERING",
+  "action": "lock",
+  "cn_term": "至高督军 约翰·克拉文鹰",
+  "category": "person",
+  "confidence": 0.99,
+  "reason": "Wiki 核实碑文人物及 Clavering 拼写；本地 Clavering Boulevard 多处稳定译为“克拉文鹰大道”，故保留天邈已建立的姓氏底色。",
+  "conflict_reason": "",
+  "support_cn_terms": ["克拉文鹰大道"],
+  "wiki_urls": [
+   "https://dishonored.fandom.com/wiki/Notable_Clergy",
+   "https://dishonored.fandom.com/wiki/Distillery_District"
+  ]
+ },
+ {
+  "id": "term:b5e1baa94c26ca48",
+  "en_term": "Hole in the Fence",
+  "action": "lock",
+  "cn_term": "围栏的缺口",
+  "category": "other",
+  "confidence": 0.97,
+  "reason": "Wiki 确认这是唯一的庄园恩惠项，实际效果是在围栏打开一条潜入缺口；采用天邈任务目标中的“围栏的缺口”。",
+  "conflict_reason": "",
+  "support_cn_terms": [],
+  "wiki_urls": [
+   "https://dishonored.fandom.com/wiki/Delilah%27s_Masterwork",
+   "https://dishonored.fandom.com/wiki/Favors"
+  ]
+ },
+ {
+  "id": "term:271e9a568c0e9e56",
+  "en_term": "Jump",
+  "action": "exclude",
+  "cn_term": "",
+  "category": "ui_term",
+  "confidence": 0.99,
+  "reason": "Wiki 确认 jump 是普通移动动作而非具名能力；按键名可用“跳跃”，句内动作则需要按语法译“跳/跳下”。",
+  "conflict_reason": "普通动作词不进入专名锁，Phase 3 按整条 UI 文本处理。",
+  "support_cn_terms": [],
+  "wiki_urls": [
+   "https://dishonored.fandom.com/wiki/Natural_Abilities",
+   "https://dishonored.fandom.com/wiki/Agility"
+  ]
+ },
+ {
+  "id": "term:4ec1ee441394e98d",
+  "en_term": "Lady Emily",
+  "action": "lock",
+  "cn_term": "艾米莉小姐",
+  "category": "person",
+  "confidence": 0.98,
+  "reason": "Wiki 确认 Lady Emily 始终是同一人物、Lady 是礼貌称谓；本地广泛对白和描述以“艾米莉小姐”为主流，个别王族身份句仍可按整句译“公主”。",
+  "conflict_reason": "",
+  "support_cn_terms": [],
+  "wiki_urls": ["https://dishonored.fandom.com/wiki/Emily_Kaldwin"]
+ },
+ {
+  "id": "term:9724c763f1289867",
+  "en_term": "Light As A Shadow",
+  "action": "lock",
+  "cn_term": "轻如暗影",
+  "category": "item",
+  "confidence": 0.98,
+  "reason": "Wiki 确认两个 DLC 中是同一减轻坠落伤害的护符；采用先发 DLC 的天邈名“轻如暗影”。",
+  "conflict_reason": "",
+  "support_cn_terms": [],
+  "wiki_urls": ["https://dishonored.fandom.com/wiki/Bone_Charms"]
+ },
+ {
+  "id": "term:4ceb99332b6bfb23",
+  "en_term": "Overpowering",
+  "action": "lock",
+  "cn_term": "拼剑压制",
+  "category": "ability",
+  "confidence": 0.99,
+  "reason": "Wiki 确认效果是更容易赢得拼剑僵持；“拼剑压制”准确表达机制，优于过度泛化的“势不可当”。",
+  "conflict_reason": "",
+  "support_cn_terms": [],
+  "wiki_urls": [
+   "https://dishonored.fandom.com/wiki/Bone_Charms",
+   "https://dishonored.fandom.com/wiki/Swords"
+  ]
+ },
+ {
+  "id": "term:1e382fb0677c3577",
+  "en_term": "Scavenger",
+  "action": "exclude",
+  "cn_term": "",
+  "category": "other",
+  "confidence": 0.99,
+  "reason": "Wiki 确认 Scavenger 是额外拾取弹药的护符；本地另有普通拾荒者人物，属于不同系统实体。",
+  "conflict_reason": "护符用“拾荒浪客”，人物类别用“拾荒者”。",
+  "support_cn_terms": [],
+  "wiki_urls": [
+   "https://dishonored.fandom.com/wiki/Bone_Charms",
+   "https://dishonored.fandom.com/wiki/Bullets"
+  ]
+ },
+ {
+  "id": "term:b7ffd3b5e123909f",
+  "en_term": "Swift Stalker",
+  "action": "lock",
+  "cn_term": "迅捷飞影",
+  "category": "item",
+  "confidence": 0.99,
+  "reason": "Wiki 确认触发条件是收起武器后加速，并非进入潜行状态；采用不引入错误机制暗示的天邈名“迅捷飞影”。",
+  "conflict_reason": "",
+  "support_cn_terms": [],
+  "wiki_urls": [
+   "https://dishonored.fandom.com/wiki/Bone_Charms",
+   "https://dishonored.fandom.com/wiki/Natural_Abilities"
+  ]
+ },
+ {
+  "id": "term:7e87ef124a4e96cc",
+  "en_term": "Vengeance",
+  "action": "exclude",
+  "cn_term": "",
+  "category": "item",
+  "confidence": 0.99,
+  "reason": "Wiki 将基础游戏普通护符与 Brigmore 的破损护符列为不同类型，且效果/代价不同；本地两个名称对应各自系统。",
+  "conflict_reason": "普通护符保留“嗜血天性”，破损护符保留“浴血癫狂”。",
+  "support_cn_terms": [],
+  "wiki_urls": ["https://dishonored.fandom.com/wiki/Bone_Charms"]
+ },
+ {
+  "id": "term:d211fe4d5c885206",
+  "en_term": "Whale Oil Tank Receptacle",
+  "action": "lock",
+  "cn_term": "鲸油罐供电器",
+  "category": "item",
+  "confidence": 0.99,
+  "reason": "Wiki 区分 receptacle 与 dispenser/refilling station：前者承接鲸油罐并向设备供电，不是填充机器；采用天邈既有系统译法“鲸油罐供电器”。",
+  "conflict_reason": "",
+  "support_cn_terms": [],
+  "wiki_urls": [
+   "https://dishonored.fandom.com/wiki/Whale_Oil_Tank",
+   "https://dishonored.fandom.com/wiki/The_Flooded_District"
+  ]
+ }
+]

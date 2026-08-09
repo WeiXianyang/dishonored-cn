@@ -1,0 +1,3 @@
+{"id":"int:Phase06_MS.int:Tutorial:m_Use","layer":"int","context":{"file":"Phase06_MS.int","section":"Tutorial","key":"m_Use","line":1},"en":"Press `GBA_Use` to pick up the key.","cn":"按 `GBA_Use` 拿起钥匙。","tags":["`GBA_Use`"],"status":"aligned"}
+{"id":"int:Phase06_MS.int:Tutorial:m_Food","layer":"int","context":{"file":"Phase06_MS.int","section":"Tutorial","key":"m_Food","line":2},"en":"Eat food to restore health.","cn":"吃食物以恢复法力。","tags":[],"status":"aligned"}
+{"id":"upk:00000000000000000000000000000001","layer":"upk","context":{"dialog_path":"dlg_phase06.corvo.line_1"},"en":"Corvo, Dunwall needs you.","cn":"科尔沃，顿沃需要你。","tags":[],"status":"aligned"}

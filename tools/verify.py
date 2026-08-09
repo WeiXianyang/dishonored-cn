@@ -23,10 +23,10 @@ def verify_int(src_dir, patch_dir):
     ok, warn = [], []
     src = {}
     for e in parse_int.parse_int_dir(src_dir):
-        src.setdefault(e['file'], {})[(e['section'], e['key'])] = e['value']
+        src.setdefault(e['file'], {})[parse_int.entry_identity(e)] = e
     patch_files = {}
     for e in parse_int.parse_int_dir(patch_dir):
-        patch_files.setdefault(e['file'], {})[(e['section'], e['key'])] = e['value']
+        patch_files.setdefault(e['file'], {})[parse_int.entry_identity(e)] = e
 
     changed_ids = []
     for fname, keys in src.items():
@@ -37,11 +37,13 @@ def verify_int(src_dir, patch_dir):
         if set(keys) != set(pk):
             diff = set(keys) ^ set(pk)
             warn.append(f'{fname}: 键集合不一致 ±{len(diff)} 个')
-        for (section, key) in keys:
-            if keys[(section, key)] != pk.get((section, key)):
-                changed_ids.append(f'int:{fname}:{section}:{key}')
-                if re.findall(r'<[^>]*>', keys[(section, key)]) != re.findall(r'<[^>]*>', pk[(section, key)]):
-                    warn.append(f'{fname}:{section}:{key} 占位标签被改动')
+        for identity, src_entry in keys.items():
+            patch_entry = pk.get(identity)
+            if src_entry['value'] != (patch_entry or {}).get('value'):
+                selector = parse_int.entry_selector(src_entry)
+                changed_ids.append(f"int:{fname}:{src_entry['section']}:{selector}")
+                if re.findall(r'<[^>]*>', src_entry['value']) != re.findall(r'<[^>]*>', (patch_entry or {}).get('value', '')):
+                    warn.append(f"{fname}:{src_entry['section']}:{selector} 占位标签被改动")
         ok.append((fname, len(keys), len(pk)))
     return changed_ids, warn
 

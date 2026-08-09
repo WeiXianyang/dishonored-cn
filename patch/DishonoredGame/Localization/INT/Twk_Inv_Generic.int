@@ -1,0 +1,12 @@
+[InvItemBase:DisTweaks_InventoryItem_PlayerSpecific_1 DisTweaks_InventoryItem_PlayerSpecific]
+m_Name=""
+m_Description=""
+
+[Twk_Inv_Powers:DisTweaks_InventoryItem_PlayerSpecific_0 DisTweaks_InventoryItem_PlayerSpecific]
+m_Name=""
+m_Description=""
+
+[WeaponRangedBase:DisTweaks_InventoryItem_PlayerSpecific_0 DisTweaks_InventoryItem_PlayerSpecific]
+m_Name=""
+m_Description=""
+

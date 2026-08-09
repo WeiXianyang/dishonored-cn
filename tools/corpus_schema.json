@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dishonored aligned corpus row",
+  "type": "object",
+  "required": ["id", "layer", "context", "en", "cn", "tags", "status"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "layer": {"enum": ["int", "upk"]},
+    "context": {"type": "object"},
+    "source_context": {"type": "object"},
+    "domain": {"type": "object"},
+    "target_format": {"type": "object"},
+    "en": {"type": "string"},
+    "cn": {"type": "string"},
+    "tags": {"type": "array", "items": {"type": "string"}},
+    "status": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": true
+}

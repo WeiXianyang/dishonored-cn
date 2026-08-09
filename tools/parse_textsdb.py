@@ -11,7 +11,9 @@
     ...
 
 值解析：把 repr 字符串还原为原始字节（\\xHH / \\\\ / \\' / \\n 等转义按字节还原），
-再按 UTF-16 LE 解码得到中文字幕。
+再按 UTF-16 LE 解码得到中文字幕。天邈 1.4 的每个值都以一个 ``NUL``
+结尾（供注入后的 UE3 FString 使用）；本底层解析器原样保留该终止符，语料构建
+阶段再将它拆为 ``cn`` 正文与 ``target_format.nul_terminated``。
 
 命令行用法:
     python parse_textsdb.py texts.db [--out out.json]

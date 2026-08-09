@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """冒烟测试：parse_int.py 与 parse_textsdb.py（用构造样例，不碰游戏目录）"""
+import argparse
 import json
 import os
 import sys
@@ -45,14 +46,39 @@ def test_parse_int(tmp):
         f.write('[Sample2]\r\n'.encode('utf-16-le'))
         f.write('m_Name="第二段同名键"\r\n'.encode('utf-16-le'))
         f.write('m_InteractText="`GBA_Use` 解锁"\r\n'.encode('utf-16-le'))
+        f.write('[Mixed]\r\n'.encode('utf-16-le'))
+        f.write('Plain=Unquoted UI text\r\n'.encode('utf-16-le'))
+        f.write('m_Items[0]=(m_Name="Store item",m_Description="Item description")\r\n'.encode('utf-16-le'))
+        f.write('FontLib=First font\r\n'.encode('utf-16-le'))
+        f.write('FontLib=Second font\r\n'.encode('utf-16-le'))
     entries = parse_int.parse_int_file(p)
-    assert len(entries) == 3, entries
+    assert len(entries) == 8, entries
     assert entries[0]['key'] == 'm_Name' and entries[0]['value'] == '示例文本'
     assert entries[0]['section'] == 'Sample1'
     # 同 key 不同 section 是不同条目
     assert entries[1]['section'] == 'Sample2' and entries[1]['value'] == '第二段同名键'
     assert entries[2]['section'] == 'Sample2' and entries[2]['value'] == '`GBA_Use` 解锁'
-    print('[OK] parse_int: 3 entries, section 分区/同名键/内嵌标签正确')
+    by_selector = {parse_int.entry_selector(e): e for e in entries if e['section'] == 'Mixed'}
+    assert by_selector['Plain']['value'] == 'Unquoted UI text'
+    assert by_selector['m_Items[0]::m_Name']['value'] == 'Store item'
+    assert by_selector['m_Items[0]::m_Description']['value'] == 'Item description'
+    assert by_selector['FontLib']['value'] == 'First font'
+    assert by_selector['FontLib#1']['value'] == 'Second font'
+
+    raw = open(p, 'rb').read()
+    text, fmt = parse_int.decode_int_bytes(raw)
+    edits = {
+        ('Mixed', 'Plain', 0, '', 0): '无引号界面文本',
+        ('Mixed', 'm_Items[0]', 0, 'm_Name', 0): '商店物品',
+        ('Mixed', 'FontLib', 1, '', 0): '第二字体',
+    }
+    rewritten, changed, unused = parse_int.replace_int_text(text, edits)
+    assert changed == 3 and not unused, (changed, unused)
+    assert 'Plain=无引号界面文本\r\n' in rewritten
+    assert 'm_Items[0]=(m_Name="商店物品",m_Description="Item description")\r\n' in rewritten
+    assert 'FontLib=First font\r\nFontLib=第二字体\r\n' in rewritten
+    assert parse_int.encode_int_text(rewritten, fmt).startswith(b'\xff\xfe')
+    print('[OK] parse_int: 引号/无引号/结构体/重复 key 解析与最小写回正确')
 
 
 def test_textsdb(tmp):
@@ -71,24 +97,29 @@ def test_textsdb(tmp):
     print('[OK] parse_textsdb: 3 entries, 中文/引号/反斜杠/换行还原正确')
 
 
-def test_textsdb_real_sample():
-    """真实 texts.db 存在时：解析并验证 UTF-16 LE 解码、含 CJK"""
-    PATH = r'C:\SteamLibrary\steamapps\common\Dishonored\Sub_Import\texts.db'
-    if not os.path.exists(PATH):
-        print('[SKIP] parse_textsdb 真实样本（游戏文件不在本机）')
+def test_textsdb_real_sample(path=None):
+    """只有显式传入路径时才读取真实 texts.db，避免测试暗访游戏目录。"""
+    if not path:
+        print('[SKIP] parse_textsdb 真实样本（未显式传入 --real-textsdb）')
         return
-    db = parse_textsdb.parse_textsdb(PATH)
+    if not os.path.exists(path):
+        raise FileNotFoundError(f'显式指定的 texts.db 不存在: {path}')
+    db = parse_textsdb.parse_textsdb(path)
     assert len(db) > 9000, len(db)
     sample = next(iter(db.values()))
     assert any('\u4e00' <= c <= '\u9fff' for c in sample), repr(sample)
     print(f'[OK] parse_textsdb 真实样本: {len(db)} 条，示例: {sample[:50]!r}')
 
 
-def main():
+def main(argv=None):
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--real-textsdb',
+                        help='可选；显式授权读取的真实 texts.db 路径')
+    args = parser.parse_args(argv)
     tmp = tempfile.mkdtemp(prefix='dh_smoke_')
     test_parse_int(tmp)
     test_textsdb(tmp)
-    test_textsdb_real_sample()
+    test_textsdb_real_sample(args.real_textsdb)
     print('\n全部冒烟测试通过 ✓')
 
 

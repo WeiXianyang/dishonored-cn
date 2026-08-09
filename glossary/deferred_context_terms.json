@@ -1,0 +1,489 @@
+{
+ "_note": "不进入全局术语锁；Phase 3 必须按具体实体/系统/语境审校，不得用单一译名强制覆盖。",
+ "_policy": "exclude-from-global-lock-and-defer-to-phase3",
+ "items": [
+  {
+   "id": "term:8e59da90ddacb930",
+   "action": "review",
+   "cn_term": "",
+   "category": "item",
+   "confidence": 0.99,
+   "reason": "Wiki 与本地语料共同证明该短语既可指操作杆，也可指可停留的吊桥控制站；不能建立单一平面映射。",
+   "evidence_ids": [
+    "int:Flooded_Twk.int:wall_lever_01_bridge_twk:pInteractableTweaks DisTweaks_InteractableInterface:m_Name",
+    "int:L_Bridge_Part1b_Script.int:TheWorld:PersistentLevel.Main_Sequence.DisSeqAct_DialogScriptedChoice_1 DisSeqAct_DialogScriptedChoice:m_Choices[1]::m_ChoiceText",
+    "int:L_Bridge_Part1b_Script.int:TheWorld:PersistentLevel.Main_Sequence.DisSeqAct_DialogScriptedChoice_2 DisSeqAct_DialogScriptedChoice:m_Choices[1]::m_ChoiceText"
+   ],
+   "conflict": true,
+   "conflict_reason": "交互物应译“吊桥控制杆”，转场地点应译“吊桥控制室”，Phase 3 必须按字段分流。",
+   "en_term": "Drawbridge Control",
+   "seed_value": "",
+   "row_count": 3,
+   "exact_cn_variants": [
+    {
+     "cn": "吊桥控制杆",
+     "count": 1
+    }
+   ],
+   "prior_action": "review",
+   "prior_cn_term": "吊桥控制杆",
+   "prior_reason": "英文在语料中分别指装置和所在区域，边界不一致。",
+   "evidence": [
+    {
+     "id": "int:Flooded_Twk.int:wall_lever_01_bridge_twk:pInteractableTweaks DisTweaks_InteractableInterface:m_Name",
+     "layer": "int",
+     "release": "base_game",
+     "location": "Flooded_Twk.int:wall_lever_01_bridge_twk:pInteractableTweaks DisTweaks_InteractableInterface:m_Name",
+     "en": "Drawbridge Control",
+     "cn": "吊桥控制杆"
+    },
+    {
+     "id": "int:L_Bridge_Part1b_Script.int:TheWorld:PersistentLevel.Main_Sequence.DisSeqAct_DialogScriptedChoice_1 DisSeqAct_DialogScriptedChoice:m_Choices[1]::m_ChoiceText",
+     "layer": "int",
+     "release": "base_game",
+     "location": "L_Bridge_Part1b_Script.int:TheWorld:PersistentLevel.Main_Sequence.DisSeqAct_DialogScriptedChoice_1 DisSeqAct_DialogScriptedChoice:m_Choices[1]",
+     "en": "Stay at Drawbridge Control",
+     "cn": "留在吊桥控制室"
+    },
+    {
+     "id": "int:L_Bridge_Part1b_Script.int:TheWorld:PersistentLevel.Main_Sequence.DisSeqAct_DialogScriptedChoice_2 DisSeqAct_DialogScriptedChoice:m_Choices[1]::m_ChoiceText",
+     "layer": "int",
+     "release": "base_game",
+     "location": "L_Bridge_Part1b_Script.int:TheWorld:PersistentLevel.Main_Sequence.DisSeqAct_DialogScriptedChoice_2 DisSeqAct_DialogScriptedChoice:m_Choices[1]",
+     "en": "Stay at Drawbridge Control",
+     "cn": "留在吊桥控制室"
+    }
+   ],
+   "wiki_action": "exclude",
+   "wiki_urls": [
+    "https://dishonored.fandom.com/wiki/Kaldwin%27s_Bridge"
+   ],
+   "source": "dishonored_fandom_wiki_resolution"
+  },
+  {
+   "id": "term:b65eac96b50aa6a2",
+   "action": "review",
+   "cn_term": "",
+   "category": "ability",
+   "confidence": 0.98,
+   "reason": "Wiki 只确认 Fencer 是拼剑相关骸骨护符；本地另有独立的计分技巧实体，不能让护符名覆盖计分系统。",
+   "evidence_ids": [
+    "int:Twk_Pawn_DefaultPlayer.int:Twk_Pawn_DefaultPlayer:DisTweaks_WhaleBoneCharmList_0 DisTweaks_WhaleBoneCharmList:m_ScriptedCharms[8]::m_Name",
+    "int:Scoring.INT:TrickNames:Fencer"
+   ],
+   "conflict": true,
+   "conflict_reason": "骸骨护符保留“剑术大师”，计分技巧保留“剑术家”。",
+   "en_term": "Fencer",
+   "seed_value": "",
+   "row_count": 2,
+   "exact_cn_variants": [
+    {
+     "cn": "剑术大师",
+     "count": 1
+    }
+   ],
+   "prior_action": "review",
+   "prior_cn_term": "剑术大师",
+   "prior_reason": "同一英文分别用于护符名称和得分技巧，实体边界不明。",
+   "evidence": [
+    {
+     "id": "int:Twk_Pawn_DefaultPlayer.int:Twk_Pawn_DefaultPlayer:DisTweaks_WhaleBoneCharmList_0 DisTweaks_WhaleBoneCharmList:m_ScriptedCharms[8]::m_Name",
+     "layer": "int",
+     "release": "base_game",
+     "location": "Twk_Pawn_DefaultPlayer.int:Twk_Pawn_DefaultPlayer:DisTweaks_WhaleBoneCharmList_0 DisTweaks_WhaleBoneCharmList:m_ScriptedCharms[8]",
+     "en": "Fencer ",
+     "cn": "剑术大师"
+    },
+    {
+     "id": "int:Scoring.INT:TrickNames:Fencer",
+     "layer": "int",
+     "release": "base_game",
+     "location": "Scoring.INT:TrickNames:Fencer",
+     "en": "Fencer",
+     "cn": "剑术家"
+    }
+   ],
+   "wiki_action": "exclude",
+   "wiki_urls": [
+    "https://dishonored.fandom.com/wiki/Bone_Charms",
+    "https://dishonored.fandom.com/wiki/Swords"
+   ],
+   "source": "dishonored_fandom_wiki_resolution"
+  },
+  {
+   "id": "term:dd63edb1fa734878",
+   "action": "review",
+   "cn_term": "",
+   "category": "title",
+   "confidence": 0.99,
+   "reason": "Wiki 明确 the Hatters 指帮派，而 a Hatter 指单个成员；本地组织标签与 NPC 名称正好对应这两种指称。",
+   "evidence_ids": [
+    "int:DLC06_Timsh_Streets_Scripts.INT:TheWorld:PersistentLevel.Main_Sequence.Objectives.DisSeqAct_UpdateTaskTarget_50 DisSeqAct_UpdateTaskTarget:m_TargetName",
+    "int:DLC07_Pwn_Prisoner.int:DLC07_Pwn_Prisoner_Combatant:pInteractableTweaks DisTweaks_InteractableInterface:m_Name",
+    "int:DLC07_ChapterNotes_twk.int:Coldridge.ChapterNotes_Hatter DisAbstractItem:m_ItemName"
+   ],
+   "conflict": true,
+   "conflict_reason": "组织语境用“帽子帮”，单个 NPC 用“帽子帮成员”。",
+   "en_term": "Hatter",
+   "seed_value": "",
+   "row_count": 28,
+   "exact_cn_variants": [
+    {
+     "cn": "帽子帮",
+     "count": 4
+    },
+    {
+     "cn": "帽子帮成员",
+     "count": 2
+    }
+   ],
+   "prior_action": "review",
+   "prior_cn_term": "帽子帮",
+   "prior_reason": "指向稳定阵营身份，但组织名与成员称谓边界不一致。",
+   "evidence": [
+    {
+     "id": "int:DLC06_Timsh_Streets_Scripts.INT:TheWorld:PersistentLevel.Main_Sequence.Objectives.DisSeqAct_UpdateTaskTarget_50 DisSeqAct_UpdateTaskTarget:m_TargetName",
+     "layer": "int",
+     "release": "knife_of_dunwall",
+     "location": "DLC06_Timsh_Streets_Scripts.INT:TheWorld:PersistentLevel.Main_Sequence.Objectives.DisSeqAct_UpdateTaskTarget_50 DisSeqAct_UpdateTaskTarget:m_TargetName",
+     "en": "Hatter",
+     "cn": "帽子帮"
+    },
+    {
+     "id": "int:DLC07_Pwn_Prisoner.int:DLC07_Pwn_Prisoner_Combatant:pInteractableTweaks DisTweaks_InteractableInterface:m_Name",
+     "layer": "int",
+     "release": "brigmore_witches",
+     "location": "DLC07_Pwn_Prisoner.int:DLC07_Pwn_Prisoner_Combatant:pInteractableTweaks DisTweaks_InteractableInterface:m_Name",
+     "en": "Hatter",
+     "cn": "帽子帮成员"
+    },
+    {
+     "id": "int:DLC07_ChapterNotes_twk.int:Coldridge.ChapterNotes_Hatter DisAbstractItem:m_ItemName",
+     "layer": "int",
+     "release": "brigmore_witches",
+     "location": "DLC07_ChapterNotes_twk.int:Coldridge.ChapterNotes_Hatter DisAbstractItem:m_ItemName",
+     "en": "The Hatter",
+     "cn": "帽子帮"
+    }
+   ],
+   "wiki_action": "exclude",
+   "wiki_urls": [
+    "https://dishonored.fandom.com/wiki/Hatters_Gang"
+   ],
+   "source": "dishonored_fandom_wiki_resolution"
+  },
+  {
+   "id": "term:a8ae42b61aa0eb60",
+   "action": "review",
+   "cn_term": "",
+   "category": "ability",
+   "confidence": 0.82,
+   "reason": "Wiki 确认它是提高召唤刺客伤害的骸骨护符，但仍不能证明天邈的“热情伙伴”或“亲密伙伴”哪一个更适合作为正式名称。",
+   "evidence_ids": [
+    "int:DLC06_Twk_Player_Daud.int:DLC06_Twk_Player_Daud:pCharmListTweaks DisTweaks_WhaleBoneCharmList:m_Charms[21]::m_Name",
+    "int:DLC07_Twk_Player_Daud.int:DLC07_Twk_Player_Daud:pCharmListTweaks DisTweaks_WhaleBoneCharmList:m_Charms[21]::m_Name"
+   ],
+   "conflict": true,
+   "conflict_reason": "两个 DLC 的直接名称证据对等；Phase 3 需带护符效果定向定稿。",
+   "en_term": "Hearty Crew",
+   "seed_value": "",
+   "row_count": 2,
+   "exact_cn_variants": [
+    {
+     "cn": "热情伙伴",
+     "count": 1
+    },
+    {
+     "cn": "亲密伙伴",
+     "count": 1
+    }
+   ],
+   "prior_action": "review",
+   "prior_cn_term": "",
+   "prior_reason": "明确为骨符能力名称，但扩展内容间译名不一致。",
+   "evidence": [
+    {
+     "id": "int:DLC06_Twk_Player_Daud.int:DLC06_Twk_Player_Daud:pCharmListTweaks DisTweaks_WhaleBoneCharmList:m_Charms[21]::m_Name",
+     "layer": "int",
+     "release": "knife_of_dunwall",
+     "location": "DLC06_Twk_Player_Daud.int:DLC06_Twk_Player_Daud:pCharmListTweaks DisTweaks_WhaleBoneCharmList:m_Charms[21]",
+     "en": "Hearty Crew",
+     "cn": "热情伙伴"
+    },
+    {
+     "id": "int:DLC07_Twk_Player_Daud.int:DLC07_Twk_Player_Daud:pCharmListTweaks DisTweaks_WhaleBoneCharmList:m_Charms[21]::m_Name",
+     "layer": "int",
+     "release": "brigmore_witches",
+     "location": "DLC07_Twk_Player_Daud.int:DLC07_Twk_Player_Daud:pCharmListTweaks DisTweaks_WhaleBoneCharmList:m_Charms[21]",
+     "en": "Hearty Crew",
+     "cn": "亲密伙伴"
+    }
+   ],
+   "wiki_action": "defer",
+   "wiki_urls": [
+    "https://dishonored.fandom.com/wiki/Bone_Charms"
+   ],
+   "source": "dishonored_fandom_wiki_resolution"
+  },
+  {
+   "id": "term:c5e169a602be0600",
+   "action": "review",
+   "cn_term": "",
+   "category": "world_term",
+   "confidence": 1.0,
+   "reason": "Wiki 明确该英文同时指惩罚/疤痕概念和施加惩罚的金属工具，证实这里存在真实双义。",
+   "evidence_ids": [
+    "int:L_Ovrsr_Back_Script.int:TheWorld:PersistentLevel.Main_Sequence.Objective_Markers_0.DisSeqAct_UpdateTaskTarget_19 DisSeqAct_UpdateTaskTarget:m_TargetName",
+    "int:Ovrsr_AbstractInv_MS.int:HereticBrand_AbsItm DisAbstractItem:m_ItemName",
+    "int:Overseer_Twk.int:ChairCampbell_interact_twk:pInteractableTweaks DisTweaks_InteractableInterface:m_InteractText",
+    "int:ChapterNotes_twk.int:overseer.OvrsrChNote_BrandLoc DisAbstractItem:m_Description"
+   ],
+   "conflict": true,
+   "conflict_reason": "概念用“异端烙印”，拾取或使用的工具用“异教徒烙铁”。",
+   "en_term": "Heretic's Brand",
+   "seed_value": "",
+   "row_count": 14,
+   "exact_cn_variants": [
+    {
+     "cn": "异端烙印",
+     "count": 3
+    },
+    {
+     "cn": "异教徒的烙印",
+     "count": 1
+    },
+    {
+     "cn": "异教烙铁",
+     "count": 1
+    }
+   ],
+   "prior_action": "review",
+   "prior_cn_term": "异端烙印",
+   "prior_reason": "可能是重要世界观概念或关键物件，但语料对其含义和译名处理不一。",
+   "evidence": [
+    {
+     "id": "int:L_Ovrsr_Back_Script.int:TheWorld:PersistentLevel.Main_Sequence.Objective_Markers_0.DisSeqAct_UpdateTaskTarget_19 DisSeqAct_UpdateTaskTarget:m_TargetName",
+     "layer": "int",
+     "release": "base_game",
+     "location": "L_Ovrsr_Back_Script.int:TheWorld:PersistentLevel.Main_Sequence.Objective_Markers_0.DisSeqAct_UpdateTaskTarget_19 DisSeqAct_UpdateTaskTarget:m_TargetName",
+     "en": "Heretic's Brand",
+     "cn": "异端烙印"
+    },
+    {
+     "id": "int:Ovrsr_AbstractInv_MS.int:HereticBrand_AbsItm DisAbstractItem:m_ItemName",
+     "layer": "int",
+     "release": "base_game",
+     "location": "Ovrsr_AbstractInv_MS.int:HereticBrand_AbsItm DisAbstractItem:m_ItemName",
+     "en": "Heretic's Brand",
+     "cn": "异教烙铁"
+    },
+    {
+     "id": "int:Overseer_Twk.int:ChairCampbell_interact_twk:pInteractableTweaks DisTweaks_InteractableInterface:m_InteractText",
+     "layer": "int",
+     "release": "base_game",
+     "location": "Overseer_Twk.int:ChairCampbell_interact_twk:pInteractableTweaks DisTweaks_InteractableInterface:m_InteractText",
+     "en": "`GBA_Use` Heretic's Brand",
+     "cn": "`GBA_Use` 异教烙铁"
+    },
+    {
+     "id": "int:ChapterNotes_twk.int:overseer.OvrsrChNote_BrandLoc DisAbstractItem:m_Description",
+     "layer": "int",
+     "release": "base_game",
+     "location": "ChapterNotes_twk.int:overseer.OvrsrChNote_BrandLoc DisAbstractItem:m_Description",
+     "en": "The Heretic's Brand itself can be found in the Interrogation Room.",
+     "cn": "异教徒烙铁在审讯室中。"
+    }
+   ],
+   "wiki_action": "exclude",
+   "wiki_urls": [
+    "https://dishonored.fandom.com/wiki/Heretic%27s_Brand",
+    "https://dishonored.fandom.com/wiki/On_Branding_Heretics"
+   ],
+   "source": "dishonored_fandom_wiki_resolution"
+  },
+  {
+   "id": "term:271e9a568c0e9e56",
+   "action": "review",
+   "cn_term": "",
+   "category": "ui_term",
+   "confidence": 0.99,
+   "reason": "Wiki 确认 jump 是普通移动动作而非具名能力；按键名可用“跳跃”，句内动作则需要按语法译“跳/跳下”。",
+   "evidence_ids": [
+    "int:Settings.int:ProfileSettingIDs:PSI_GBA_Jump",
+    "int:Twk_InGameUI.int:Twk_GFxMoviePlayerMenuBase DisTweaks_GFxMoviePlayerMenuBase:m_GamepadMapping1[0]",
+    "int:Twk_InGameUI.int:Twk_GFxMoviePlayerMenuBase DisTweaks_GFxMoviePlayerMenuBase:m_GamepadMapping3[0]",
+    "int:Twk_InGameUI.int:Twk_GFxMoviePlayerMenuBase DisTweaks_GFxMoviePlayerMenuBase:m_GamepadMapping4[2]"
+   ],
+   "conflict": true,
+   "conflict_reason": "普通动作词不进入专名锁，Phase 3 按整条 UI 文本处理。",
+   "en_term": "Jump",
+   "seed_value": "",
+   "row_count": 13,
+   "exact_cn_variants": [
+    {
+     "cn": "跳",
+     "count": 1
+    }
+   ],
+   "prior_action": "review",
+   "prior_cn_term": "跳",
+   "prior_reason": "属于应统一的操作界面词，但现有界面语料有两种译法。",
+   "evidence": [
+    {
+     "id": "int:Settings.int:ProfileSettingIDs:PSI_GBA_Jump",
+     "layer": "int",
+     "release": "base_game",
+     "location": "Settings.int:ProfileSettingIDs:PSI_GBA_Jump",
+     "en": "Jump",
+     "cn": "跳跃"
+    },
+    {
+     "id": "int:Twk_InGameUI.int:Twk_GFxMoviePlayerMenuBase DisTweaks_GFxMoviePlayerMenuBase:m_GamepadMapping1[0]",
+     "layer": "int",
+     "release": "base_game",
+     "location": "Twk_InGameUI.int:Twk_GFxMoviePlayerMenuBase DisTweaks_GFxMoviePlayerMenuBase:m_GamepadMapping1[0]",
+     "en": "Jump",
+     "cn": "跳"
+    },
+    {
+     "id": "int:Twk_InGameUI.int:Twk_GFxMoviePlayerMenuBase DisTweaks_GFxMoviePlayerMenuBase:m_GamepadMapping3[0]",
+     "layer": "int",
+     "release": "base_game",
+     "location": "Twk_InGameUI.int:Twk_GFxMoviePlayerMenuBase DisTweaks_GFxMoviePlayerMenuBase:m_GamepadMapping3[0]",
+     "en": "Jump",
+     "cn": "跳跃"
+    },
+    {
+     "id": "int:Twk_InGameUI.int:Twk_GFxMoviePlayerMenuBase DisTweaks_GFxMoviePlayerMenuBase:m_GamepadMapping4[2]",
+     "layer": "int",
+     "release": "base_game",
+     "location": "Twk_InGameUI.int:Twk_GFxMoviePlayerMenuBase DisTweaks_GFxMoviePlayerMenuBase:m_GamepadMapping4[2]",
+     "en": "Jump",
+     "cn": "跳跃"
+    }
+   ],
+   "wiki_action": "exclude",
+   "wiki_urls": [
+    "https://dishonored.fandom.com/wiki/Natural_Abilities",
+    "https://dishonored.fandom.com/wiki/Agility"
+   ],
+   "source": "dishonored_fandom_wiki_resolution"
+  },
+  {
+   "id": "term:1e382fb0677c3577",
+   "action": "review",
+   "cn_term": "",
+   "category": "other",
+   "confidence": 0.99,
+   "reason": "Wiki 确认 Scavenger 是额外拾取弹药的护符；本地另有普通拾荒者人物，属于不同系统实体。",
+   "evidence_ids": [
+    "int:Twk_Pawn_DefaultPlayer.int:Twk_Pawn_DefaultPlayer:DisTweaks_WhaleBoneCharmList_0 DisTweaks_WhaleBoneCharmList:m_Charms[23]::m_Name",
+    "int:L_Bridge_Part1b_Script.int:TheWorld:PersistentLevel.Main_Sequence.DisSeqAct_UpdateTaskTarget_10 DisSeqAct_UpdateTaskTarget:m_TargetName",
+    "int:Bridge_Abstract.int:BridgeChapterNotes.ChapterNote_Scavenger DisAbstractItem:m_ItemName"
+   ],
+   "conflict": true,
+   "conflict_reason": "护符用“拾荒浪客”，人物类别用“拾荒者”。",
+   "en_term": "Scavenger",
+   "seed_value": "",
+   "row_count": 7,
+   "exact_cn_variants": [
+    {
+     "cn": "拾荒浪客",
+     "count": 3
+    },
+    {
+     "cn": "拾荒者",
+     "count": 3
+    }
+   ],
+   "prior_action": "review",
+   "prior_cn_term": "拾荒浪客",
+   "prior_reason": "同一英文分别用作骨符名和人物目标称谓，含义可能不同。",
+   "evidence": [
+    {
+     "id": "int:L_Bridge_Part1b_Script.int:TheWorld:PersistentLevel.Main_Sequence.DisSeqAct_UpdateTaskTarget_10 DisSeqAct_UpdateTaskTarget:m_TargetName",
+     "layer": "int",
+     "release": "base_game",
+     "location": "L_Bridge_Part1b_Script.int:TheWorld:PersistentLevel.Main_Sequence.DisSeqAct_UpdateTaskTarget_10 DisSeqAct_UpdateTaskTarget:m_TargetName",
+     "en": "Scavenger",
+     "cn": "拾荒者"
+    },
+    {
+     "id": "int:Twk_Pawn_DefaultPlayer.int:Twk_Pawn_DefaultPlayer:DisTweaks_WhaleBoneCharmList_0 DisTweaks_WhaleBoneCharmList:m_Charms[23]::m_Name",
+     "layer": "int",
+     "release": "base_game",
+     "location": "Twk_Pawn_DefaultPlayer.int:Twk_Pawn_DefaultPlayer:DisTweaks_WhaleBoneCharmList_0 DisTweaks_WhaleBoneCharmList:m_Charms[23]",
+     "en": "Scavenger",
+     "cn": "拾荒浪客"
+    },
+    {
+     "id": "int:Bridge_Abstract.int:BridgeChapterNotes.ChapterNote_Scavenger DisAbstractItem:m_ItemName",
+     "layer": "int",
+     "release": "base_game",
+     "location": "Bridge_Abstract.int:BridgeChapterNotes.ChapterNote_Scavenger DisAbstractItem:m_ItemName",
+     "en": "Scavenger context",
+     "cn": "拾荒者的背景"
+    }
+   ],
+   "wiki_action": "exclude",
+   "wiki_urls": [
+    "https://dishonored.fandom.com/wiki/Bone_Charms",
+    "https://dishonored.fandom.com/wiki/Bullets"
+   ],
+   "source": "dishonored_fandom_wiki_resolution"
+  },
+  {
+   "id": "term:7e87ef124a4e96cc",
+   "action": "review",
+   "cn_term": "",
+   "category": "item",
+   "confidence": 0.99,
+   "reason": "Wiki 将基础游戏普通护符与 Brigmore 的破损护符列为不同类型，且效果/代价不同；本地两个名称对应各自系统。",
+   "evidence_ids": [
+    "int:DLC07_Twk_Player_Daud.int:DLC07_Twk_Player_Daud:DisDLC07Tweaks_WhaleBoneCharmCrackedList_0 DisDLC07Tweaks_WhaleBoneCharmCrackedList:m_CrackedCharms[0]::m_Name",
+    "int:Twk_Pawn_DefaultPlayer.int:Twk_Pawn_DefaultPlayer:DisTweaks_WhaleBoneCharmList_0 DisTweaks_WhaleBoneCharmList:m_Charms[13]::m_Name"
+   ],
+   "conflict": true,
+   "conflict_reason": "普通护符保留“嗜血天性”，破损护符保留“浴血癫狂”。",
+   "en_term": "Vengeance",
+   "seed_value": "",
+   "row_count": 2,
+   "exact_cn_variants": [
+    {
+     "cn": "浴血癫狂",
+     "count": 1
+    },
+    {
+     "cn": "嗜血天性",
+     "count": 1
+    }
+   ],
+   "prior_action": "review",
+   "prior_cn_term": "",
+   "prior_reason": "骸骨护符名称存在版本和类型差异，不能直接统一。",
+   "evidence": [
+    {
+     "id": "int:DLC07_Twk_Player_Daud.int:DLC07_Twk_Player_Daud:DisDLC07Tweaks_WhaleBoneCharmCrackedList_0 DisDLC07Tweaks_WhaleBoneCharmCrackedList:m_CrackedCharms[0]::m_Name",
+     "layer": "int",
+     "release": "brigmore_witches",
+     "location": "DLC07_Twk_Player_Daud.int:DLC07_Twk_Player_Daud:DisDLC07Tweaks_WhaleBoneCharmCrackedList_0 DisDLC07Tweaks_WhaleBoneCharmCrackedList:m_CrackedCharms[0]",
+     "en": "Vengeance",
+     "cn": "浴血癫狂"
+    },
+    {
+     "id": "int:Twk_Pawn_DefaultPlayer.int:Twk_Pawn_DefaultPlayer:DisTweaks_WhaleBoneCharmList_0 DisTweaks_WhaleBoneCharmList:m_Charms[13]::m_Name",
+     "layer": "int",
+     "release": "base_game",
+     "location": "Twk_Pawn_DefaultPlayer.int:Twk_Pawn_DefaultPlayer:DisTweaks_WhaleBoneCharmList_0 DisTweaks_WhaleBoneCharmList:m_Charms[13]",
+     "en": "Vengeance",
+     "cn": "嗜血天性"
+    }
+   ],
+   "wiki_action": "exclude",
+   "wiki_urls": [
+    "https://dishonored.fandom.com/wiki/Bone_Charms"
+   ],
+   "source": "dishonored_fandom_wiki_resolution"
+  }
+ ]
+}

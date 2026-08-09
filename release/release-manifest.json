@@ -1,0 +1,44 @@
+{
+ "format_version": 1,
+ "game": "Dishonored GOTY (2012)",
+ "base": "Tianmiao CN v1.4",
+ "patch": "minimal fixes",
+ "parts": {
+  "Dishonored-CN-1.4p-Full-part1-Base.zip": {
+   "files": 76,
+   "size_bytes": 1600468200,
+   "size_mb": 1526.33,
+   "sha256": "ea1d7fd7a3fa2bc093c9d678abb06ddbccc07534802dff7a823f596cd954f7df"
+  },
+  "Dishonored-CN-1.4p-Full-part1-INT.zip": {
+   "files": 658,
+   "size_bytes": 2549908,
+   "size_mb": 2.43,
+   "sha256": "1e96d30f695176931747c18d4436acb03cce5f5a5329c23e82730db67de40c37"
+  },
+  "Dishonored-CN-1.4p-Full-part2-DLC05.zip": {
+   "files": 31,
+   "size_bytes": 1321181117,
+   "size_mb": 1259.98,
+   "sha256": "201fe73c5b5cacb1014ab7713ad76b78756a44395a0a151a2efbbe02e624e298"
+  },
+  "Dishonored-CN-1.4p-Full-part3-DLC06.zip": {
+   "files": 21,
+   "size_bytes": 660598619,
+   "size_mb": 630.0,
+   "sha256": "0bdb86ffcbaeb06050401f17ccc1dbbc896cb2fdfe7e3d1cef3f8891f4995be2"
+  },
+  "Dishonored-CN-1.4p-Full-part4-DLC07.zip": {
+   "files": 28,
+   "size_bytes": 965339006,
+   "size_mb": 920.62,
+   "sha256": "1abe2590b46c67f5644e4f29681a100acd8d5384bca786314be0b028f62f624e"
+  },
+  "Dishonored-CN-1.4p-Lite.zip": {
+   "files": 680,
+   "size_bytes": 76953069,
+   "size_mb": 73.39,
+   "sha256": "3459a281f732ef70161bd45f100687342903aaca61a56397cd119083747a9069"
+  }
+ }
+}
