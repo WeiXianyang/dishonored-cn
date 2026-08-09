@@ -12,9 +12,9 @@
   },
   "Dishonored-CN-1.4p-Full-part1-INT.zip": {
    "files": 658,
-   "size_bytes": 2549908,
+   "size_bytes": 2549878,
    "size_mb": 2.43,
-   "sha256": "1e96d30f695176931747c18d4436acb03cce5f5a5329c23e82730db67de40c37"
+   "sha256": "49eb7ec37ef84a6e00208da628d946d00315f7a56bde18e8f627a5789a0ed779"
   },
   "Dishonored-CN-1.4p-Full-part2-DLC05.zip": {
    "files": 31,
@@ -36,9 +36,9 @@
   },
   "Dishonored-CN-1.4p-Lite.zip": {
    "files": 680,
-   "size_bytes": 29537663,
+   "size_bytes": 29537654,
    "size_mb": 28.17,
-   "sha256": "92d16e5522fe165ad09fdc2066a1fa901412bb5616149fe88d6dd9c9e6235e08"
+   "sha256": "170f0f49f7686c6393422fcd6ea76f30dea19599dabca7368eea5248979f67aa"
   }
  }
 }
