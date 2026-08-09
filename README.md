@@ -101,24 +101,56 @@ medium 714 → keep 512 / fix 202；low 63 → keep 60 / fix 3。
 
 ## 安装
 
+> 📖 **完整图文教程（推荐先看）：[`docs/安装教程-完整版.md`](docs/安装教程-完整版.md)** —— 覆盖每一步操作、预期画面、常见问题排查。
+> 以下为核心步骤速览。
+
+### 准备工作
+
+1. 游戏本体已通过 Steam 安装，并已成功启动过一次（进入主菜单即可）。
+2. 找到**游戏根目录**：Steam 库 → 右键《羞辱 1》→「管理」→「浏览本地文件」。根目录的特征：里面有 `DishonoredGame`、`Binaries`、`Engine`、`DLC` 四个文件夹。
+3. 预留磁盘空间：Full 约 4.3 GB，Lite 约 73 MB。
+4. 大分卷解压建议用 **7-Zip / WinRAR**（7-Zip 官网 `https://www.7-zip.org`，免费）。
+
 ### Full（推荐，解压即用）
 
-1. 备份游戏目录，或准备 Steam 干净副本；
-2. 下载全部 5 个分卷 zip，**依次解压到游戏根目录覆盖**（part1-Base 先，然后 INT、DLC05、DLC06、DLC07）；
-3. 启动游戏，语言选英文（INT）即可显示中文。
+1. 下载**全部 5 个分卷** zip（缺一不可）：
 
-### Lite（安装脚本形态）
+   | 分卷 | 大小 |
+   |---|---|
+   | `Dishonored-CN-1.4p-Full-part1-Base.zip` | 1,526 MB |
+   | `Dishonored-CN-1.4p-Full-part1-INT.zip` | 2.4 MB |
+   | `Dishonored-CN-1.4p-Full-part2-DLC05.zip` | 1,260 MB |
+   | `Dishonored-CN-1.4p-Full-part3-DLC06.zip` | 630 MB |
+   | `Dishonored-CN-1.4p-Full-part4-DLC07.zip` | 920 MB |
 
-1. 将 `Dishonored-CN-1.4p-Lite.zip` 解压到游戏根目录；
-2. 双击运行 `安装.bat`：
+2. **按顺序**把每个分卷解压到**游戏根目录**（解压目标选游戏根目录本身，不是里面的子文件夹）；提示「是否覆盖」时一律选**「全部覆盖 / Yes to All」**：
+   先 `part1-Base` → `part1-INT` → `part2-DLC05` → `part3-DLC06` → `part4-DLC07`。
+3. 启动游戏（Steam 库里点「开始游戏」），语言保持英文（INT）即可显示中文。
+4. 验证：主菜单中文、对话字幕中文、人物姓名中文（皮耶罗/艾米丽）、加载提示中文。
+
+### Lite（脚本自动安装）
+
+1. 下载 `Dishonored-CN-1.4p-Lite.zip`（约 73 MB），解压到任意位置。
+2. 把解压出的**全部内容**（`DishonoredGame`、`CNPatch`、`Sub_Import`、`安装.bat`、`还原.bat` 等）放进游戏根目录——与游戏根目录里已有的 `Binaries`、`Engine`、`DLC` **同一层**（提示覆盖时选「全部」）。**不要**放进 `DishonoredGame` 里面。
+3. 双击 `安装.bat`，等待 5 步自动完成（约 4 分钟；其中第 4 步运行 `subimport.exe` 注入字幕约 3 分钟，**期间不要关闭任何窗口**）：
    - `[1/5]` 备份英文原版 658 个 `.int` 到 `_backup_int/`
-   - `[2/5]` 复制补丁 `.int`
+   - `[2/5]` 复制汉化 `.int`
    - `[3/5]` 复制中文字体/UI upk
-   - `[4/5]` 运行天邈 `subimport.exe` 注入字幕（约 3 分钟）
-   - `[5/5]` 重放天邈手工 upk（防 subimport 改写）
-3. 卸载：运行 `还原.bat`（恢复备份），或 Steam 验证文件完整性。
+   - `[4/5]` `subimport.exe` 注入字幕（约 3 分钟）
+   - `[5/5]` 重放天邈手工 upk（防止第 4 步把字体 upk 改回英文）
+4. 最后显示 `Install finished.` 即完成，启动游戏验证（同 Full 第 4 点）。
+5. 还原：双击 `还原.bat` 恢复英文 `.int`；彻底还原用 Steam「验证游戏文件完整性」。
 
-> 注：`subimport.exe` 需要 Python 2.7 运行库（已随包附带）。
+> 注：`subimport.exe` 是天邈注入工具，需要 Python 2.7 运行库（已随包附带）；若被杀毒软件误报请「信任/允许」后重试。
+
+### 常见问题速查（详见完整教程）
+
+| 现象 | 原因与处理 |
+|---|---|
+| 中文全是方块 □ | 字体/UI upk 没装上：Full 检查是否解压了 `part1-Base`；Lite 重跑 `安装.bat` 确认第 3、5 步无 `[WARN]` |
+| 人名/部分文字是英文 | `INT` 目录的 .int 没覆盖全：重新解压 `part1-INT.zip`（或重跑 Lite），确认 `.int` 为 658 个 |
+| Steam 更新/校验后变英文 | 正常：Steam 会还原被修改的文件，重装补丁即可 |
+| 启动崩溃 | 游戏路径不能含中文；必须从 Steam 库启动 |
 
 ---
 
