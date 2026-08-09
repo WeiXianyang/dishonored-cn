@@ -16,15 +16,11 @@
 import argparse
 import json
 import os
-import re
 import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
 import parse_int
 import parse_textsdb
-
-SECTION_RE = re.compile(r'^\[(.+)\]$')
-
 
 # ---------- 读取 review 结果 ----------
 
@@ -62,11 +58,11 @@ def load_decisions(path):
 # ---------- .int 写回 ----------
 
 def apply_int(src_dir, decisions, out_root, corpus_by_id=None):
-    """按 (file, section, key) 替换值（id 经 corpus 解析）；保持 UTF-16 LE BOM、CRLF、键序。"""
+    """按完整 INT identity 替换值；保留源编码、BOM、换行和其余字节。"""
     out_dir = os.path.join(out_root, 'DishonoredGame', 'Localization', 'INT')
     os.makedirs(out_dir, exist_ok=True)
     corpus_by_id = corpus_by_id or {}
-    # 按文件收集修改: {file: {(section, key): new_text}}
+    # 按文件收集修改: {file: {identity: new_text}}
     by_file = {}
     for rid, res in decisions.items():
         if not rid.startswith('int:') or res['action'] != 'fix' or not res.get('new_text'):
@@ -80,41 +76,33 @@ def apply_int(src_dir, decisions, out_root, corpus_by_id=None):
         if not fname:
             print(f'  [跳过] corpus 条目无 file 上下文: {rid}')
             continue
-        by_file.setdefault(fname, {})[(ctx.get('section', ''), ctx.get('key', ''))] = res['new_text']
+        identity = parse_int.context_identity(ctx)
+        by_file.setdefault(fname.replace('\\', '/'), {})[identity] = res['new_text']
 
     changed_files = 0
     changed_entries = 0
-    for fn in sorted(os.listdir(src_dir)):
-        if not fn.lower().endswith('.int'):
+    src_abs = os.path.abspath(src_dir)
+    for rel_name, edits in sorted(by_file.items()):
+        path = os.path.abspath(os.path.join(src_abs, *rel_name.split('/')))
+        if os.path.commonpath([src_abs, path]) != src_abs:
+            raise ValueError(f'INT 相对路径越界: {rel_name}')
+        if not os.path.isfile(path):
+            print(f'  [跳过] INT 源文件不存在: {rel_name}')
             continue
-        edits = by_file.get(fn, {})
-        if not edits:
-            continue  # 无修改则跳过（包内不含该文件）
-        path = os.path.join(src_dir, fn)
         raw = open(path, 'rb').read()
-        text = raw.decode('utf-16')  # 保留 BOM 字符
-        lines = text.splitlines(keepends=True)
-        section = ''
-        out_lines = []
-        for line in lines:
-            m = SECTION_RE.match(line.rstrip('\r\n'))
-            if m:
-                section = m.group(1).strip()
-                out_lines.append(line)
-                continue
-            m = re.match(r'^([A-Za-z0-9_.]+)\s*=\s*"(.*)"\s*$', line.rstrip('\r\n'))
-            if m and (section, m.group(1)) in edits:
-                new_val = edits.pop((section, m.group(1)))
-                # 保留原行缩进与换行风格
-                indent = line[:line.index('=')] if '=' in line else ''
-                eol = '\r\n' if line.endswith('\r\n') else '\n'
-                out_lines.append(f'{indent}="{new_val}"{eol}')
-                changed_entries += 1
-            else:
-                out_lines.append(line)
-        with open(os.path.join(out_dir, fn), 'wb') as f:
-            f.write(''.join(out_lines).encode('utf-16'))
+        text, format_name = parse_int.decode_int_bytes(raw)
+        rewritten, changed, unused = parse_int.replace_int_text(text, edits)
+        if unused:
+            for identity in sorted(unused):
+                print(f'  [跳过] INT 条目未定位: {rel_name} {identity}')
+        if not changed:
+            continue
+        out_path = os.path.join(out_dir, *rel_name.split('/'))
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
+        with open(out_path, 'wb') as f:
+            f.write(parse_int.encode_int_text(rewritten, format_name))
         changed_files += 1
+        changed_entries += changed
     return changed_files, changed_entries
 
 
@@ -151,10 +139,17 @@ def apply_textsdb(src_db, decisions, out_root):
     for m in ptd.PAIR.finditer(text):
         segments.append((m.group(2), m.group(0)))
 
+    source_values = ptd.parse_textsdb(src_db)
     edits = {}
     for rid, res in decisions.items():
         if rid.startswith('upk:') and res['action'] == 'fix' and res.get('new_text'):
-            edits[rid[4:]] = res['new_text']
+            # 天邈 texts.db 的 10,284 个值都包含供 UE3 FString 使用的末尾 NUL。
+            # 语料/模型侧不暴露这个控制字符，写回时由工具统一补上。
+            key = rid[4:]
+            new_text = res['new_text'].rstrip('\x00')
+            if source_values.get(key, '').endswith('\x00'):
+                new_text += '\x00'
+            edits[key] = new_text
 
     parts = ['(dp0']
     for key, seg in segments:
@@ -183,12 +178,18 @@ def build_changelog(decisions, corpus_by_id):
         if res['action'] != 'fix':
             continue
         src = corpus_by_id.get(rid, {})
+        old_text = src.get('cn', '')
+        new_text = res.get('new_text', '')
+        # Phase 4.5 反方二审回退时 new_text=original_cn，与语料库 cn 相同；
+        # 实际未改变文本的条目不应进入 changelog
+        if old_text == new_text:
+            continue
         changes.append({
             'id': rid,
             'context': src.get('context', {}),
             'en': src.get('en', ''),
-            'old': src.get('cn', ''),
-            'new': res.get('new_text', ''),
+            'old': old_text,
+            'new': new_text,
             'reason': res.get('reason', ''),
             'source': res.get('source', 'ai'),
         })

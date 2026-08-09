@@ -16,7 +16,12 @@ data/aligned/
 
 # 本地工具
 tools/.venv/
+tools/.codex-cli/
 
 # 打包产物按需发布，默认不入库（发布时走 GitHub Release）
 patch/*.zip
 patch/*.7z
+
+# 构建中间态与临时脚本（产物见 release/）
+build/
+tmp/
