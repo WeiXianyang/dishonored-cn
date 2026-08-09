@@ -47,7 +47,6 @@ Phase 0 环境 → Phase 1 提取对齐 → Phase 2 术语表 → Phase 3 AI校�
 AI 会按 8 个阶段逐步引导你完成全部流程。
 
 > 📖 完整工作流文档：[`LOCALIZATION_PIPELINE.md`](LOCALIZATION_PIPELINE.md)  
-> 📖 Reasonix 用户也可使用内置 Skill：`/localization-pipeline`  
 > 📖 工作流设计原理见 [`docs/safe-localization-workflow.md`](docs/safe-localization-workflow.md)  
 > 📖 术语安全审计见 [`docs/glossary-safety-audit-report.md`](docs/glossary-safety-audit-report.md)
 
