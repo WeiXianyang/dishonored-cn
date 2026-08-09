@@ -1,9 +1,0 @@
-[Twk_GFxMoviePlayerMainMenu DisTweaks_GFxMoviePlayerMainMenu]
-m_NoProfileMessage="您尚未登录。若要保存进度，您需要先登录。是否立即登录？"
-m_NoProfileChoiceOK="是"
-m_NoProfileChoiceBack="否"
-m_NoStorageDeviceMessage="您没有选择存储设备，游戏进度将不会保存。是否继续？您可以在选项菜单中选择存储设备。"
-m_NoStorageDeviceChoiceOK="OK"
-m_NoStorageDeviceChoiceBack="返回"
-m_GameInstallMessage="为了获得最佳游戏体验，我们建议将《耻辱》安装到 Xbox 360 硬盘。完整安装需要 5GB 可用空间。有关如何将游戏安装到 Xbox 360 硬盘的说明，请参阅手册中的“入门指南”。"
-m_GameInstallChoiceOK="OK"
