@@ -111,34 +111,52 @@ Full 形态共 5 个 zip 分卷（因为单文件超过 100 MB，GitHub 不能�
 └── hashes.json
 ```
 
-### 3.2 把解压出的内容放进游戏根目录
+### 3.2 双击运行 安装.bat（自动查找游戏目录）
 
-**这一步最容易被搞错，请仔细看。**
+**不需要手动移动任何文件**——解压文件夹放在哪都行（桌面、下载文件夹、D 盘均可）。
 
-游戏根目录（含 `DishonoredGame`、`Binaries`、`Engine`、`DLC` 的文件夹）里已经有自带的 `DishonoredGame` 文件夹。你要做的是：**把解压出的 `DishonoredGame`、`CNPatch`、`Sub_Import`、`安装.bat`、`还原.bat` 等，与游戏根目录里已有的 `DishonoredGame`、`Binaries`、`Engine`、`DLC` 放在同一层**。
+1. **先完全退出游戏**（若正在运行）：游戏进程会锁定 `.upk` 文件导致安装无效，脚本会检测到并阻止安装。
+2. 双击解压文件夹里的 `安装.bat`。
+3. 脚本会自动查找游戏目录（依次尝试：Steam 注册表默认库 → C~G 盘常见 Steam 库 → 当前文件夹就是游戏根目录），找到后显示：
 
-推荐做法（二选一）：
+   ```
+   Found your Dishonored folder:
+     C:\SteamLibrary\steamapps\common\Dishonored
+   Use this folder? [Y/N] (default Y):
+   ```
 
-- **方法 A（推荐）**：把 zip 里的**全部内容**直接解压到游戏根目录（解压目标选择游戏根目录本身）。提示覆盖时选「全部覆盖」。
-- **方法 B**：先解压到临时文件夹，然后**复制**里面的 `DishonoredGame`、`CNPatch`、`Sub_Import`、`安装.bat`、`还原.bat`、`README.md`、`hashes.json` 到游戏根目录，提示覆盖时选「全部」。
+   确认路径无误，直接按回车（或输入 `Y`）即可开始安装。
 
-**验证放对了**：游戏根目录下应该同时能看到 `Binaries`、`DishonoredGame`、`DLC`、`Engine`、`CNPatch`、`Sub_Import`、`安装.bat`、`还原.bat`。
+4. **找不到游戏目录 / 想装到指定目录**（手动填写）：输入 `N` 或脚本没检测到时，会提示：
 
-### 3.3 双击运行 安装.bat
+   ```
+   Could not auto-detect the game folder.
+   Please type your Dishonored game folder:
+   ```
 
-1. 在游戏根目录下，双击 `安装.bat`。
-2. 会弹出黑色命令行窗口，依次显示 5 步：
+   手动输入游戏根目录的完整路径后回车，例如：
+
+   ```
+   D:\Games\Dishonored
+   ```
+
+   **游戏根目录的特征**：里面有 `DishonoredGame`、`Binaries`、`Engine`、`DLC` 这几个文件夹（不是里面的 `DishonoredGame` 子文件夹）。路径填错会显示 `[ERROR]` 并退出，重新双击运行再填一次即可。
+
+### 3.3 安装过程
+
+脚本依次显示 5 步（约 3-4 分钟，期间不要关闭窗口）：
 
 | 步骤 | 显示 | 做什么 | 耗时 |
 |---|---|---|---|
 | 1/5 | `Backing up original .int files to _backup_int ...` | 备份英文原版 658 个 .int 到 `_backup_int` 文件夹 | 几秒 |
 | 2/5 | `Copying localized .int files ...` | 覆盖为汉化 .int | 几秒 |
-| 3/5 | `Copying font/UI packages (.upk) from CNPatch\Upks ...` | 复制 3 个中文字体 upk | 几秒 |
+| 3/5 | `Copying font/UI packages (.upk) from CNPatch\Upks ...` | 复制 6 个中文字体/UI upk | 几秒 |
 | 4/5 | `Injecting subtitles into .upk files via Tianmiao tool ...` | 运行 subimport.exe 把字幕写入 151 个 upk，**此步会弹出子窗口且最久** | **约 3 分钟** |
 | 5/5 | `Restoring font/UI packages after injection ...` | 注入会把字体 upk 改回英文，此步重新覆盖为天邈字体 upk | 几秒 |
 
-3. 最后显示 `Install finished.` 并停留等待按键——按任意键关闭即可，**安装完成**。
-4. 提示：第 4 步运行时如果看到 subimport 的子窗口（`程序处理文件中，请不要关闭本窗口…`），**不要关闭它**，等它自己跑完（约 3 分钟，看到 `* 处理完毕 *` 即为结束）。
+1. 最后显示 `Install finished.` 并停留等待按键——按任意键关闭即可，**安装完成**。
+2. 提示：第 4 步运行时如果看到 subimport 的子窗口（`程序处理文件中，请不要关闭本窗口…`），**不要关闭它**，等它自己跑完（约 3 分钟，看到 `* 处理完毕 *` 即为结束）。
+3. 若某步显示 `[WARN] ... could not be overwritten`，说明游戏还在运行，**完全退出游戏后重新运行** `安装.bat`。
 
 ### 3.4 启动游戏验证
 
