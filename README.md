@@ -1,9 +1,18 @@
 # 《羞辱 1》Dishonored GOTY — 天邈汉化修复补丁 v1.4p
 
-基于天邈汉化组《羞辱》年度版天邈汉化 **v1.4**（2015.12.30）的最小修补版。
-在保留天邈译文风格与全部内容的**前提下**，仅订正翻译错误、术语冲突与占位符问题，**不引入第三版译文**。
+面向 Windows Steam 版《Dishonored GOTY》的完整中文修复补丁，覆盖本体及 DLC05、DLC06、DLC07。
+项目基于天邈汉化组 **v1.4**（2015.12.30）进行最小修补：保留原译风格，只修可确认的翻译错误、术语冲突与占位符问题，**不引入第三版译文**。
 
-> ⚠️ 公开发布需先取得天邈汉化组授权（已向其负责人提交授权申请，承诺无偿、非商业、完整署名致谢、修改清单全公开、收到异议立即下架）。
+> ✅ **完全免费、非商业，并已获天邈汉化组授权。** [查看授权记录](docs/tianmiao-authorization-request.md)
+
+| 双语语料 | 可审计修补 | 内容覆盖 | 质量管线 |
+|:---:|:---:|:---:|:---:|
+| **31,583 条** | **6,352 条** | **本体 + 全部 DLC** | **8 阶段审校** |
+| 100% 全量对齐 | 原文 / 原译 / 修正 / 理由 | DLC05 / DLC06 / DLC07 | AI 初审 + 人工裁决 + 反方二审 |
+
+**[⬇️ 下载最新版本](https://github.com/WeiXianyang/dishonored-cn/releases/latest)** · **[📖 查看安装教程](docs/安装教程-完整版.md)** · **[🔍 核对 6,352 条修改](patch/changelog.json)** · **[🧰 复用审校工作流](LOCALIZATION_PIPELINE.md)**
+
+> ⭐ 如果补丁或工作流对你有帮助，欢迎点一下右上角的 **Star**。它会帮助更多玩家发现这个项目，也支持作者继续维护。
 
 ---
 
@@ -95,7 +104,7 @@ Dishonored-CN-1.4p-Full-part4-DLC07.zip     920 MB   (28 文件)
 Phase 4.5 裁决明细：critical 1,822 → keep 1,661 / fix 161；high 2,652 → keep 2,112 / fix 540；
 medium 714 → keep 512 / fix 202；low 63 → keep 60 / fix 3。
 
-详细分阶段报告见 `docs/`（Phase 1–4.5 验收清单、术语决策、Wiki 研究、工作流规范、授权申请函等）。
+详细分阶段报告见 `docs/`（Phase 1–4.5 验收清单、术语决策、Wiki 研究、工作流规范、授权记录等）。
 
 ---
 
@@ -124,7 +133,7 @@ medium 714 → keep 512 / fix 202；low 63 → keep 60 / fix 3。
 
 ## 致谢
 
-- **天邈汉化组**（[其乐发布帖](https://keylol.com/t101091-1-1) / [Steam 群组](https://steamcommunity.com/groups/tianmiao) / [微博](https://weibo.com/disthaven)）：本补丁 95%+ 译文来自天邈 v1.4，仅订正约 4.7% 的翻译问题；未取得授权前不公开发布。
+- **天邈汉化组**（[其乐发布帖](https://keylol.com/t101091-1-1) / [Steam 群组](https://steamcommunity.com/groups/tianmiao) / [微博](https://weibo.com/disthaven)）：本补丁 95%+ 译文来自天邈 v1.4，仅订正约 4.7% 的翻译问题；项目已获天邈汉化组授权公开发布。
 - 修改明细 `changelog.json` 全部公开可审计。
 
 ---
