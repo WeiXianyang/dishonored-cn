@@ -1,276 +1,144 @@
 ---
 name: localization-pipeline
-description: 游戏汉化最小修补工作流：8阶段审校管线（提取→术语→AI校对→人工审核→反方二审→生成→打包→验证）。适用于对现有汉化做系统性审校，不改风格只修硬错。
+description: Audit, repair, validate, and release an existing game localization without turning the work into a rewrite. Use for bilingual corpus alignment, translation-patch repair, terminology control, subtitle or UI review, AI-assisted QA, adversarial second review, deterministic writeback, changelogs, and release validation across any engine or text format.
 ---
 
-# 游戏汉化最小修补工作流
+# Repair Existing Game Localizations Safely
 
-基于 Dishonored 天邈汉化 1.4p 项目的实战经验沉淀。适用于**基于现有汉化做最小修补**的场景——不改风格、只修硬错。
+Preserve the shipped or community translation as a protected baseline. Change only demonstrable defects, keep every accepted edit traceable to frozen inputs, and make rollback possible.
 
-## 使用场景
+## Establish the project contract
 
-- 已有汉化质量不错但存在零星错译/漏译/术语不一致，需要系统性审校
-- 源文本格式复杂（UE3 .int + UPK 字幕、带标签/变量/换行签名）
-- 需要保留原汉化组的翻译底色，只做"修补"而非"重译"
-- 需要可追溯、可审计的修改清单
+Before editing anything, collect:
 
-## 不适用场景
+- game, build, platform, language pair, base game/DLC/mod scope;
+- source-language material and the exact baseline translation;
+- archive, database, engine, encoding, newline, placeholder, markup, and packaging constraints;
+- permission or redistribution constraints;
+- available runtime evidence: scripts, object paths, screenshots, audio, dialogue trees, or reproducible saves;
+- success criteria, installation path, rollback path, and release artifact shape.
 
-- 从零开始的新翻译项目（没有基线译文可对照）
-- 需要大范围改写的项目（这不是修补，是重译）
-- 纯人工审校（AI 不可用的环境）
+Ask for missing inputs that would change extraction, identity, or packaging. If source text is unavailable, limit work to mechanical and monolingual defects; do not claim semantic correctness.
 
-## 工作流概览（8 阶段）
+Freeze hashes of every input before extraction. Never edit the only copy of a game file.
 
-```
-Phase 0 环境准备 → Phase 1 双源提取对齐 → Phase 2 术语表建设
-→ Phase 3 AI 校对流水线 → Phase 4 人工审核 → Phase 4.5 反方二审
-→ Phase 5 合并生成 → Phase 6 打包 → Phase 7 验证
-```
+## Separate the invariant workflow from format adapters
 
----
+Keep the review pipeline format-independent. Put engine and file knowledge behind an adapter with these operations:
 
-## Phase 0：环境与仓库
+1. `discover` — enumerate all in-scope resources and releases;
+2. `extract` — emit source and baseline text plus provenance;
+3. `identify` — assign stable IDs from structure, never text alone;
+4. `render` — write an allowlisted set of accepted changes into staging;
+5. `verify` — re-extract and check structure, encoding, placeholders, and coverage;
+6. `package` — produce installable and reversible artifacts.
 
-**做什么**：初始化目录骨架、确认双源（英文原文目录 + 汉化中文目录）、确认模型后端。
+Use this workflow for CSV/TSV, PO/XLIFF, JSON/YAML/XML, INI/properties, string tables, SQLite or custom databases, subtitle resources, and extracted engine archives. Do not assume direct support for a container merely because its extracted text is supported. Read [references/adapters.md](references/adapters.md) before implementing or changing an adapter.
 
-**关键决策**：
-- 模型后端选择（本地 CLI / API，是否支持 structured output）
-- 目录结构：`tools/` `data/` `glossary/` `prompt/` `patch/` `docs/`
+## Use one stable record contract
 
-**产出物**：git 仓库 + 目录骨架 + 模型调用链路验证
+Normalize every translatable occurrence to a record containing:
 
----
+- stable ID and any explicit alias/relationship to other records;
+- source text and frozen baseline translation;
+- release/domain and content type;
+- resource path, section/object/field, occurrence, and dialogue or scene provenance;
+- neighboring context when available;
+- encoding, newline, placeholder, interpolation, tag, markup, plural/select, layout, and timing signatures when applicable;
+- source and baseline hashes.
 
-## Phase 1：双源提取与对齐
+Preserve duplicate strings when their objects or runtime contexts differ. Keep missing translations distinct from deliberately empty overrides. Record unmatched rows instead of silently dropping them.
 
-**做什么**：从英文源和中文源分别提取文本，按稳定身份对齐。
+Read [references/contracts.md](references/contracts.md) when creating schemas, prompts, validators, or a merge gate.
 
-**关键步骤（按源类型）**：
+## Run the eight-stage repair pipeline
 
-### .int 文件（UE3 本地化文件）
-- 解析三类赋值语法（引号、无引号、结构体字段）
-- 稳定身份含：相对文件 + section + key + 出现序号 + 结构字段
-- 保持 UTF-16 LE + BOM + CRLF
+### Phase 0 — Intake and freeze
 
-### UPK 字幕（UE3 内嵌字幕）
-- 英文：读取 UPK 对象属性，按 `dis.db` 坐标提取
-- 中文：解析 `texts.db`（哈希→UTF-16 中文映射）
-- 哈希验证：`MD5(英文 UTF-16LE)` 与 `dis.db` 索引必须全量匹配
+Define scope, rights, versions, adapters, invariants, evaluation samples, and rollback. Hash inputs and create an isolated staging tree.
 
-**对齐策略**：
-- .int：按 文件+section+key+出现序号 对齐
-- UPK：按 MD5 哈希对齐
-- 每条记录附带 context（文件/关卡/说话人/dialog_path）和 domain（DLC版本）
+### Phase 1 — Extract and align
 
-**产出物**：`data/aligned/corpus.jsonl`（双语对齐语料，每条含 id/en/cn/context/domain）
+Extract both language sides, align by structural identity, measure coverage, and investigate every duplicate, missing, or unmatched ID. Make the aligned corpus the only semantic-review input.
 
----
+### Phase 2 — Build scoped terminology
 
-## Phase 2：术语表建设
+Mine candidate entities and repeated phrases, then classify each as:
 
-**做什么**：从语料中提取专有名词候选，经 AI + 人工确认为术语锁。
+- globally stable;
+- exact-case only;
+- label/item-name only;
+- context, speaker, release, or DLC specific;
+- rejected or ambiguous.
 
-**流程**：
-1. 从语料中提取高频/高信息量的名词短语候选
-2. AI 首审（medium）→ 冲突裁决（high）→ 人工确认
-3. 每个术语含：英文、批准中文、证据来源（Wiki + 本地语料）、频次、版本分布
+Use longest-match and boundary checks, but never treat string matching as proof. Any edit introduced by a term match still requires semantic review.
 
-**⚠️ 教训——术语作用域是关键**：
-- **不要**把所有术语都做成全局硬锁（子串污染是灾难性的）
-- 术语分为两类：
-  - **硬锁**（全局）：人名、地名、核心世界观术语（如 `Dunwall→顿沃`）
-  - **作用域候选**（限定语境）：物品名只在 UI 标签语境生效（如 `Regent's Safe` 只限保险箱标签，不能污染 `Safe Room`）
-- 短术语需要复合词边界检查，避免匹配子串
-- 跨 DLC 同名实体可能是不同对象（如不同关卡的钥匙）
+### Phase 3 — Propose minimal repairs
 
-**产出物**：`glossary/terms.json` + `glossary/advisory_terms.json`
+Have the proposer compare source, baseline, and context. `keep` is the default. Permit changes only for hard defects such as mistranslation, omission, wrong entity, reversed relation, broken number/negation/modality, typo, corrupted placeholder, or clearly defective machine output.
 
----
+Reject preference-only rewrites, tone modernization, synonym swaps, and fluency polishing when the baseline meaning is already sound.
 
-## Phase 3：AI 校对流水线（核心）
+Each proposal must identify its evidence basis, the exact supporting source or baseline span, baseline defect, minimal target delta, evidence or uncertainty, and affected format signature. Require a source span for semantic changes; allow a baseline or runtime span for target-only mechanical defects. Use structured output and validate ID coverage deterministically.
 
-**做什么**：逐批让 AI 对照英文审核中文译文，标记需要修补的条目。
+### Phase 4 — Research and human adjudication
 
-**流水线设计（`review_pipeline.py` 模式）**：
+Route insufficient-context cases to a queue. Ask one falsifiable question per case. Prefer exact-build local evidence, then scripts/object bindings/audio/captures, then official material or reputable community references. A search hit is not proof; no hit is not disproof.
 
-### 输入构造
-每条提供给 AI 的信息：
-- `id`、`en`（英文）、`cn`（旧译）
-- `context`：文件/关卡/说话人/相邻台词
-- `required_format`：标签、变量、换行签名（必须原样保留的不变量）
-- `required_terms`：该条命中的硬锁术语及批准中文
+Keep raw evidence separate from the translation decision. If no external reference exists, use reproducible local control flow, audio, captures, and saves; if those do not settle the question, retain `research_required` and release the frozen baseline. If both baseline and candidate are wrong, create a new proposal and restart review instead of editing inside the adjudication step.
 
-### 分批策略
-- 每批 30–40 条
-- .int 按文件聚合，UPK 按关卡/对话路径聚合（保留语境）
-- 每批独立落盘，支持断点续跑
+### Phase 5 — Run an adversarial second review
 
-### 模型配置
-- Medium 做全量首审（覆盖面）
-- High 做疑难复审（uncertain + 低置信度 + 术语冲突）
-- 必须使用 structured output（JSON Schema）强制输出格式
-- 单并发，指数退避重试
+Hide the proposer rationale and confidence. The critic may return only:
 
-### System Prompt 铁律
+- `accept_candidate`;
+- `revert_baseline`;
+- `research_required`.
 
-1. **天邈译文是基线，不是重译对象**——没有十足把握就不改（action=keep 是默认值）
-2. 只修硬问题：错译、漏译、语义偏离、机翻痕迹、错别字、格式破坏
-3. 专有名词一律以术语表为准（硬锁必须遵守，作用域候选可结合语境否决）
-4. 格式签名必须保留（标签数量/顺序、变量名称/出现次数、换行签名）
-5. 不确定就标记 `uncertain=true`，涉及事实则写 `[WIKI_LOOKUP: xxx]`
-6. **等义就不改**——旧译已能正确传达语义时不得因"更顺口"而修改
+Forbid third wording. An accepted candidate must be supported by a hard baseline defect; equal meaning is a reason to revert. Review all semantic changes, prioritizing altered placeholders, numbers, negation, modality, direction, participants, entities, interactions, and large rewrites.
 
-### 质量控制
-- 修改率红线：>35% 暂停排查
-- 不确定率红线：>10% 暂停排查
-- 占位符/标签/变量的硬违规必须为 0
-- 每 500 条输出滚动统计
-- 每批 id 全集校验：无遗漏、无重复、无多余
+### Phase 6 — Merge, render, and package deterministically
 
-### ⚠️ 教训——不确定处理流程
+Treat accepted stable IDs as an allowlist. Revert unresolved cases to the frozen baseline. Reject unknown, duplicate, missing, or conflicting IDs. Recompute placeholder, tag, terminology, and structural checks from source data rather than trusting model flags.
 
-```
-AI 标 uncertain=true + [WIKI_LOOKUP: xxx]
-  → 编排层查询 Dishonored Wiki（Fandom API）
-  → Wiki 能裁决 → 直接 fix/keep
-  → Wiki 不能裁决 → 保留给 Phase 4 人工审核
-```
+Render only into staging. Preserve byte-level properties where the format requires them. Re-extract the rendered output, create an effective changelog with `old != new`, and package with hashes, install instructions, and rollback instructions.
 
-关键原则：Wiki 搜索命中 ≠ 结论，需要页面直接支持当前事实。无结果不能当反证。不同来源冲突时降级为人工。
+### Phase 7 — Validate and release
 
-**产出物**：`data/review/phase3/*.json`（每批结果）+ 汇总 accepted_fixes + uncertain 清单
+Run static checks on full coverage, structure, encoding, placeholders, tags, line breaks, file inventory, deterministic rebuilds, and expected diffs. Then smoke-test representative runtime paths for base game and every scoped expansion: menus, objectives, subtitles, notes, item names, prompts, choices, fonts, and fallback behavior.
 
----
+Publish only verified artifacts, a manifest, a changelog, unresolved/exception ledgers, and known limitations. When redistribution rights are limited, publish a legal delta/patch and installer instead of full extracted scripts or assets.
 
-## Phase 4：人工审核（占比极低）
+## Enforce release gates
 
-**做什么**：对 AI 无法确定的条目（<1%）进行上下文补齐后的人工裁决。
+Reject release if any accepted edit lacks frozen provenance, stable identity, independent review, a closed decision, invariant validation, or resolved evidence when facts were required.
 
-**上下文增强（`phase4_prepare.py` 模式）**：
-- 补齐 DLC/任务/地点/触发类型
-- 注入同场景完整对白（±2 句邻居）
-- 注入 Wiki 核查结论
-- 注入技术定位（文件/对话树路径）
+Also reject:
 
-**⚠️ 教训——不要信任模型的自信度**：
-- Phase 4 中从 145 条模型的"裁决"中拦截了 8 条模型过度/欠修
-- 需要独立二次验收，逐项检查任务定位、同场对白、格式、术语
+- missing or duplicate IDs;
+- critic-authored third translations;
+- changed placeholders, tags, keys, or structure outside an approved adapter rule;
+- unexplained divergence for exact-source duplicates;
+- packaging changes that cannot be installed and rolled back reproducibly;
+- critical regression cases that are not detected at 100%.
 
-**产出物**：全部人工项裁决完毕（fix 或 keep），uncertain 归零
+Turn every discovered failure into a gold regression case plus at least one mutation. Include negation, modality, number, direction, actor/patient swaps, pronouns, entity collisions, compound-term pollution, unsupported added facts, and runtime-marker damage.
 
----
+## Scale without weakening coverage
 
-## Phase 4.5：反方二审（防过修稳定化）
+Batch by both record count and serialized context size. Group by resource, scene, dialogue, or object when that preserves meaning. Save each batch independently, fingerprint prompts/configuration/model/adapters, support resume, and invalidate caches when any fingerprint changes.
 
-**⚠️ 这是从错误中学到的最重要机制——独立反方二审**。
+Use risk scores only to order work, never to approve changes or skip review. Pause and recalibrate when modification, uncertainty, overturn, invariant-failure, or unsupported-evidence rates spike.
 
-**为什么需要它**：术语回溯提供了铁证——1,207 条中发现 416 条被第二轮改变，187 条恢复天邈原译。同一个 Agent 既能发现问题也能为自己的修改背书，错误修改可能带着高置信度出现。
+## Produce reusable outputs
 
-**核心设计（`release_gate.py` 模式）**：
+Keep these artifacts even when filenames differ by project:
 
-### 单写入规则
-反方 Agent 只能做三种裁决：
-1. 接受候选（确认原译有硬错且候选确实修复了）
-2. **完整回退**到天邈原译（原译可接受，或候选只是润色）
-3. 请求研究/重新提案（原译和候选都不可靠）
+- frozen input manifest and aligned corpus;
+- scoped glossary and rejected-term ledger;
+- proposals, critic decisions, research queue, and evidence records;
+- accepted allowlist, reverted/unresolved/exception ledgers;
+- regression and mutation corpus;
+- rendered patch, effective changelog, release manifest, hashes, install and rollback guide.
 
-**绝对禁止**写第三版译文。代码层硬拒绝。
-
-### 关键设计决策
-- **隐藏首轮理由**——反方看不到 Phase 3/4 的理由和置信度，独立判断
-- **风险分层**（只决定处理顺序，不代替全覆盖二审）：
-  - critical：否定/情态/数量/方向发生变化 | high：大幅改写
-  - medium：对白敏感改写 | low：小改
-- **错误疫苗**（`localization_regression_cases.json`）：
-  - 保存已知典型错误作为测试用例
-  - 每轮反方二审必须 100% 通过疫苗检测
-  - 发现新错误类型必须加入疫苗库
-
-### 证据优先级
-1. 本条英文 + 本地同场景对白
-2. 游戏脚本/实机证据
-3. Dishonored Wiki
-4. 官方资料
-5. 词典和语言直觉
-
-### 发布硬门
-- 所有语义修补具备独立裁决
-- 错误疫苗 critical 检出率 100%
-- 占位符/标签/变量/换行/编码错误 = 0
-- 分层抽检错误修改率 <1%
-
-**产出物**：最终 decisions（keep=保留候选，fix=回退原译），uncertain 归零
-
----
-
-## Phase 5：合并生成
-
-**做什么**：将最终 decisions 写回实际文件。
-
-**关键原则**：
-- .int：按 file+key 应用修改，**保持 UTF-16 LE+BOM+CRLF+键序不变**（最小 diff）
-- UPK：生成新 `texts.db`，仅替换修改条目的值（最小 diff）
-- 辅助文件原样复制（`dis.db`/`upklist.db`/字体 upk）
-
-**⚠️ 教训——changelog 过滤**：
-- `build_changelog` 必须过滤 `old == new` 的条目（Phase 4.5 回退会导致 new=原译=old）
-- reason 与内容不一致的条目不应进入最终清单
-
-**产出物**：`patch/` 目录 + `changelog.json`（仅含有效修改条目）
-
----
-
-## Phase 6：打包
-
-**双形态策略**：
-- **Full**：全部文件解压覆盖即玩（大体积，体验好）
-- **Lite**：安装脚本形态（小体积，需注入工具）
-
-**⚠️ 教训**：
-- Full 和 Lite 的文件路径/注入顺序可能不同
-- 字体 upk 和 UI upk 必须随包分发
-- bat 脚本换行必须是 CRLF
-
-**产出物**：`release/` 目录 + SHA-256 清单 `release-manifest.json`
-
----
-
-## Phase 7：验证
-
-**静态验证**（自动化）：
-- 编码/结构/条目数校验
-- 哈希校验（新包 vs 天邈原版 vs 预期差异清单）
-- 差异必须与预期一致，0 异常、0 多余文件
-
-**动态验证**（实机）：
-- 主菜单中文 → 进关卡 → 触发对话字幕 → UI/任务/物品/书页抽查
-- ⚠️ 这是静态验证无法替代的——字体遗漏、bat 换行等问题只能实机发现
-
----
-
-## 使用指南
-
-1. **先确认基线**：英文源 + 中文源都存在且可只读访问
-2. **运行 Phase 1**：提取对齐，确认语料覆盖率
-3. **人工确认 Phase 2**：术语表必须人工过目（这是 3 次人工节点之一）
-4. **Phase 3 先冒烟**：跑 2 批验证结构化输出和标签完整性，再全量
-5. **Phase 4.5 不能跳过**：反方二审是防止过度修改的最后防线
-6. **Phase 7 实机验证不能省**：静态验证检查不了游戏中真实显示效果
-7. **每次发现新错误类型**：加入错误疫苗库 `localization_regression_cases.json`
-
-## 文件结构参考
-
-```
-project/
-├── tools/           # 提取、对齐、校对、打包脚本
-├── data/
-│   ├── aligned/     # corpus.jsonl（双语对齐语料）
-│   └── review/      # AI 校对结果、人工裁决、反方二审
-├── glossary/        # terms.json + advisory_terms.json
-├── prompt/          # System prompt 模板
-├── research/        # Wiki 查证记录、人工规则
-├── docs/            # 各阶段报告
-├── patch/           # 最终修补产物
-└── release/         # 发布包
-```
+For a compact implementation checklist and generic data examples, use [references/contracts.md](references/contracts.md). Treat this repository's Dishonored implementation as a case study, not as a mandatory engine or tool choice.

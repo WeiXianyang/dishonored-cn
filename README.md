@@ -10,9 +10,39 @@
 | **31,583 条** | **6,352 条** | **本体 + 全部 DLC** | **8 阶段审校** |
 | 100% 全量对齐 | 原文 / 原译 / 修正 / 理由 | DLC05 / DLC06 / DLC07 | AI 初审 + 人工裁决 + 反方二审 |
 
-**[⬇️ 下载最新版本](https://github.com/WeiXianyang/dishonored-cn/releases/latest)** · **[📖 查看安装教程](安装教程-完整版.md)** · **[🔍 核对 6,352 条修改](changelog.json)** · **[🧰 复用审校工作流](LOCALIZATION_PIPELINE.md)**
+**[⬇️ 下载最新版本](https://github.com/WeiXianyang/dishonored-cn/releases/latest)** · **[📖 查看安装教程](安装教程-完整版.md)** · **[🔍 核对 6,352 条修改](changelog.json)** · **[🧰 复用通用汉化修补 Skill](.reasonix/skills/localization-pipeline/SKILL.md)**
 
 > ⭐ 如果补丁或工作流对你有帮助，欢迎点一下右上角的 **Star**。它会帮助更多玩家发现这个项目，也支持作者继续维护。
+
+---
+
+## 🧰 可复用于更多游戏的汉化修补 Skill
+
+本项目把实战方法沉淀成了一个可复制的 **AI 辅助游戏汉化安全修补 Skill**。它不绑定《耻辱》、游戏引擎、文件格式、模型或 AI 平台：UE、Unity、Ren'Py、RPG Maker、自研引擎，以及 CSV、PO、JSON、数据库和提取后的二进制资源都可通过适配器接入。
+
+**直接使用**：复制 [`.reasonix/skills/localization-pipeline/`](.reasonix/skills/localization-pipeline/) 到支持 `SKILL.md` 的 Agent 环境；也可以把 [`SKILL.md`](.reasonix/skills/localization-pipeline/SKILL.md) 直接提供给任意 AI。面向人的完整中文说明见 [`LOCALIZATION_PIPELINE.md`](LOCALIZATION_PIPELINE.md)。
+
+| 通用机制 | 解决的问题 |
+|---|---|
+| 结构化稳定 ID | 相同文本属于不同对象时不会误合并 |
+| 作用域术语 | 防止短词污染复合词、跨场景或跨 DLC 误套术语 |
+| 最小修补提案 | 默认保留旧译，只修能证明的硬错 |
+| 独立反方二审 | 只允许接受、回退或请求研究，禁止写第三版译文 |
+| 格式适配器 | 引擎差异只存在于提取、写回、验证和打包 |
+| 确定性发布门 | ID、占位符、结构、覆盖率和回归测试由代码放行 |
+
+快速开始：
+
+```text
+我要修补：[游戏 / 版本 / 平台]
+语言方向：[源语言] → [目标语言]
+原文资源：[路径或获取方式]
+现有汉化：[路径或获取方式]
+资源格式或引擎：[已知信息]
+请按照 Skill 先完成 Phase 0。
+```
+
+**[打开 Skill](.reasonix/skills/localization-pipeline/SKILL.md)** · **[阅读中文工作流](LOCALIZATION_PIPELINE.md)** · **[格式适配器指南](.reasonix/skills/localization-pipeline/references/adapters.md)** · **[数据与发布契约](.reasonix/skills/localization-pipeline/references/contracts.md)**
 
 ---
 
