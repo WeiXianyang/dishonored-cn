@@ -18,6 +18,8 @@
 
 ## 🧰 可复用于更多游戏的汉化修补 Skill
 
+![通用游戏汉化修补 Skill：8 阶段安全审校流程](assets/localization-skill-cover.png)
+
 本项目把实战方法沉淀成了一个可复制的 **AI 辅助游戏汉化安全修补 Skill**。它不绑定《耻辱》、游戏引擎、文件格式、模型或 AI 平台：UE、Unity、Ren'Py、RPG Maker、自研引擎，以及 CSV、PO、JSON、数据库和提取后的二进制资源都可通过适配器接入。
 
 **直接使用**：复制 [`.reasonix/skills/localization-pipeline/`](.reasonix/skills/localization-pipeline/) 到支持 `SKILL.md` 的 Agent 环境；也可以把 [`SKILL.md`](.reasonix/skills/localization-pipeline/SKILL.md) 直接提供给任意 AI。面向人的完整中文说明见 [`LOCALIZATION_PIPELINE.md`](LOCALIZATION_PIPELINE.md)。
