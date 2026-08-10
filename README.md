@@ -1,6 +1,6 @@
 # 《耻辱 1》Dishonored GOTY — 天邈汉化修复补丁 v1.4p
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Game](https://img.shields.io/badge/Game-Dishonored%20GOTY-blue.svg)](https://store.steampowered.com/app/205100)
 [![Platform](https://img.shields.io/badge/Platform-Windows-0078d6.svg)](https://store.steampowered.com/app/205100)
 [![Release](https://img.shields.io/badge/Release-v1.4p-orange.svg)](https://github.com/WeiXianyang/dishonored-cn/releases)
