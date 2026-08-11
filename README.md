@@ -192,15 +192,15 @@ Full 形态共 5 个 zip 分卷（因为单文件超过 100 MB，GitHub 不能�
 
 | 步骤 | 显示 | 做什么 | 耗时 |
 |---|---|---|---|
-| 1/5 | `Backing up original .int files to _backup_int ...` | 备份英文原版 658 个 .int 到 `_backup_int` 文件夹 | 几秒 |
-| 2/5 | `Copying localized .int files ...` | 覆盖为汉化 .int | 几秒 |
-| 3/5 | `Copying font/UI packages (.upk) from CNPatch\Upks ...` | 复制 6 个中文字体/UI upk | 几秒 |
-| 4/5 | `Injecting subtitles into .upk files via Tianmiao tool ...` | 运行 subimport.exe 把字幕写入 151 个 upk，**此步会弹出子窗口且最久** | **约 3 分钟** |
-| 5/5 | `Restoring font/UI packages after injection ...` | 注入会把字体 upk 改回英文，此步重新覆盖为天邈字体 upk | 几秒 |
+| 1/5 | `[1/5] 备份 .int 文件到 _backup_int ...` | 备份英文原版 658 个 .int 到 `_backup_int` 文件夹 | 几秒 |
+| 2/5 | `[2/5] 复制汉化 .int 文件 ...` | 覆盖为汉化 .int | 几秒 |
+| 3/5 | `[3/5] 复制字体/界面 upk ...` | 复制 6 个中文字体/UI upk | 几秒 |
+| 4/5 | `[4/5] 正在注入字幕到 upk ...` | 运行 subimport.exe 把字幕写入 151 个 upk，**此步会弹出子窗口且最久** | **约 3 分钟** |
+| 5/5 | `[5/5] 注入后恢复字体/界面 upk ...` | 注入会把字体 upk 改回英文，此步重新覆盖为天邈字体 upk | 几秒 |
 
-1. 最后显示 `Install finished.` 并停留等待按键——按任意键关闭即可，**安装完成**。
+1. 最后显示 `安装完成！请从 Steam 启动游戏。` 并停留等待按键——按任意键关闭即可，**安装完成**。
 2. 提示：第 4 步运行时如果看到 subimport 的子窗口（`程序处理文件中，请不要关闭本窗口…`），**不要关闭它**，等它自己跑完（约 3 分钟，看到 `* 处理完毕 *` 即为结束）。
-3. 若某步显示 `[WARN] ... could not be overwritten`，说明游戏还在运行，**完全退出游戏后重新运行** `安装.bat`。
+3. 若脚本报错退出，按窗口里的提示排查（游戏/Steam 未完全退出、游戏目录无写入权限、压缩包解压不完整）后重新运行 `安装.bat`。
 
 ### 3.4 启动游戏验证
 
@@ -245,7 +245,8 @@ Full 形态共 5 个 zip 分卷（因为单文件超过 100 MB，GitHub 不能�
 - `subimport.exe` 是天邈汉化组 2015 年的注入工具，无任何联网行为。请在杀毒软件中「信任/允许」后重试。本补丁所有文件均附 SHA-256 清单（`hashes.json` / `release-manifest.json`）可核验，绝无恶意代码。
 
 ### Q6：双击 `安装.bat` 闪一下就没了 / 提示找不到 `DishonoredGame`
-- 说明 `安装.bat` 不在游戏根目录运行。把解压出的内容放到游戏根目录（与 `Binaries`、`DLC` 同级）后再双击。
+- 说明脚本没自动找到游戏目录（游戏装在非常见路径），且手动输入的路径也不对。
+- 手输时填**游戏根目录**（里面有 `DishonoredGame`、`Binaries`、`Engine`、`DLC` 的那一层），不是里面的 `DishonoredGame` 子文件夹，路径不要带引号。
 
 ### Q7：游戏启动就崩溃（黑屏退出 / 报错）
 - 如果游戏装在**含中文的路径**下（如 `D:\游戏\Dishonored`），请把游戏目录改到纯英文路径（Steam 默认路径都是英文，一般无此问题）。
@@ -255,7 +256,15 @@ Full 形态共 5 个 zip 分卷（因为单文件超过 100 MB，GitHub 不能�
 - 见第 4 节：Steam「验证游戏文件完整性」。
 
 ### Q9：Lite 安装到一半关掉了 / 中途断电
-- 重新双击 `安装.bat` 即可（第 1 步会检测到 `_backup_int` 已存在，不会重复备份）。
+- 重新双击 `安装.bat` 即可（第 1 步会检测到 `_backup_int` 已存在，不会重复备份，也不会把英文备份冲掉）。
+
+### Q10：第 2 步报 `[错误] 汉化 .int 文件复制失败`
+- **这是 2026-08-11 之前那版 Lite 包的脚本 bug，已修复，请重新下载 Lite 包**（sha256 见 `release-manifest.json`）。
+- 原因：补丁包被解压到游戏根目录本身时，源目录与目标目录是同一个，`xcopy` 报 `Cannot perform a cyclic copy` 返回错误码 4，旧脚本据此误判为失败——文件其实已经就位。
+
+### Q11：双击 `安装.bat` 一闪而过，报 `\Steam\steamapps\common\Dishonored was unexpected at this time`
+- **同样是旧版脚本的 bug，已修复，请重新下载 Lite 包。**
+- 原因：Steam 默认装在 `C:\Program Files (x86)\Steam`，路径里的 `)` 会提前闭合脚本里的 `if (...)` 代码块，导致 cmd 解析崩溃。装在 `C:\SteamLibrary` 等无括号路径的用户不受影响。
 
 ---
 
