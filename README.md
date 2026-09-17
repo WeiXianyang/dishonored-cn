@@ -101,11 +101,11 @@ Full 形态共 5 个 zip 分卷（因为单文件超过 100 MB，GitHub 不能�
 
 | 文件 | 大小 | 内容 |
 |---|---|---|
-| `Dishonored-CN-1.4p-Full-part1-Base.zip` | 1,526 MB | 151 个字幕 upk + 3 个中文字体 upk |
-| `Dishonored-CN-1.4p-Full-part1-INT.zip` | 2.4 MB | 658 个汉化 `.int` 文件 |
-| `Dishonored-CN-1.4p-Full-part2-DLC05.zip` | 1,260 MB | DLC05（顿沃城之锋）字幕 |
-| `Dishonored-CN-1.4p-Full-part3-DLC06.zip` | 630 MB | DLC06（布莱格摩尔女巫）字幕 |
-| `Dishonored-CN-1.4p-Full-part4-DLC07.zip` | 920 MB | DLC07（Daud 附加内容）字幕 |
+| `Dishonored-CN-1.4p-Full-part1-Base.zip` | 739 MB | 151 个字幕 upk + 3 个中文字体 upk |
+| `Dishonored-CN-1.4p-Full-part1-INT.zip` | 0.55 MB | 658 个汉化 `.int` 文件 |
+| `Dishonored-CN-1.4p-Full-part2-DLC05.zip` | 531 MB | DLC05（顿沃城之锋）字幕 |
+| `Dishonored-CN-1.4p-Full-part3-DLC06.zip` | 218 MB | DLC06（布莱格摩尔女巫）字幕 |
+| `Dishonored-CN-1.4p-Full-part4-DLC07.zip` | 324 MB | DLC07（Daud 附加内容）字幕 |
 
 **必须全部下载**，缺一个就会缺对应部分的字幕。建议 5 个都放进同一个文件夹再开始解压。
 
@@ -142,7 +142,7 @@ Full 形态共 5 个 zip 分卷（因为单文件超过 100 MB，GitHub 不能�
 
 ### 3.1 下载并解压
 
-1. 下载 `Dishonored-CN-1.4p-Lite.zip`（约 73 MB）。
+1. 下载 `Dishonored-CN-1.4p-Lite.zip`（约 28 MB）。
 2. 解压到**任意临时位置**（比如桌面），解压后你会看到这些内容：
 
 ```
