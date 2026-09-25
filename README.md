@@ -5,8 +5,8 @@
 [![Platform](https://img.shields.io/badge/Platform-Windows-green.svg)](https://store.steampowered.com/app/205100)
 [![Release](https://img.shields.io/badge/Release-v1.4p-green.svg)](https://github.com/WeiXianyang/dishonored-cn/releases)
 
-面向 Windows Steam 版《Dishonored GOTY》的完整中文修复补丁，覆盖本体及 DLC05、DLC06、DLC07。
-项目基于天邈汉化组 **v1.4** 进行最小修补：保留原译风格，只修可确认的翻译错误、术语冲突与占位符问题，**不引入第三版译文**。
+面向 Windows Steam 版《Dishonored GOTY》的完整中文修复补丁，覆盖本体及全部dlc。
+项目基于天邈汉化组 **v1.4** 进行最小修补：保留原译风格，只修可确认的翻译错误、术语冲突与占位符问题。
 
 > ✅ **已获天邈汉化组授权。** Full 与 Lite 两种形态任选其一，**不要同时安装**。
 
