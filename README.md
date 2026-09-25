@@ -10,20 +10,17 @@
 
 > ✅ **完全免费、非商业，并已获天邈汉化组授权。** Full 与 Lite 两种形态任选其一，**不要同时安装**。
 
-| 双语语料 | 可审计修补 | 内容覆盖 | 质量管线 |
+| 双语语料 | 可审计修补 | 内容覆盖 |
 |:---:|:---:|:---:|:---:|
-| **31,583 条** | **6,352 条** | **本体 + 全部 DLC** | **8 阶段审校** |
-| 100% 全量对齐 | 原文 / 原译 / 修正 / 理由 | DLC05 / DLC06 / DLC07 | AI 初审 + 人工裁决 + 反方二审 |
+| **31,583 条** | **6,352 条** | **本体 + 全部 DLC** |
 
 **[⬇️ 下载最新版本](https://github.com/WeiXianyang/dishonored-cn/releases/latest)** · **[📖 查看安装教程](安装教程-完整版.md)** · **[🔍 核对 6,352 条修改](changelog.json)** · **[🧰 复用通用汉化修补 Skill](.reasonix/skills/localization-pipeline/SKILL.md)**
-
-> ⭐ 如果补丁或工作流对你有帮助，欢迎点一下右上角的 **Star**。它会帮助更多玩家发现这个项目，也支持作者继续维护。
 
 ---
 
 ## 🧰 可复用于更多游戏的汉化修补 Skill
 
-本项目把实战方法沉淀成了一个可复制的 **AI 辅助游戏汉化安全修补 Skill**。它不绑定《耻辱》、游戏引擎、文件格式、模型或 AI 平台：UE、Unity、Ren'Py、RPG Maker、自研引擎，以及 CSV、PO、JSON、数据库和提取后的二进制资源都可通过适配器接入。
+本项目把方法沉淀成了一个可复制的 **AI 辅助游戏汉化安全修补 Skill**。UE、Unity、Ren'Py、RPG Maker、自研引擎，以及 CSV、PO、JSON、数据库和提取后的二进制资源都可通过适配器接入。
 
 **直接使用**：复制 [`.reasonix/skills/localization-pipeline/`](.reasonix/skills/localization-pipeline/) 到支持 `SKILL.md` 的 Agent 环境；也可以把 [`SKILL.md`](.reasonix/skills/localization-pipeline/SKILL.md) 直接提供给任意 AI。面向人的完整中文说明见 [`LOCALIZATION_PIPELINE.md`](LOCALIZATION_PIPELINE.md)。
 
@@ -245,7 +242,8 @@ Full 形态共 5 个 zip 分卷（因为单文件超过 100 MB，GitHub 不能�
 - `subimport.exe` 是天邈汉化组 2015 年的注入工具，无任何联网行为。请在杀毒软件中「信任/允许」后重试。本补丁所有文件均附 SHA-256 清单（`hashes.json` / `release-manifest.json`）可核验，绝无恶意代码。
 
 ### Q6：双击 `安装.bat` 闪一下就没了 / 提示找不到 `DishonoredGame`
-- 说明脚本没自动找到游戏目录（游戏装在非常见路径），且手动输入的路径也不对。
+- 说明脚本没自动找到游戏目录（游戏装在非常见路径），且手动输入的路径也不对。
+
 - 手输时填**游戏根目录**（里面有 `DishonoredGame`、`Binaries`、`Engine`、`DLC` 的那一层），不是里面的 `DishonoredGame` 子文件夹，路径不要带引号。
 
 ### Q7：游戏启动就崩溃（黑屏退出 / 报错）
