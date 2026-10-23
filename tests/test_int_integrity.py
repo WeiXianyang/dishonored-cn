@@ -13,21 +13,19 @@ from verify_int_integrity import analyze_int, read_archive, verify
 INT = "DishonoredGame/Localization/INT/"
 BASELINE = json.loads((ROOT / "tests/fixtures/int_release_baseline.json").read_text("utf-8"))
 SOURCE_SCHEMA = json.loads((ROOT / "tests/fixtures/int_source_schema.json").read_text("utf-8"))
-PROPOSED = ROOT / "tmp/full-localization-audit/pipeline/proposed_packages"
-
 class FullIntIntegrityTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.lite_path = PROPOSED / "Dishonored-CN-1.4p-Lite.zip"
-        cls.full_path = PROPOSED / "Dishonored-CN-1.4p-Full-part1-INT.zip"
+        cls.lite_path = ROOT / "Dishonored-CN-1.4p-Lite.zip"
+        cls.full_path = ROOT / "release/Dishonored-CN-1.4p-Full-part1-INT.zip"
         with zipfile.ZipFile(cls.lite_path) as archive:
             cls.members = {name: archive.read(name) for name in archive.namelist()}
 
     def test_confirmed_packages_match_all_658_schema_and_member_hashes(self):
         verify(self.lite_path, BASELINE, SOURCE_SCHEMA)
         verify(self.full_path, BASELINE, SOURCE_SCHEMA)
-        lite = read_archive(self.lite_path)
-        full = read_archive(self.full_path)
+        lite = read_archive(self.lite_path, SOURCE_SCHEMA)
+        full = read_archive(self.full_path, SOURCE_SCHEMA)
         self.assertEqual(lite["int_schema"], full["int_schema"])
         self.assertEqual(
             {name: digest for name, digest in lite["members"].items() if name.lower().endswith(".int")},
