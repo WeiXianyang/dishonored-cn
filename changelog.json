@@ -1,5 +1,113 @@
 [
  {
+  "id": "int:DishonoredGame.int:DisDLC05GameInfo:m_Challenges[0].m_ExpertModeDesc:m_ExpertModeDesc",
+  "context": {
+   "file": "DishonoredGame.int",
+   "section": "DisDLC05GameInfo",
+   "key": "m_Challenges[0].m_ExpertModeDesc",
+   "assignment_occurrence": 0,
+   "subkey": "m_ExpertModeDesc",
+   "field_occurrence": 0,
+   "style": "struct_field",
+   "line": 1343
+  },
+  "en": "Very Hard stealth difficulty. The clues are placed on the belts of some characters.",
+  "old": null,
+  "new": "潜行难度设为极难。线索放在部分人物的腰带上。",
+  "reason": "补齐中文 struct 中遗漏的非空极难挑战说明；索引与英文挑战条目对应。",
+  "source": "manual"
+ },
+ {
+  "id": "int:DishonoredGame.int:DisDLC05GameInfo:m_Challenges[1].m_ExpertModeDesc:m_ExpertModeDesc",
+  "context": {
+   "file": "DishonoredGame.int",
+   "section": "DisDLC05GameInfo",
+   "key": "m_Challenges[1].m_ExpertModeDesc",
+   "assignment_occurrence": 0,
+   "subkey": "m_ExpertModeDesc",
+   "field_occurrence": 0,
+   "style": "struct_field",
+   "line": 1344
+  },
+  "en": "Very Hard stealth difficulty. You have no supernatural powers. Some doors and chests are locked, and the placement of the valuables is different.",
+  "old": null,
+  "new": "潜行难度设为极难。你无法使用超自然能力。部分门和箱子上了锁，贵重物品的摆放位置也有所不同。",
+  "reason": "补齐中文 struct 中遗漏的非空极难挑战说明；索引与英文挑战条目对应。",
+  "source": "manual"
+ },
+ {
+  "id": "int:DishonoredGame.int:DisDLC05GameInfo:m_Challenges[2].m_ExpertModeDesc:m_ExpertModeDesc",
+  "context": {
+   "file": "DishonoredGame.int",
+   "section": "DisDLC05GameInfo",
+   "key": "m_Challenges[2].m_ExpertModeDesc",
+   "assignment_occurrence": 0,
+   "subkey": "m_ExpertModeDesc",
+   "field_occurrence": 0,
+   "style": "struct_field",
+   "line": 1345
+  },
+  "en": "Combat difficulty set to Very Hard. The enemies are aware of you as soon as they appear.",
+  "old": null,
+  "new": "战斗难度设为极难。敌人一出现就会察觉到你。",
+  "reason": "补齐中文 struct 中遗漏的非空极难挑战说明；索引与英文挑战条目对应。",
+  "source": "manual"
+ },
+ {
+  "id": "int:DishonoredGame.int:DisDLC05GameInfo:m_Challenges[7].m_ExpertModeDesc:m_ExpertModeDesc",
+  "context": {
+   "file": "DishonoredGame.int",
+   "section": "DisDLC05GameInfo",
+   "key": "m_Challenges[7].m_ExpertModeDesc",
+   "assignment_occurrence": 0,
+   "subkey": "m_ExpertModeDesc",
+   "field_occurrence": 0,
+   "style": "struct_field",
+   "line": 1350
+  },
+  "en": "Assassins patrol the area. Grab the elixirs dispatched around the map to restore your mana.",
+  "old": null,
+  "new": "刺客会在区域内巡逻。拾取地图各处的药剂可恢复魔力。",
+  "reason": "补齐中文 struct 中遗漏的非空极难挑战说明；索引与英文挑战条目对应。",
+  "source": "manual"
+ },
+ {
+  "id": "int:DishonoredGame.int:DisDLC05GameInfo:m_Challenges[8].m_ExpertModeDesc:m_ExpertModeDesc",
+  "context": {
+   "file": "DishonoredGame.int",
+   "section": "DisDLC05GameInfo",
+   "key": "m_Challenges[8].m_ExpertModeDesc",
+   "assignment_occurrence": 0,
+   "subkey": "m_ExpertModeDesc",
+   "field_occurrence": 0,
+   "style": "struct_field",
+   "line": 1351
+  },
+  "en": "Mana is limited. Some Assassins patrol the area. Some obstacles are added.",
+  "old": null,
+  "new": "魔力有限。区域内有部分刺客巡逻，并增添了一些障碍。",
+  "reason": "补齐中文 struct 中遗漏的非空极难挑战说明；索引与英文挑战条目对应。",
+  "source": "manual"
+ },
+ {
+  "id": "int:DishonoredGame.int:DisDLC05GameInfo:m_Challenges[9].m_ExpertModeDesc:m_ExpertModeDesc",
+  "context": {
+   "file": "DishonoredGame.int",
+   "section": "DisDLC05GameInfo",
+   "key": "m_Challenges[9].m_ExpertModeDesc",
+   "assignment_occurrence": 0,
+   "subkey": "m_ExpertModeDesc",
+   "field_occurrence": 0,
+   "style": "struct_field",
+   "line": 1352
+  },
+  "en": "Some obstacles are added between platforms. You take damage from falls.",
+  "old": null,
+  "new": "平台之间增加了障碍。坠落会使你受伤。",
+  "reason": "补齐中文 struct 中遗漏的非空极难挑战说明；索引与英文挑战条目对应。",
+  "source": "manual"
+ },
+ {
   "id": "int:AssassinsTraining_MS.int:Notes.DisclaimerExpert_AbstrInv1 DisAbstractItem:m_Description",
   "context": {
    "file": "AssassinsTraining_MS.int",

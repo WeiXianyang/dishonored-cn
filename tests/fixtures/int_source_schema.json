@@ -1,0 +1,866 @@
+{
+  "source": "_backup_int english corpus; source-confirmed struct string fields only",
+  "struct_string_fields": {
+    "artdealer_ms.int": [],
+    "assassinstraining_ms.int": [],
+    "audiograph_assets.int": [],
+    "audiograph_twk.int": [],
+    "bendtimemassacre_ms_tweak.int": [],
+    "blueprints_twk.int": [],
+    "blueprints_twk_abst.int": [],
+    "boyle_abstractinv_assets.int": [],
+    "boyle_abstractinv_ms.int": [],
+    "boyle_ext_ms.int": [],
+    "boyle_int_ms.int": [],
+    "boyle_objectives.int": [],
+    "boyle_twk.int": [],
+    "bridge_abstract.int": [],
+    "bridge_ms.int": [],
+    "bridge_objectives.int": [],
+    "bridge_tweaks.int": [],
+    "bridge_twk.int": [],
+    "brothel_objectives.int": [],
+    "brothel_tweak.int": [],
+    "brothel_twk.int": [],
+    "chaingauntlet_script_ms.int": [],
+    "chainkill_script_ms.int": [],
+    "chapternotes_twk.int": [],
+    "climbable_twk.int": [],
+    "components_twk.int": [],
+    "countdown_ms.int": [],
+    "descriptions.int": [],
+    "dishonorededitor.int": [],
+    "dishonoredgame.int": [
+      "m_Description",
+      "m_ExpertModeDesc",
+      "m_InteractTextOverride",
+      "m_Name"
+    ],
+    "distillery_ms.int": [],
+    "dlc05_01.int": [],
+    "dlc05_accuracy.int": [],
+    "dlc05_bendtimemassacre.int": [],
+    "dlc05_bootcamp.int": [],
+    "dlc05_catchmeifyoucan.int": [],
+    "dlc05_chaingauntlet.int": [],
+    "dlc05_chainkill.int": [],
+    "dlc05_countdown.int": [],
+    "dlc05_infiltrate01.int": [],
+    "dlc05_movable_twk.int": [],
+    "dlc05_mysteryman.int": [],
+    "dlc05_race01.int": [],
+    "dlc05_thethreekeys.int": [],
+    "dlc05_thief.int": [],
+    "dlc05_usable_twk.int": [
+      "m_InteractTextOverride"
+    ],
+    "dlc06_assault_objectives.int": [],
+    "dlc06_attach_butcher.int": [],
+    "dlc06_audiograph_twk.int": [],
+    "dlc06_blueprints_seekfree.int": [],
+    "dlc06_blueprints_twk.int": [],
+    "dlc06_chapterinfolist.int": [],
+    "dlc06_chapternotes_twk.int": [],
+    "dlc06_daudbase_script.int": [
+      "m_ChoiceText"
+    ],
+    "dlc06_daudsbase_absinv_ms.int": [],
+    "dlc06_daudsbase_ms.int": [],
+    "dlc06_dishonoredgamefull_p.int": [],
+    "dlc06_intro_ms_abst.int": [],
+    "dlc06_intro_objectives.int": [],
+    "dlc06_inv_arcmine.int": [],
+    "dlc06_inv_cleaverbutcher.int": [],
+    "dlc06_inv_npc_butcher.int": [],
+    "dlc06_inv_sumassassin.int": [],
+    "dlc06_locationmaps_assets.int": [],
+    "dlc06_missionstats.int": [
+      "m_Description"
+    ],
+    "dlc06_notes_slaughter.int": [],
+    "dlc06_pckp_ammo.int": [],
+    "dlc06_pckp_heirlooms.int": [],
+    "dlc06_pckp_maps.int": [],
+    "dlc06_proj_flashsmoke.int": [],
+    "dlc06_proj_sawprojectiles.int": [],
+    "dlc06_pwn_aristo_f_timsh.int": [],
+    "dlc06_pwn_assassin_lieut.int": [],
+    "dlc06_pwn_butcher.int": [],
+    "dlc06_pwn_cleaverbutcher_base.int": [],
+    "dlc06_pwn_dead_npcs.int": [],
+    "dlc06_pwn_laborer_f_1.int": [],
+    "dlc06_pwn_laborer_f_ames.int": [],
+    "dlc06_pwn_laborer_mtall_1.int": [],
+    "dlc06_pwn_middleclass_mtall_1.int": [],
+    "dlc06_pwn_mtall_rothwild.int": [],
+    "dlc06_pwn_mtall_timsh.int": [],
+    "dlc06_pwn_thugwhiskey_msmall_1.int": [],
+    "dlc06_pwn_witch_delilah.int": [],
+    "dlc06_rewiretool.int": [],
+    "dlc06_securitysystems_twk.int": [
+      "m_InteractTextOverride"
+    ],
+    "dlc06_slaughter_ext_assn.int": [],
+    "dlc06_slaughter_ext_p.int": [
+      "m_ChoiceText"
+    ],
+    "dlc06_slaughter_ext_script.int": [],
+    "dlc06_slaughter_int_assassin.int": [],
+    "dlc06_slaughter_int_script.int": [
+      "m_ChoiceText"
+    ],
+    "dlc06_slaughter_int_script2.int": [],
+    "dlc06_slaughter_ms_abst.int": [],
+    "dlc06_slaughter_objectives.int": [],
+    "dlc06_slaughter_twk.int": [
+      "m_InteractTextOverride"
+    ],
+    "dlc06_store_seekfree.int": [],
+    "dlc06_timsh_estate_p.int": [
+      "m_ChoiceText"
+    ],
+    "dlc06_timsh_estate_scripts.int": [
+      "m_ChoiceText"
+    ],
+    "dlc06_timsh_ms_abst.int": [],
+    "dlc06_timsh_ms_pawns.int": [],
+    "dlc06_timsh_ms_tweak.int": [],
+    "dlc06_timsh_objectives.int": [],
+    "dlc06_timsh_streets_p.int": [
+      "m_ChoiceText"
+    ],
+    "dlc06_timsh_streets_scripts.int": [],
+    "dlc06_tower_script.int": [],
+    "dlc06_traps_twk.int": [],
+    "dlc06_tutorials_twk.int": [],
+    "dlc06_twk_inv_grenadedaud.int": [],
+    "dlc06_twk_inv_playerspecific.int": [],
+    "dlc06_twk_player_daud.int": [
+      "m_Name",
+      "m_Text"
+    ],
+    "dlc06_twk_powers_assassummon.int": [],
+    "dlc06_twk_store.int": [
+      "m_Description",
+      "m_Name"
+    ],
+    "dlc06_twk_ui.int": [],
+    "dlc06_twk_ui_mainmenu.int": [],
+    "dlc06_twk_upgrades.int": [],
+    "dlc06_writtennotes_twk.int": [],
+    "dlc07_audiograph_twk.int": [],
+    "dlc07_base_objectives.int": [],
+    "dlc07_baseintro_twk.int": [],
+    "dlc07_blueprints_seekfree.int": [],
+    "dlc07_blueprints_twk.int": [],
+    "dlc07_brig_abstinv_seekfree.int": [],
+    "dlc07_brig_abstractinv_ms.int": [],
+    "dlc07_brig_void_ms.int": [],
+    "dlc07_briglever.int": [
+      "m_InteractTextOverride"
+    ],
+    "dlc07_brigmore_objectives.int": [],
+    "dlc07_brigmore_void_fx.int": [],
+    "dlc07_chapterinfolist.int": [],
+    "dlc07_chapternotes_twk.int": [],
+    "dlc07_coldridge_absinv_ms.int": [],
+    "dlc07_coldridge_ms.int": [],
+    "dlc07_coldridge_objectives.int": [],
+    "dlc07_designtemp.int": [],
+    "dlc07_drapermill_absinv_ms.int": [],
+    "dlc07_drapermill_twk.int": [
+      "m_InteractTextOverride"
+    ],
+    "dlc07_drapership_twk.int": [],
+    "dlc07_draperstreet_twk.int": [
+      "m_InteractTextOverride"
+    ],
+    "dlc07_drapersward_objectives.int": [],
+    "dlc07_dwenginecoil_objectives.int": [],
+    "dlc07_dwgeezer_objectives.int": [],
+    "dlc07_dwsewer_absinv_ms.int": [],
+    "dlc07_dwsewer_objectives.int": [],
+    "dlc07_dwsewer_twk.int": [],
+    "dlc07_dwship_ms_seekfree.int": [],
+    "dlc07_dwstreets_absinv_ms.int": [],
+    "dlc07_gravehound.int": [],
+    "dlc07_inv_corvo.int": [],
+    "dlc07_inv_daud.int": [],
+    "dlc07_inv_tentacle.int": [],
+    "dlc07_inv_thug.int": [],
+    "dlc07_inv_witch.int": [],
+    "dlc07_missionstats.int": [
+      "m_Description"
+    ],
+    "dlc07_notes_drapersward.int": [],
+    "dlc07_npcplotsettings.int": [],
+    "dlc07_pckp_crackedbonecharms.int": [],
+    "dlc07_pckp_heirlooms.int": [],
+    "dlc07_pwn_civilian.int": [],
+    "dlc07_pwn_corvo.int": [],
+    "dlc07_pwn_deadpawns.int": [],
+    "dlc07_pwn_edgarwakefield.int": [],
+    "dlc07_pwn_f_deadeelthug.int": [],
+    "dlc07_pwn_geezer.int": [],
+    "dlc07_pwn_gravehound.int": [],
+    "dlc07_pwn_laborer.int": [],
+    "dlc07_pwn_lizzystride.int": [],
+    "dlc07_pwn_msmall_deadeelthug.int": [],
+    "dlc07_pwn_nursetrimble.int": [],
+    "dlc07_pwn_prisoner.int": [],
+    "dlc07_pwn_tentacle.int": [],
+    "dlc07_pwn_witch.int": [],
+    "dlc07_pwn_witch_delilah.int": [],
+    "dlc07_store_seekfree.int": [],
+    "dlc07_twk_player_daud.int": [
+      "m_Name",
+      "m_Text"
+    ],
+    "dlc07_twk_powers_assassummon.int": [],
+    "dlc07_twk_store.int": [
+      "m_Description",
+      "m_Name"
+    ],
+    "dlc07_twk_ui.int": [],
+    "dlc07_twk_upgrades.int": [],
+    "dlc07_usable_twk.int": [
+      "m_InteractTextOverride"
+    ],
+    "dlc07_writtennotes_twk.int": [],
+    "doors_transition_twk.int": [],
+    "doors_twk.int": [],
+    "dropattack_script_ms.int": [],
+    "e3_tweaks.int": [],
+    "examplegame.int": [],
+    "flooded_abstractinv_ms.int": [],
+    "flooded_objectives.int": [],
+    "flooded_tweaks.int": [],
+    "flooded_twk.int": [],
+    "galvani_ms.int": [],
+    "gfxui.int": [],
+    "hub_abstinv.int": [],
+    "hub_abstractinv_ms.int": [],
+    "hub_fx.int": [],
+    "hub_ms.int": [],
+    "hub_twk.int": [],
+    "izerraf_loctest.int": [],
+    "jlake_objectives.int": [],
+    "l_artdealer_audio.int": [],
+    "l_artdealer_scripts.int": [
+      "m_ChoiceText"
+    ],
+    "l_boyle_ext_audio.int": [],
+    "l_boyle_ext_p.int": [
+      "m_ChoiceText"
+    ],
+    "l_boyle_ext_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_boyle_int_audio.int": [],
+    "l_boyle_int_p.int": [
+      "m_ChoiceText"
+    ],
+    "l_boyle_int_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_boylestreet_ext_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_bridge_part1a_audio.int": [],
+    "l_bridge_part1a_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_bridge_part1b_audio.int": [],
+    "l_bridge_part1b_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_bridge_part1c_audio.int": [],
+    "l_bridge_part1c_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_bridge_part2_audio.int": [],
+    "l_bridge_part2_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_brothel_audio.int": [],
+    "l_brothel_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_distillery2_audio.int": [],
+    "l_distillery2_p.int": [],
+    "l_distillery2_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_distillery_audio.int": [],
+    "l_distillery_loot.int": [
+      "m_ChoiceText"
+    ],
+    "l_distillery_strt1script.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc05_arena_p.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc05_arena_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc05_atrain_p.int": [],
+    "l_dlc05_atrain_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc05_btm_p.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc05_btm_script_01.int": [],
+    "l_dlc05_btm_script_02.int": [],
+    "l_dlc05_btm_script_03.int": [],
+    "l_dlc05_btm_script_04.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc05_btm_script_05.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc05_btm_script_06.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc05_chainkill_p.int": [],
+    "l_dlc05_chainkill_phase_01.int": [],
+    "l_dlc05_chainkill_phase_02.int": [],
+    "l_dlc05_chainkill_phase_03.int": [],
+    "l_dlc05_chainkill_phase_04.int": [],
+    "l_dlc05_chainkill_phase_05.int": [],
+    "l_dlc05_chainkill_phase_06.int": [],
+    "l_dlc05_chainkill_script.int": [],
+    "l_dlc05_cntdwn_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc05_countdown_p.int": [],
+    "l_dlc05_dropattack_p.int": [],
+    "l_dlc05_drpatt_env.int": [],
+    "l_dlc05_drpatt_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc05_mysteryman_p.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc05_mystman_audio.int": [],
+    "l_dlc05_mystman_env.int": [],
+    "l_dlc05_mystman_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc05_oilrain_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc05_race_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc05_thief_audio.int": [],
+    "l_dlc05_thief_p.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc05_thief_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc07_baseintro_audio.int": [],
+    "l_dlc07_baseintro_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc07_brig_ext_audio.int": [],
+    "l_dlc07_brig_ext_p.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc07_brig_ext_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc07_brig_scriptnew.int": [],
+    "l_dlc07_brigmore_int_audio.int": [],
+    "l_dlc07_brigmore_int_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc07_brigmore_void_script.int": [],
+    "l_dlc07_coldridge_audio.int": [],
+    "l_dlc07_coldridge_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc07_drapermill_audio.int": [],
+    "l_dlc07_drapermill_p.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc07_drapermill_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc07_drapersewer_audio.int": [],
+    "l_dlc07_drapersewer_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc07_drapersewers_p.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc07_drapership_loot.int": [],
+    "l_dlc07_drapership_p.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc07_drapership_script.int": [],
+    "l_dlc07_draperstreets_audio.int": [],
+    "l_dlc07_draperstreets_loot.int": [],
+    "l_dlc07_draperstreets_p.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc07_draperstreets_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_dlc07_endgame_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_flooded_fassassins_audio.int": [],
+    "l_flooded_fassassins_p.int": [
+      "m_ChoiceText"
+    ],
+    "l_flooded_fassassins_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_flooded_fgate_audio.int": [],
+    "l_flooded_fgate_p.int": [
+      "m_ChoiceText"
+    ],
+    "l_flooded_fgate_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_flooded_frefinery_audio.int": [],
+    "l_flooded_frefinery_intro.int": [],
+    "l_flooded_frefinery_p.int": [
+      "m_ChoiceText"
+    ],
+    "l_flooded_frefinery_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_flooded_fstreets_p.int": [
+      "m_ChoiceText"
+    ],
+    "l_flooded_fstreets_script.int": [],
+    "l_galvani1_audio.int": [],
+    "l_galvani1_scripts.int": [
+      "m_ChoiceText"
+    ],
+    "l_galvani1_strt1_scripts.int": [],
+    "l_galvani1_strt2_scripts.int": [],
+    "l_isl_audio_master.int": [],
+    "l_isl_audio_slave.int": [],
+    "l_isl_common_master.int": [],
+    "l_isl_common_slave.int": [],
+    "l_isl_geom_master.int": [],
+    "l_isl_geom_slave.int": [],
+    "l_isl_highchaos_script.int": [],
+    "l_isl_lowchaos_script.int": [],
+    "l_isl_script_master.int": [
+      "m_ChoiceText"
+    ],
+    "l_isl_script_slave.int": [
+      "m_ChoiceText"
+    ],
+    "l_lighth_audio_master.int": [],
+    "l_lighth_audio_slave.int": [],
+    "l_lighth_highchaos_script.int": [],
+    "l_lighth_lowchaos_script.int": [],
+    "l_lighth_script_master.int": [],
+    "l_lighth_script_slave.int": [],
+    "l_outsiderdream_p.int": [],
+    "l_outsiderdream_script.int": [],
+    "l_ovrsr_audio.int": [],
+    "l_ovrsr_back_audio.int": [],
+    "l_ovrsr_back_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_ovrsr_kennel_audio.int": [],
+    "l_ovrsr_kennel_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_ovrsr_returnpath.int": [],
+    "l_ovrsr_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_prison_audio.int": [],
+    "l_prison_p.int": [],
+    "l_prison_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_prsnsewer_geo.int": [],
+    "l_prsnsewer_p.int": [
+      "m_ChoiceText"
+    ],
+    "l_prsnsewer_ratscene.int": [],
+    "l_prsnsewer_script.int": [],
+    "l_pub_assault_env.int": [],
+    "l_pub_day_audio.int": [],
+    "l_pub_day_env.int": [],
+    "l_pub_dusk_audio.int": [],
+    "l_pub_dusk_env.int": [],
+    "l_pub_dusk_p.int": [],
+    "l_pub_fromboyle_script.int": [],
+    "l_pub_frombridge_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_pub_frombridge_script_sleep.int": [],
+    "l_pub_frombrothel_script.int": [],
+    "l_pub_fromflooded_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_pub_fromovrsr_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_pub_fromovrsr_script_sleep.int": [],
+    "l_pub_fromprison_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_pub_fromprison_script_sleep.int": [],
+    "l_pub_fromtwrreturn_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_pub_morning_audio.int": [],
+    "l_pub_morning_env.int": [],
+    "l_pub_morning_p.int": [],
+    "l_pub_night_audio.int": [],
+    "l_pub_night_env.int": [],
+    "l_streets1_audio.int": [],
+    "l_streets1_p.int": [
+      "m_ChoiceText"
+    ],
+    "l_streets1_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_streets2_audio.int": [],
+    "l_streets2_p.int": [],
+    "l_streets2_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_streetsewer_audio.int": [],
+    "l_streetsewer_p.int": [],
+    "l_streetsewer_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_tower_script.int": [],
+    "l_towerrtrn_int_audio.int": [],
+    "l_towerrtrn_int_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_towerrtrn_yard_audio.int": [],
+    "l_towerrtrn_yard_p.int": [],
+    "l_towerrtrn_yard_roof_script.int": [
+      "m_ChoiceText"
+    ],
+    "l_towerrtrn_yard_script.int": [
+      "m_ChoiceText"
+    ],
+    "lighthouse_island_ms.int": [],
+    "lighthouse_objectives.int": [],
+    "lighthouse_tweaks.int": [],
+    "lighthouse_twk.int": [],
+    "locationmaps_assets.int": [],
+    "money_twk.int": [],
+    "money_twk_abs.int": [],
+    "movable_twk.int": [],
+    "movablelimb_interact_twk.int": [],
+    "mysteryman_ms.int": [],
+    "oilrain_ms.int": [],
+    "outsiderdream_objectives.int": [],
+    "outsidershrine_twk.int": [],
+    "overseer_designtemp.int": [],
+    "overseer_ms.int": [],
+    "overseer_twk.int": [],
+    "ovrsr_abstractinv_assets.int": [],
+    "ovrsr_abstractinv_ms.int": [],
+    "ovrsr_objectives.int": [],
+    "paspeaker_twk.int": [],
+    "pawn_fighterciv_mtall_1.int": [],
+    "pickups_twk.int": [],
+    "pickups_twk_keys.int": [],
+    "prison_abstractinv_assets.int": [],
+    "prison_abstractinv_ms.int": [],
+    "prison_ms.int": [],
+    "prison_objectives.int": [],
+    "prsnsewer_twk.int": [],
+    "pub_objectives.int": [],
+    "pwn_aristo_f_1.int": [],
+    "pwn_aristo_f_1_mask1.int": [],
+    "pwn_aristo_f_2.int": [],
+    "pwn_aristo_f_3.int": [],
+    "pwn_aristo_f_4.int": [],
+    "pwn_aristo_mtall_1.int": [],
+    "pwn_aristo_mtall_1_mask1.int": [],
+    "pwn_aristo_mtall_2.int": [],
+    "pwn_aristo_mtall_3.int": [],
+    "pwn_aristo_mtall_4.int": [],
+    "pwn_assassin_mtall_1.int": [],
+    "pwn_assassin_mtbase.int": [],
+    "pwn_assassinintro_mtall_1.int": [],
+    "pwn_assassinslack_mtall_1.int": [],
+    "pwn_bridge.int": [],
+    "pwn_brothelmadam_f.int": [],
+    "pwn_cityguard_msmall_0.int": [],
+    "pwn_cityguard_msmall_1.int": [],
+    "pwn_cityguard_msmall_1_full1.int": [],
+    "pwn_cityguard_msmall_1_helm1.int": [],
+    "pwn_cityguard_msmall_1_mask1.int": [],
+    "pwn_cityguard_msmall_2.int": [],
+    "pwn_cityguard_msmall_2_helm1.int": [],
+    "pwn_cityguard_msmall_2_mask2.int": [],
+    "pwn_cityguard_msmall_3.int": [],
+    "pwn_cityguard_msmall_3_helm1.int": [],
+    "pwn_cityguard_msmall_3_mask1.int": [],
+    "pwn_civ_base.int": [],
+    "pwn_daud_mtall_1.int": [],
+    "pwn_dead_npcs.int": [],
+    "pwn_eliteguard_base.int": [],
+    "pwn_eliteguard_mtall_0.int": [],
+    "pwn_eliteguard_mtall_1.int": [],
+    "pwn_eliteguard_mtall_1_full1.int": [],
+    "pwn_eliteguard_mtall_1_helm1.int": [],
+    "pwn_eliteguard_mtall_1_mask1.int": [],
+    "pwn_eliteguard_mtall_2.int": [],
+    "pwn_eliteguard_mtall_2_helm1.int": [],
+    "pwn_eliteguard_mtall_2_mask2.int": [],
+    "pwn_eliteguard_mtall_3.int": [],
+    "pwn_eliteguard_mtall_3_helm1.int": [],
+    "pwn_eliteguard_mtall_3_mask1.int": [],
+    "pwn_eliteguard_mtall_4.int": [],
+    "pwn_eliteguard_mtall_4_helm1.int": [],
+    "pwn_eliteguard_mtall_4_hub7.int": [],
+    "pwn_eliteguard_mtall_4_mask2.int": [],
+    "pwn_eliteguard_mtall_5.int": [],
+    "pwn_eliteguard_mtall_5_helm1.int": [],
+    "pwn_eliteguard_mtall_5_hub7.int": [],
+    "pwn_eliteguard_prison.int": [],
+    "pwn_execsister_f.int": [],
+    "pwn_grannyrags_f.int": [],
+    "pwn_grif_msmall.int": [],
+    "pwn_guard_base.int": [],
+    "pwn_leglessbum_msmall.int": [],
+    "pwn_lowerguard_mtall_0.int": [],
+    "pwn_lowerguard_mtall_0_mask1.int": [],
+    "pwn_lowerguard_mtall_1.int": [],
+    "pwn_lowerguard_mtall_1_cap1.int": [],
+    "pwn_lowerguard_mtall_2.int": [],
+    "pwn_lowerguard_mtall_2_cap1.int": [],
+    "pwn_lowerguard_mtall_3.int": [],
+    "pwn_lowerguard_mtall_3_cap1.int": [],
+    "pwn_lowerguard_mtall_4.int": [],
+    "pwn_lowerguard_mtall_4_cap1.int": [],
+    "pwn_lowerguardintro_mtall_0.int": [],
+    "pwn_middleclass_f_1.int": [],
+    "pwn_middleclass_f_1_mask1.int": [],
+    "pwn_middleclass_f_2.int": [],
+    "pwn_middleclass_f_2_hat1.int": [],
+    "pwn_middleclass_f_3.int": [],
+    "pwn_middleclass_f_3_hat1.int": [],
+    "pwn_middleclass_f_4.int": [],
+    "pwn_middleclass_msmall_1.int": [],
+    "pwn_middleclass_msmall_1_hat1.int": [],
+    "pwn_middleclass_msmall_1_tower.int": [],
+    "pwn_middleclass_mtall_1.int": [],
+    "pwn_middleclass_mtall_1_hat1.int": [],
+    "pwn_middleclass_mtall_1_mask1.int": [],
+    "pwn_middleclass_mtall_2.int": [],
+    "pwn_middleclass_mtall_2_hat1.int": [],
+    "pwn_middleclass_mtall_3.int": [],
+    "pwn_middleclass_mtall_3_hat1.int": [],
+    "pwn_musico_regent_mtall_1.int": [],
+    "pwn_musicoverseer_mtall_1.int": [],
+    "pwn_overseer_base.int": [],
+    "pwn_overseer_mtall_1.int": [],
+    "pwn_overseerhmaster_mtall_1.int": [],
+    "pwn_prostitute_f_1.int": [],
+    "pwn_prostitute_f_1_mask1.int": [],
+    "pwn_prostitute_f_2.int": [],
+    "pwn_prostitute_f_2_mask1.int": [],
+    "pwn_prostitute_f_3.int": [],
+    "pwn_prostitute_f_3_mask1.int": [],
+    "pwn_prostitute_f_4.int": [],
+    "pwn_prostitute_f_4_mask1.int": [],
+    "pwn_prostitute_f_5.int": [],
+    "pwn_prostitute_f_5_mask1.int": [],
+    "pwn_prsnsewer.int": [],
+    "pwn_servant_f_1.int": [],
+    "pwn_servant_f_2.int": [],
+    "pwn_slackjaw_mtall_1.int": [],
+    "pwn_thug_base.int": [],
+    "pwn_thug_msmall_0.int": [],
+    "pwn_thug_msmall_1.int": [],
+    "pwn_thug_msmall_1_hat1.int": [],
+    "pwn_thug_msmall_2.int": [],
+    "pwn_thug_msmall_2_hat1.int": [],
+    "pwn_thug_msmall_3.int": [],
+    "pwn_thug_msmall_4.int": [],
+    "pwn_thug_msmall_5.int": [],
+    "pwn_thug_msmall_5_hat.int": [],
+    "pwn_thug_msmall_6.int": [],
+    "pwn_thug_msmall_6_hat1.int": [],
+    "pwn_thug_msmall_7.int": [],
+    "pwn_thug_msmall_7_hat1.int": [],
+    "pwn_thugwhiskey_msmall_1.int": [],
+    "pwn_thugwhiskey_msmall_1_hat1.int": [],
+    "pwn_thugwhiskey_msmall_2.int": [],
+    "pwn_thugwhiskey_msmall_2_hat1.int": [],
+    "pwn_thugwhiskey_msmall_3.int": [],
+    "pwn_thugwhiskey_msmall_3_hat1.int": [],
+    "pwn_thugwhiskey_msmall_4.int": [],
+    "pwn_thugwhiskey_msmall_4_hat1.int": [],
+    "pwn_weeper_base.int": [],
+    "pwn_weeper_fbase.int": [],
+    "pwn_weeper_msbase.int": [],
+    "pwn_weeper_mtbase.int": [],
+    "pwn_weeperaristo_f_1.int": [],
+    "pwn_weeperaristo_mtall_1.int": [],
+    "pwn_weepercity_msmall_1.int": [],
+    "pwn_weeperelite_mtall_1.int": [],
+    "pwn_weepermiddle_f_1.int": [],
+    "pwn_weepermiddle_f_2.int": [],
+    "pwn_weepermiddle_msmall_1.int": [],
+    "pwn_weepermiddle_mtall_1.int": [],
+    "pwn_weeperthug_msmall_1.int": [],
+    "pwn_weeperthug_msmall_2.int": [],
+    "race_ms.int": [],
+    "rewiretool_twk.int": [],
+    "rpg.int": [],
+    "runes_twk.int": [],
+    "scoring.int": [],
+    "securitysystems_twk.int": [
+      "m_InteractTextOverride"
+    ],
+    "settings.int": [],
+    "sewer_ms.int": [],
+    "stores_twk.int": [
+      "m_Description",
+      "m_Name"
+    ],
+    "streets_absinv.int": [],
+    "streets_ms.int": [],
+    "streets_objectives.int": [],
+    "streets_tweaks.int": [],
+    "streets_twk.int": [],
+    "streetsewer_absinv.int": [],
+    "streetsewer_twk.int": [],
+    "streetsshared_ms.int": [],
+    "subtitles.int": [],
+    "thief_ms_tweak.int": [],
+    "tower_01_ms.int": [],
+    "tower_abstractinv_assets.int": [],
+    "tower_abstractinv_ms.int": [],
+    "tower_objectives.int": [],
+    "tower_twk.int": [],
+    "tower_twk_abs.int": [],
+    "tutorials_twk.int": [],
+    "tutorials_twk_abst.int": [],
+    "twk_chapterinfolist.int": [],
+    "twk_emptyhands.int": [],
+    "twk_emptyhands_npc.int": [],
+    "twk_ingameui.int": [
+      "m_Description"
+    ],
+    "twk_inv_assassin.int": [],
+    "twk_inv_cityguard.int": [],
+    "twk_inv_crossbowbase.int": [],
+    "twk_inv_eliteguard.int": [],
+    "twk_inv_executioner.int": [],
+    "twk_inv_generic.int": [],
+    "twk_inv_grenadebase.int": [],
+    "twk_inv_grenadecorvo.int": [],
+    "twk_inv_heartbase.int": [],
+    "twk_inv_heartcorvo.int": [],
+    "twk_inv_lowerguard.int": [],
+    "twk_inv_npc_overseer.int": [],
+    "twk_inv_pistolbase.int": [],
+    "twk_inv_playerspecific.int": [],
+    "twk_inv_slackjaw.int": [],
+    "twk_inv_springrazor.int": [],
+    "twk_inv_springrazorbase.int": [],
+    "twk_inv_swordbase.int": [],
+    "twk_inv_swordbase_npc.int": [],
+    "twk_inv_tallboy.int": [],
+    "twk_inv_throwinghand.int": [],
+    "twk_inv_thug.int": [],
+    "twk_inv_whiskeybottlebase.int": [],
+    "twk_inv_whiskeybottlethug.int": [],
+    "twk_inv_wolfhound.int": [],
+    "twk_missionstats.int": [
+      "m_Description"
+    ],
+    "twk_npcplotsettings.int": [],
+    "twk_pawn_admiralhavelock.int": [],
+    "twk_pawn_antonsokolov.int": [],
+    "twk_pawn_bartender.int": [],
+    "twk_pawn_boatman.int": [],
+    "twk_pawn_boyle_party.int": [],
+    "twk_pawn_calista.int": [],
+    "twk_pawn_cityguard_rape.int": [],
+    "twk_pawn_corvo.int": [],
+    "twk_pawn_defaultnpc.int": [],
+    "twk_pawn_defaultplayer.int": [
+      "m_Name",
+      "m_Text"
+    ],
+    "twk_pawn_e3_crazydude.int": [],
+    "twk_pawn_e3_noble.int": [],
+    "twk_pawn_e3_weeper.int": [],
+    "twk_pawn_empress.int": [],
+    "twk_pawn_executioner.int": [],
+    "twk_pawn_guardcaptain.int": [],
+    "twk_pawn_hubservantfemale.int": [],
+    "twk_pawn_jonathanrussel.int": [],
+    "twk_pawn_ladyemily.int": [],
+    "twk_pawn_ladyesmaboyle.int": [],
+    "twk_pawn_ladylydiaboyle.int": [],
+    "twk_pawn_ladywaverlyboyle.int": [],
+    "twk_pawn_lighthouse_elites.int": [],
+    "twk_pawn_lighthouse_guards.int": [],
+    "twk_pawn_lordpendleton.int": [],
+    "twk_pawn_lordregent.int": [],
+    "twk_pawn_martin_hub.int": [],
+    "twk_pawn_martin_prison.int": [],
+    "twk_pawn_outsider.int": [],
+    "twk_pawn_overseercampbell.int": [],
+    "twk_pawn_overseermartin.int": [],
+    "twk_pawn_pendletonbrother_a.int": [],
+    "twk_pawn_pendletonbrother_b.int": [],
+    "twk_pawn_piero.int": [],
+    "twk_pawn_tallboy.int": [],
+    "twk_pawn_test_guard_offduty.int": [],
+    "twk_pawn_testpawn_farmer.int": [],
+    "twk_pawn_testpawn_merchant.int": [],
+    "twk_pawn_testpawnblueelite.int": [],
+    "twk_pawn_testpawnblueguard.int": [],
+    "twk_pawn_testpawnredelite.int": [],
+    "twk_pawn_testpawnredguard.int": [],
+    "twk_pawn_testpawnyellowelite.int": [],
+    "twk_pawn_testpawnyellowguard.int": [],
+    "twk_pawn_tower_captain.int": [],
+    "twk_pawn_wolfhound.int": [],
+    "twk_powers_devouringswarm.int": [],
+    "twk_powers_possess.int": [],
+    "twk_proj_arrows.int": [],
+    "twk_proj_grenade.int": [],
+    "twk_proj_grenadebase.int": [],
+    "twk_proj_stickygrenade.int": [],
+    "twk_proj_thrownobject.int": [],
+    "twk_proj_whiskeybottle.int": [],
+    "twk_projectiles.int": [],
+    "twk_ratswarm.int": [],
+    "twk_riverkrust_interactable.int": [],
+    "twk_ui_mainmenu.int": [],
+    "twk_ui_missionstats.int": [],
+    "twk_upgrades.int": [],
+    "usable_holdtouse_twk.int": [],
+    "usable_twk.int": [
+      "m_InteractTextOverride"
+    ],
+    "walloflight_twk.int": [
+      "m_InteractTextOverride"
+    ],
+    "watchtower.int": [],
+    "watchtower_twk.int": [],
+    "writtennotes_assets.int": [],
+    "writtennotes_twk.int": [],
+    "ysaquet_bridge.int": [
+      "m_InteractTextOverride"
+    ]
+  }
+}

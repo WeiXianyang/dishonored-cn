@@ -8,15 +8,13 @@
 面向 Windows Steam 版《Dishonored GOTY》的完整中文修复补丁，覆盖本体及全部dlc。
 项目基于天邈汉化组 **v1.4** 进行最小修补：保留原译风格，只修可确认的翻译错误、术语冲突与占位符问题。
 
+**2026-10-24 全量结构复核：** 恢复 DLC05 六条非空极难挑战说明，并修正 DLC06 对象路径标点、排行榜键分隔符、三份 INT 文件的重复 BOM，以及 DLC07 商店说明缺少的开引号。Lite 与 Full INT 分卷已同步；其他 Lite 包成员保持原内容。
+
 **2026-10-24 更新：** 修复本体第一章拾取生命／魔力药剂时使用提示回显资源标识的问题，同时补齐低生命／低魔力提示。已安装旧版的玩家，退出游戏后下载最新 `Dishonored-CN-1.4p-Full-part1-INT.zip`，解压覆盖到游戏根目录即可（Lite / Full 均适用）；无需重装其他分卷。完整安装包也已同步更新。
 
 > ✅ **已获天邈汉化组授权。** Full 与 Lite 两种形态任选其一，**不要同时安装**。
 
-| 双语语料 | 可审计修补 | 内容覆盖 |
-|:---:|:---:|:---:|:---:|
-| **31,583 条** | **6,352 条** | **本体 + 全部 DLC** |
-
-**[⬇️ 下载最新版本](https://github.com/WeiXianyang/dishonored-cn/releases/latest)** · **[📖 查看安装教程](安装教程-完整版.md)** · **[🔍 核对 6,352 条修改](changelog.json)** · **[🧰 复用通用汉化修补 Skill](.reasonix/skills/localization-pipeline/SKILL.md)**
+修复记录与逐项变更依据见 [`changelog.json`](changelog.json)。
 
 ---
 
@@ -272,7 +270,7 @@ Full 形态共 5 个 zip 分卷（因为单文件超过 100 MB，GitHub 不能�
 
 - `release-manifest.json`：Full 5 个分卷 + Lite 的 SHA-256 校验值。
 - `hashes.json`（Lite 包内）：Lite 全部文件 SHA-256 校验值。
-- `changelog.json`：全部 6,352 条修改明细（每条含 英文原文 / 天邈原译 / 修正后译文 / 修改理由），**公开可审计**。
+- `changelog.json`：逐项修复记录与依据，**公开可审计**。
 
 校验方法（可选）：将下载的 zip 拖入 7-Zip 或使用 `certutil -hashfile 文件名 SHA256` 比对清单中的值，一致即文件完整。
 
