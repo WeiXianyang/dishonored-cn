@@ -358666,5 +358666,117 @@
    "style": "quoted",
    "line": 24
   }
+ },
+ {
+  "id": "int:Twk_Pawn_Corvo.int:Twk_Pawn_Corvo DisTweaks_PlayerPawn:m_AcquiredElixirTutorialMessage_PC[0]",
+  "en": "Press `GBA_HealthElixir` to drink a Health potion.",
+  "old": "（缺失）",
+  "new": "按 `GBA_HealthElixir` 喝生命药剂。",
+  "reason": "补齐本体科尔沃及其 Release 对象缺失的键鼠药剂教程字段，修复拾取药剂和低生命/魔力提示回显资源标识；复用 DefaultPlayer 现有中文并保留动态按键。",
+  "context": {
+   "file": "Twk_Pawn_Corvo.int",
+   "section": "Twk_Pawn_Corvo DisTweaks_PlayerPawn",
+   "key": "m_AcquiredElixirTutorialMessage_PC[0]",
+   "assignment_occurrence": 0,
+   "style": "assignment"
+  }
+ },
+ {
+  "id": "int:Twk_Pawn_Corvo.int:Twk_Pawn_Corvo DisTweaks_PlayerPawn:m_AcquiredElixirTutorialMessage_PC[1]",
+  "en": "Press `GBA_ManaElixir` to drink a Mana potion.",
+  "old": "（缺失）",
+  "new": "按 `GBA_ManaElixir` 喝精神药剂。",
+  "reason": "补齐本体科尔沃及其 Release 对象缺失的键鼠药剂教程字段，修复拾取药剂和低生命/魔力提示回显资源标识；复用 DefaultPlayer 现有中文并保留动态按键。",
+  "context": {
+   "file": "Twk_Pawn_Corvo.int",
+   "section": "Twk_Pawn_Corvo DisTweaks_PlayerPawn",
+   "key": "m_AcquiredElixirTutorialMessage_PC[1]",
+   "assignment_occurrence": 0,
+   "style": "assignment"
+  }
+ },
+ {
+  "id": "int:Twk_Pawn_Corvo.int:Twk_Pawn_Corvo DisTweaks_PlayerPawn:m_UseElixirTutorialMessage_PC[0]",
+  "en": "Your Health is Low. Press `GBA_HealthElixir` to drink a potion.",
+  "old": "（缺失）",
+  "new": "你的生命值过低。按 `GBA_HealthElixir` 喝生命药剂。",
+  "reason": "补齐本体科尔沃及其 Release 对象缺失的键鼠药剂教程字段，修复拾取药剂和低生命/魔力提示回显资源标识；复用 DefaultPlayer 现有中文并保留动态按键。",
+  "context": {
+   "file": "Twk_Pawn_Corvo.int",
+   "section": "Twk_Pawn_Corvo DisTweaks_PlayerPawn",
+   "key": "m_UseElixirTutorialMessage_PC[0]",
+   "assignment_occurrence": 0,
+   "style": "assignment"
+  }
+ },
+ {
+  "id": "int:Twk_Pawn_Corvo.int:Twk_Pawn_Corvo DisTweaks_PlayerPawn:m_UseElixirTutorialMessage_PC[1]",
+  "en": "Your Mana is Low. Press `GBA_ManaElixir` to drink a potion.",
+  "old": "（缺失）",
+  "new": "你的魔力值过低。按 `GBA_ManaElixir` 喝魔法药剂。",
+  "reason": "补齐本体科尔沃及其 Release 对象缺失的键鼠药剂教程字段，修复拾取药剂和低生命/魔力提示回显资源标识；复用 DefaultPlayer 现有中文并保留动态按键。",
+  "context": {
+   "file": "Twk_Pawn_Corvo.int",
+   "section": "Twk_Pawn_Corvo DisTweaks_PlayerPawn",
+   "key": "m_UseElixirTutorialMessage_PC[1]",
+   "assignment_occurrence": 0,
+   "style": "assignment"
+  }
+ },
+ {
+  "id": "int:Twk_Pawn_Corvo.int:Twk_Pawn_Corvo_Release DisTweaks_PlayerPawn:m_AcquiredElixirTutorialMessage_PC[0]",
+  "en": "Press `GBA_HealthElixir` to drink a Health potion.",
+  "old": "（缺失）",
+  "new": "按 `GBA_HealthElixir` 喝生命药剂。",
+  "reason": "补齐本体科尔沃及其 Release 对象缺失的键鼠药剂教程字段，修复拾取药剂和低生命/魔力提示回显资源标识；复用 DefaultPlayer 现有中文并保留动态按键。",
+  "context": {
+   "file": "Twk_Pawn_Corvo.int",
+   "section": "Twk_Pawn_Corvo_Release DisTweaks_PlayerPawn",
+   "key": "m_AcquiredElixirTutorialMessage_PC[0]",
+   "assignment_occurrence": 0,
+   "style": "assignment"
+  }
+ },
+ {
+  "id": "int:Twk_Pawn_Corvo.int:Twk_Pawn_Corvo_Release DisTweaks_PlayerPawn:m_AcquiredElixirTutorialMessage_PC[1]",
+  "en": "Press `GBA_ManaElixir` to drink a Mana potion.",
+  "old": "（缺失）",
+  "new": "按 `GBA_ManaElixir` 喝精神药剂。",
+  "reason": "补齐本体科尔沃及其 Release 对象缺失的键鼠药剂教程字段，修复拾取药剂和低生命/魔力提示回显资源标识；复用 DefaultPlayer 现有中文并保留动态按键。",
+  "context": {
+   "file": "Twk_Pawn_Corvo.int",
+   "section": "Twk_Pawn_Corvo_Release DisTweaks_PlayerPawn",
+   "key": "m_AcquiredElixirTutorialMessage_PC[1]",
+   "assignment_occurrence": 0,
+   "style": "assignment"
+  }
+ },
+ {
+  "id": "int:Twk_Pawn_Corvo.int:Twk_Pawn_Corvo_Release DisTweaks_PlayerPawn:m_UseElixirTutorialMessage_PC[0]",
+  "en": "Your Health is Low. Press `GBA_HealthElixir` to drink a potion.",
+  "old": "（缺失）",
+  "new": "你的生命值过低。按 `GBA_HealthElixir` 喝生命药剂。",
+  "reason": "补齐本体科尔沃及其 Release 对象缺失的键鼠药剂教程字段，修复拾取药剂和低生命/魔力提示回显资源标识；复用 DefaultPlayer 现有中文并保留动态按键。",
+  "context": {
+   "file": "Twk_Pawn_Corvo.int",
+   "section": "Twk_Pawn_Corvo_Release DisTweaks_PlayerPawn",
+   "key": "m_UseElixirTutorialMessage_PC[0]",
+   "assignment_occurrence": 0,
+   "style": "assignment"
+  }
+ },
+ {
+  "id": "int:Twk_Pawn_Corvo.int:Twk_Pawn_Corvo_Release DisTweaks_PlayerPawn:m_UseElixirTutorialMessage_PC[1]",
+  "en": "Your Mana is Low. Press `GBA_ManaElixir` to drink a potion.",
+  "old": "（缺失）",
+  "new": "你的魔力值过低。按 `GBA_ManaElixir` 喝魔法药剂。",
+  "reason": "补齐本体科尔沃及其 Release 对象缺失的键鼠药剂教程字段，修复拾取药剂和低生命/魔力提示回显资源标识；复用 DefaultPlayer 现有中文并保留动态按键。",
+  "context": {
+   "file": "Twk_Pawn_Corvo.int",
+   "section": "Twk_Pawn_Corvo_Release DisTweaks_PlayerPawn",
+   "key": "m_UseElixirTutorialMessage_PC[1]",
+   "assignment_occurrence": 0,
+   "style": "assignment"
+  }
  }
 ]

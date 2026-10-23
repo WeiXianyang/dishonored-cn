@@ -6,39 +6,39 @@
  "parts": {
   "Dishonored-CN-1.4p-Full-part1-Base.zip": {
    "files": 76,
-   "size_bytes": 1600468200,
-   "size_mb": 1526.33,
-   "sha256": "ea1d7fd7a3fa2bc093c9d678abb06ddbccc07534802dff7a823f596cd954f7df"
+   "size_bytes": 775002940,
+   "size_mb": 739.1,
+   "sha256": "3311d985fb4fbaec48f0fb4d42c90911b04d29eabb8103d5889e87f64c7bb244"
   },
   "Dishonored-CN-1.4p-Full-part1-INT.zip": {
    "files": 658,
-   "size_bytes": 2558464,
-   "size_mb": 2.44,
-   "sha256": "10e69590bbc712393ef5d3dedcc156497729c38126d424556db3c293b5f86ba6"
+   "size_bytes": 580649,
+   "size_mb": 0.55,
+   "sha256": "5e7051bbafd0543c518f7dc082cc30cf8b8e138efe8159af4a5d4f7d0cb9d022"
   },
   "Dishonored-CN-1.4p-Full-part2-DLC05.zip": {
    "files": 31,
-   "size_bytes": 1321181117,
-   "size_mb": 1259.98,
-   "sha256": "201fe73c5b5cacb1014ab7713ad76b78756a44395a0a151a2efbbe02e624e298"
+   "size_bytes": 556768937,
+   "size_mb": 530.98,
+   "sha256": "4e2cb70e410cf1662a6138959f9c33fdaf4c8a92c06f1c54e602a7b1fffad1c6"
   },
   "Dishonored-CN-1.4p-Full-part3-DLC06.zip": {
    "files": 21,
-   "size_bytes": 660598619,
-   "size_mb": 630.0,
-   "sha256": "0bdb86ffcbaeb06050401f17ccc1dbbc896cb2fdfe7e3d1cef3f8891f4995be2"
+   "size_bytes": 228597674,
+   "size_mb": 218.01,
+   "sha256": "d281d0d74ab83bbb25e62a965d93986f47d189f911dca4636189c2ca48a41c3c"
   },
   "Dishonored-CN-1.4p-Full-part4-DLC07.zip": {
    "files": 28,
-   "size_bytes": 965339006,
-   "size_mb": 920.62,
-   "sha256": "1abe2590b46c67f5644e4f29681a100acd8d5384bca786314be0b028f62f624e"
+   "size_bytes": 340137144,
+   "size_mb": 324.38,
+   "sha256": "cd3a6096036d481c2c8fb8adb196a5beecc4ce78728d488d8a70e9b329373418"
   },
   "Dishonored-CN-1.4p-Lite.zip": {
-   "files": 680,
-   "size_bytes": 29401950,
+   "files": 679,
+   "size_bytes": 29403901,
    "size_mb": 28.04,
-   "sha256": "b5bf1b474b5b998ec23d3d47f0e73e754cb5f3c2a189f4c0c0b84b8f997542f4"
+   "sha256": "190f95687002366d121ce257c05cf2144bcb95746f518e5d6ae5d8b8acfd0f00"
   }
  }
 }
